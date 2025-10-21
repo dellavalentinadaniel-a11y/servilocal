@@ -1,0 +1,6 @@
+node_modules/
+.husky/_/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

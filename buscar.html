@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar servicios – ServiLocal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="c-page">
+
+  <header class="c-navbar">
+    <div class="container c-navbar__inner">
+      <a class="c-navbar__brand" href="index.html">ServiLocal</a>
+      <nav class="c-navbar__links">
+        <a class="c-navbar__link" href="index.html">Inicio</a>
+        <a class="c-navbar__link" href="todos_los_servicios.html">Servicios</a>
+        <a class="c-navbar__link" href="perfil.html">Mi perfil</a>
+        <a class="c-navbar__link" href="index.html">Cerrar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="c-main">
+    <section class="c-hero">
+      <div class="container c-hero__inner">
+        <div>
+          <span class="c-badge-pill">Explorá profesionales</span>
+          <h1 class="c-hero__title">Buscar profesionales verificados</h1>
+          <p class="c-hero__text">Filtrá por categoría, ubicación y reputación para conectar con especialistas confiables cerca de tu barrio.</p>
+          <div class="c-hero__actions">
+            <a class="c-button" href="#resultados">Ver resultados disponibles</a>
+            <a class="c-navbar__link" href="todos_los_servicios.html">Explorar categorías</a>
+          </div>
+        </div>
+        <div>
+          <div class="c-form-card">
+            <div class="c-form-grid c-form-grid--responsive">
+              <div class="c-form-field">
+                <label class="c-label" for="categoria">Categoría</label>
+                <select id="categoria" class="c-select">
+                  <option>Todas</option>
+                  <option>Jardinería</option>
+                  <option>Plomería</option>
+                  <option>Electricidad</option>
+                  <option>Limpieza</option>
+                  <option>Construcción</option>
+                  <option>Abogacía</option>
+                  <option>Contaduría</option>
+                  <option>Veterinaria</option>
+                  <option>Ferretería</option>
+                  <option>Corralón</option>
+                  <option>Mecánica del automotor</option>
+                </select>
+              </div>
+              <div class="c-form-field">
+                <label class="c-label" for="ubicacion">Ubicación</label>
+                <input id="ubicacion" type="text" class="c-input" placeholder="Ej: Ciudad de México">
+              </div>
+              <div class="c-form-field">
+                <label class="c-label" for="orden">Ordenar por</label>
+                <select id="orden" class="c-select">
+                  <option>Recomendados</option>
+                  <option>Mejor calificados</option>
+                  <option>Más cercanos</option>
+                </select>
+              </div>
+            </div>
+            <div class="c-form-card__footer">
+              <button class="c-button" type="button">Buscar</button>
+              <a class="c-navbar__link" href="#resultados">Ver resultados</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="c-section" id="resultados">
+      <div class="container">
+        <header class="c-section__heading c-section__heading--left">
+          <h2 class="texto-subtitulo u-no-margin">Resultados (3)</h2>
+          <p class="texto-base u-no-margin">Mostrando profesionales disponibles en tu zona. Podés ajustar los filtros para refinar la búsqueda.</p>
+        </header>
+        <div class="c-result-list">
+          <article class="c-result-card">
+            <div class="c-result-card__media" aria-hidden="true"></div>
+            <div class="c-result-card__body">
+              <header class="c-result-card__header">
+                <h3 class="c-result-card__title">Carlos – Jardinería</h3>
+                <div class="c-result-card__meta">
+                  <span class="c-rating" aria-hidden="true">★★★★☆</span>
+                  <span class="c-rating__value">(4.5)</span>
+                  <span>+10 años de experiencia</span>
+                </div>
+              </header>
+              <p class="texto-base u-no-margin">Podado, diseño de jardines y sistemas de riego automático. Servicio en barrios del norte y turnos express en 24 hs.</p>
+              <div class="c-result-card__actions">
+                <a class="c-button" href="proveedor.html">Ver perfil</a>
+                <a class="c-navbar__link" href="#">Guardar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="c-result-card">
+            <div class="c-result-card__media" aria-hidden="true"></div>
+            <div class="c-result-card__body">
+              <header class="c-result-card__header">
+                <h3 class="c-result-card__title">Laura – Limpieza</h3>
+                <div class="c-result-card__meta">
+                  <span class="c-rating" aria-hidden="true">★★★★★</span>
+                  <span class="c-rating__value">(5.0)</span>
+                  <span>Servicios residenciales y oficinas</span>
+                </div>
+              </header>
+              <p class="texto-base u-no-margin">Limpieza profunda, mudanzas y espacios comerciales. Planes con productos ecológicos y equipo propio.</p>
+              <div class="c-result-card__actions">
+                <a class="c-button" href="proveedor.html">Ver perfil</a>
+                <a class="c-navbar__link" href="#">Solicitar disponibilidad</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="c-result-card">
+            <div class="c-result-card__media" aria-hidden="true"></div>
+            <div class="c-result-card__body">
+              <header class="c-result-card__header">
+                <h3 class="c-result-card__title">Mecánica Exprés</h3>
+                <div class="c-result-card__meta">
+                  <span class="c-rating" aria-hidden="true">★★★★☆</span>
+                  <span class="c-rating__value">(4.6)</span>
+                  <span>Responde en menos de 2 hs</span>
+                </div>
+              </header>
+              <p class="texto-base u-no-margin">Diagnóstico computarizado, eléctricos y mecánica ligera a domicilio. Cobertura en toda el área metropolitana.</p>
+              <div class="c-result-card__actions">
+                <a class="c-button" href="proveedor.html">Ver perfil</a>
+                <a class="c-navbar__link" href="#">Compartir</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="c-footer">
+    <div class="container c-footer__inner">
+      <div>
+        <h2 class="texto-subtitulo c-footer__title">¿No encontraste lo que buscás?</h2>
+        <p class="c-footer__meta">Nuestro equipo puede ayudarte a contactar especialistas fuera de la lista para proyectos personalizados.</p>
+      </div>
+      <div class="c-footer__links">
+        <a class="c-footer__link" href="todos_los_servicios.html">Explorar categorías</a>
+        <a class="c-footer__link" href="proveedor.html">Ver proveedores destacados</a>
+        <a class="c-footer__link" href="registro.html">Postularse como proveedor</a>
+        <a class="c-footer__link" href="politicas.html">Políticas de privacidad</a>
+      </div>
+      <div class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</div>
+    </div>
+  </footer>
+
+  <script src="js/cookies.js"></script>
+
+</body>
+</html>

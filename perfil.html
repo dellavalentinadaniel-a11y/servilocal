@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Perfil – ServiLocal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="c-page">
+
+  <header class="c-navbar" role="banner">
+    <div class="container c-navbar__inner">
+      <a class="c-navbar__brand" href="index.html" aria-label="Inicio de ServiLocal">ServiLocal</a>
+      <nav class="c-navbar__links">
+        <a class="c-navbar__link" href="buscar.html" aria-label="Buscar servicios">Buscar servicios</a>
+        <a class="c-navbar__link" href="todos_los_servicios.html" aria-label="Ver todas las categorías">Servicios</a>
+        <a class="c-navbar__link" href="index.html" aria-label="Cerrar sesión">Cerrar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="c-main" role="main">
+    <section class="c-section c-section--tight">
+      <div class="container">
+        <article class="c-profile-card" role="region" aria-labelledby="profile-heading">
+          <div class="c-banner c-banner--large" aria-hidden="true"></div>
+          <div class="c-profile-body">
+            <div class="c-profile-header">
+              <div class="c-profile-header__avatar">
+                <div class="c-avatar">
+                  <div class="c-avatar__loader" aria-hidden="true">
+                    <i class="fas fa-spinner fa-spin"></i>
+                  </div>
+                  <img
+                    id="profileImage"
+                    src="imagenes/perfile/images%20(1).png"
+                    alt="Foto de perfil de Usuario"
+                    class="c-avatar__image u-transparent u-transition-opacity"
+                    loading="lazy"
+                    onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                  >
+                  <button id="changeProfilePicBtn" class="c-avatar__button" type="button" aria-label="Cambiar foto de perfil">
+                    <i class="fas fa-camera" aria-hidden="true"></i>
+                  </button>
+                  <input type="file" id="profilePicInput" class="u-hidden" accept="image/*" aria-label="Seleccionar nueva foto de perfil">
+                </div>
+              </div>
+              <div class="c-profile-header__body">
+                <h1 id="profile-heading" class="texto-subtitulo">Usuario Ejemplo</h1>
+                <div class="c-profile-rating">
+                  <span aria-label="4.8 de 5 estrellas">★★★★☆</span>
+                  <span class="c-profile-rating__meta">(4.8 • 32 reseñas)</span>
+                </div>
+                <div class="c-profile-info">
+                  <div class="c-profile-info__meta">
+                    <span id="profileEmail">usuario@ejemplo.com</span>
+                    <span id="profileLocation">Ciudad de México, México</span>
+                  </div>
+                  <p class="c-profile-description" id="profileAbout">Profesional en jardinería con más de 10 años de experiencia.</p>
+                </div>
+              </div>
+              <div class="c-profile-header__actions">
+                <button id="editProfileBtn" class="c-button" type="button" aria-label="Editar perfil">
+                  Editar perfil
+                </button>
+                <button id="settingsBtn" class="c-button c-button--secondary" type="button" aria-label="Configuración de cuenta">
+                  Configuración
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="c-section">
+      <div class="container c-grid c-grid--two">
+        <article class="c-panel" aria-labelledby="gallery-heading">
+          <div class="c-panel__header">
+            <h2 id="gallery-heading" class="c-panel__title">Fotos del perfil</h2>
+            <button id="addPhotoBtn" class="c-button" type="button" aria-label="Agregar nueva foto">
+              <i class="fas fa-plus c-icon-left" aria-hidden="true"></i>Agregar foto
+            </button>
+            <input type="file" id="galleryPicInput" class="u-hidden" accept="image/*" multiple aria-label="Seleccionar fotos para la galería">
+          </div>
+          <div id="galleryContainer" class="c-gallery" role="list" aria-label="Galería de imágenes del perfil">
+            <div class="c-gallery__item" role="listitem">
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img
+                  src="imagenes/perfilemuestra/2-1.png"
+                  alt="Jardinería 1"
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="imagenes/perfilemuestra/2-1.png"
+                  tabindex="0"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            </div>
+            <div class="c-gallery__item" role="listitem">
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img
+                  src="imagenes/perfilemuestra/21-espectaculares-jardines-verticales-06.png"
+                  alt="Jardinería 2"
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="imagenes/perfilemuestra/21-espectaculares-jardines-verticales-06.png"
+                  tabindex="0"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            </div>
+            <div class="c-gallery__item" role="listitem">
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img
+                  src="imagenes/perfilemuestra/captura-de-pantalla-alquiler-casa-jardin-flores-villa-la-angostura-neuquen-800x350.png"
+                  alt="Jardinería 3"
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="imagenes/perfilemuestra/captura-de-pantalla-alquiler-casa-jardin-flores-villa-la-angostura-neuquen-800x350.png"
+                  tabindex="0"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            </div>
+            <div class="c-gallery__item" role="listitem">
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img
+                  src="imagenes/perfilemuestra/planta-exteriores-jardineria.png"
+                  alt="Jardinería 4"
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="imagenes/perfilemuestra/planta-exteriores-jardineria.png"
+                  tabindex="0"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="c-panel" aria-labelledby="stats-heading">
+          <h2 id="stats-heading" class="c-panel__title">Estadísticas</h2>
+          <div class="c-stat-grid">
+            <div class="c-stat-card">
+              <span class="c-stat-card__value">12</span>
+              <span class="c-stat-card__label">Servicios contratados</span>
+            </div>
+            <div class="c-stat-card">
+              <span class="c-stat-card__value">8</span>
+              <span class="c-stat-card__label">Reseñas dejadas</span>
+            </div>
+            <div class="c-stat-card">
+              <span class="c-stat-card__value">5</span>
+              <span class="c-stat-card__label">Favoritos</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="c-section">
+      <div class="container">
+        <div class="c-tabs" role="tablist" aria-label="Secciones del perfil">
+          <nav class="c-tabs__nav">
+            <button class="c-tabs__link c-tabs__link--active" data-tab="tab-informacion" type="button" role="tab" aria-controls="tab-informacion" aria-selected="true">Mi perfil</button>
+            <button class="c-tabs__link" data-tab="tab-servicios" type="button" role="tab" aria-controls="tab-servicios" aria-selected="false">Servicios</button>
+            <button class="c-tabs__link" data-tab="tab-favoritos" type="button" role="tab" aria-controls="tab-favoritos" aria-selected="false">Favoritos</button>
+            <button class="c-tabs__link" data-tab="tab-configuracion" type="button" role="tab" aria-controls="tab-configuracion" aria-selected="false">Configuración</button>
+          </nav>
+
+          <div id="tab-informacion" class="c-tab-panel" role="tabpanel" aria-labelledby="tab-informacion">
+            <article class="c-panel">
+              <h2 class="c-panel__title">Información personal</h2>
+              <dl class="c-description-list">
+                <div class="c-description-list__item">
+                  <dt class="c-description-list__term">Nombre completo</dt>
+                  <dd id="displayName" class="c-description-list__detail">Usuario Ejemplo</dd>
+                </div>
+                <div class="c-description-list__item">
+                  <dt class="c-description-list__term">Correo electrónico</dt>
+                  <dd id="displayEmail" class="c-description-list__detail">usuario@ejemplo.com</dd>
+                </div>
+                <div class="c-description-list__item">
+                  <dt class="c-description-list__term">Teléfono</dt>
+                  <dd id="displayPhone" class="c-description-list__detail">+52 123 456 7890</dd>
+                </div>
+                <div class="c-description-list__item">
+                  <dt class="c-description-list__term">Tipo de cuenta</dt>
+                  <dd id="displayAccountType" class="c-description-list__detail">Cliente</dd>
+                </div>
+                <div class="c-description-list__item">
+                  <dt class="c-description-list__term">Ubicación</dt>
+                  <dd id="displayLocation" class="c-description-list__detail">Ciudad de México, México</dd>
+                </div>
+              </dl>
+            </article>
+            <article class="c-panel">
+              <h2 class="c-panel__title">Acerca de mí</h2>
+              <p class="texto-base" id="profileBio">Profesional en jardinería con más de 10 años de experiencia.</p>
+            </article>
+          </div>
+
+          <div id="tab-servicios" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-servicios">
+            <div class="c-grid c-grid--two">
+              <article class="c-card">
+                <div class="c-card__header">
+                  <h3 class="c-card__title">Mantenimiento de jardines</h3>
+                  <span class="c-chip">Activo</span>
+                </div>
+                <div class="c-card__body">
+                  Servicio regular para jardines residenciales y comerciales. Incluye limpieza, fertilización y control de plagas.
+                </div>
+                <div class="c-card__meta">
+                  <span><i class="fas fa-star"></i> 4.8 • 24 reseñas</span>
+                  <span>$500 – $1,200 MXN</span>
+                </div>
+              </article>
+              <article class="c-card">
+                <div class="c-card__header">
+                  <h3 class="c-card__title">Diseño de paisaje</h3>
+                  <span class="c-chip">Activo</span>
+                </div>
+                <div class="c-card__body">
+                  Planificación y diseño de espacios verdes con enfoque sustentable y mantenimiento sencillo.
+                </div>
+                <div class="c-card__meta">
+                  <span><i class="fas fa-star"></i> 4.5 • 18 reseñas</span>
+                  <span>$1,500 – $5,000 MXN</span>
+                </div>
+              </article>
+              <article class="c-card">
+                <div class="c-card__header">
+                  <h3 class="c-card__title">Podado de árboles</h3>
+                  <span class="c-chip">Activo</span>
+                </div>
+                <div class="c-card__body">
+                  Podado técnico y mantenimiento de árboles con certificación en seguridad.
+                </div>
+                <div class="c-card__meta">
+                  <span><i class="fas fa-star"></i> 4.9 • 15 reseñas</span>
+                  <span>$300 – $800 MXN</span>
+                </div>
+              </article>
+              <article class="c-card">
+                <div class="c-card__header">
+                  <h3 class="c-card__title">Instalación de césped</h3>
+                  <span class="c-chip c-chip--neutral">Inactivo</span>
+                </div>
+                <div class="c-card__body">
+                  Instalación de césped natural y sintético con asesoría de riego y mantenimiento.
+                </div>
+                <div class="c-card__meta">
+                  <span><i class="fas fa-star"></i> 4.6 • 12 reseñas</span>
+                  <span>$800 – $2,500 MXN</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div id="tab-favoritos" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-favoritos">
+            <div class="c-grid c-grid--three">
+              <article class="c-card">
+                <div class="c-card__header">
+                  <h3 class="c-card__title">Carlos Jardinería</h3>
+                  <span class="c-chip">Mantenimiento</span>
+                </div>
+                <div class="c-card__body">
+                  Especialista en jardines residenciales. Disponible en zona norte.
+                </div>
+                <div class="c-card__meta">
+                  <span><i class="fas fa-star"></i> 4.8</span>
+                  <span>$500/hr</span>
+                </div>
+              </article>
+              <article class="c-card">
+                <div class="c-card__header">
+                  <h3 class="c-card__title">ElectroFix</h3>
+                  <span class="c-chip">Hogar</span>
+                </div>
+                <div class="c-card__body">
+                  Técnicos eléctricos certificados. Atención en 24 horas.
+                </div>
+                <div class="c-card__meta">
+                  <span><i class="fas fa-star"></i> 4.9</span>
+                  <span>+120 trabajos</span>
+                </div>
+              </article>
+              <article class="c-card">
+                <div class="c-card__header">
+                  <h3 class="c-card__title">LimpioMax</h3>
+                  <span class="c-chip">Limpieza</span>
+                </div>
+                <div class="c-card__body">
+                  Planes mensuales para oficinas y hogares. Productos ecológicos incluidos.
+                </div>
+                <div class="c-card__meta">
+                  <span><i class="fas fa-star"></i> 4.7</span>
+                  <span>Desde $750</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div id="tab-configuracion" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-configuracion">
+            <article class="c-panel">
+              <h2 class="c-panel__title">Preferencias rápidas</h2>
+              <div class="c-simple-list">
+                <div>Correo de notificaciones: <strong>Activado</strong></div>
+                <div>Mostrar ubicación aproximada: <strong>Activado</strong></div>
+                <div>Permitir contacto directo: <strong>Solo clientes verificados</strong></div>
+              </div>
+              <div class="c-panel__actions">
+                <button id="openSettingsFromTab" class="c-button c-button--secondary" type="button">
+                  Ajustar configuración
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="c-footer">
+    <div class="container c-footer__inner">
+      <div>
+        <h2 class="texto-subtitulo c-footer__title">ServiLocal</h2>
+        <p class="c-footer__meta">Conectando vecinos con profesionales de confianza.</p>
+      </div>
+      <div class="c-footer__links">
+        <a class="c-footer__link" href="todos_los_servicios.html">Todos los servicios</a>
+        <a class="c-footer__link" href="buscar.html">Buscar profesionales</a>
+        <a class="c-footer__link" href="proveedor.html">Ver proveedores</a>
+        <a class="c-footer__link" href="registro.html">Sumar mi negocio</a>
+        <a class="c-footer__link" href="politicas.html">Políticas de privacidad</a>
+      </div>
+      <div class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</div>
+    </div>
+  </footer>
+
+  <!-- Modal galería -->
+  <div id="galleryModal" class="c-modal u-hidden" role="dialog" aria-modal="true" aria-labelledby="gallery-heading">
+    <div class="c-modal__dialog">
+      <button id="closeGalleryModal" class="c-modal__close" type="button" aria-label="Cerrar galería">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="c-modal__image-wrapper">
+        <div id="modalLoadingSpinner" class="c-modal__loader u-hidden">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <img id="modalImage" src="" alt="Imagen ampliada" class="c-modal__image u-transparent u-transition-opacity">
+      </div>
+      <div class="c-modal__nav">
+        <button class="c-modal__nav-btn" type="button" data-direction="-1" aria-label="Ver imagen anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div id="imageCounter" class="c-modal__counter"></div>
+        <button class="c-modal__nav-btn" type="button" data-direction="1" aria-label="Ver imagen siguiente">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal editar perfil -->
+  <div id="editProfileModal" class="c-modal u-hidden" role="dialog" aria-modal="true" aria-labelledby="editProfileTitle">
+    <div class="c-modal__dialog">
+      <button class="c-modal__close" type="button" aria-label="Cerrar modal" data-dismiss="editProfileModal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="c-modal__surface">
+        <header class="c-modal__header">
+          <h2 id="editProfileTitle" class="c-modal__title">Editar perfil</h2>
+        </header>
+        <div class="c-modal__body">
+          <form id="profileForm" class="c-form">
+            <div class="c-form-grid c-form-grid--responsive">
+              <div class="c-form-field">
+                <label class="c-label" for="editName">Nombre completo</label>
+                <input class="c-input" type="text" id="editName" name="editName" value="Usuario Ejemplo">
+              </div>
+              <div class="c-form-field">
+                <label class="c-label" for="editEmail">Correo electrónico</label>
+                <input class="c-input" type="email" id="editEmail" name="editEmail" value="usuario@ejemplo.com">
+              </div>
+              <div class="c-form-field">
+                <label class="c-label" for="editPhone">Teléfono</label>
+                <input class="c-input" type="tel" id="editPhone" name="editPhone" value="+52 123 456 7890">
+              </div>
+              <div class="c-form-field">
+                <label class="c-label" for="editLocation">Ubicación</label>
+                <input class="c-input" type="text" id="editLocation" name="editLocation" value="Ciudad de México, México">
+              </div>
+            </div>
+            <div class="c-form-field">
+              <label class="c-label" for="editAbout">Acerca de mí</label>
+              <textarea class="c-input" id="editAbout" name="editAbout" rows="4">Profesional en jardinería con más de 10 años de experiencia.</textarea>
+            </div>
+            <div class="c-modal__actions">
+              <button type="button" class="c-button c-button--secondary" data-dismiss="editProfileModal">Cancelar</button>
+              <button type="submit" class="c-button">Guardar cambios</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal configuración -->
+  <div id="settingsModal" class="c-modal u-hidden" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="c-modal__dialog">
+      <button class="c-modal__close" type="button" aria-label="Cerrar modal" data-dismiss="settingsModal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="c-modal__surface">
+        <header class="c-modal__header">
+          <h2 id="settingsTitle" class="c-modal__title">Configuración de cuenta</h2>
+        </header>
+        <div class="c-modal__body">
+          <article class="c-panel">
+            <h3 class="c-panel__title">Privacidad</h3>
+            <div class="c-simple-list">
+              <label><input type="checkbox" checked> Mostrar mi ubicación aproximada</label>
+              <label><input type="checkbox" checked> Recibir notificaciones por correo</label>
+              <label><input type="checkbox"> Mostrar número a clientes</label>
+            </div>
+          </article>
+          <article class="c-panel">
+            <h3 class="c-panel__title">Cuenta</h3>
+            <div class="c-simple-list">
+              <button class="c-navbar__link" type="button">Cambiar contraseña</button>
+              <button class="c-navbar__link" type="button">Preferencias de notificación</button>
+              <button class="c-navbar__link" type="button">Seguridad y acceso</button>
+            </div>
+          </article>
+        </div>
+        <div class="c-modal__actions">
+          <button type="button" class="c-button" data-dismiss="settingsModal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const body = document.body;
+      const galleryContainer = document.getElementById('galleryContainer');
+      const galleryModal = document.getElementById('galleryModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalLoader = document.getElementById('modalLoadingSpinner');
+      const closeGalleryModalBtn = document.getElementById('closeGalleryModal');
+      const addPhotoBtn = document.getElementById('addPhotoBtn');
+      const galleryPicInput = document.getElementById('galleryPicInput');
+      const profilePicInput = document.getElementById('profilePicInput');
+      const changeProfilePicBtn = document.getElementById('changeProfilePicBtn');
+      const tabButtons = Array.from(document.querySelectorAll('.c-tabs__link'));
+      const tabPanels = Array.from(document.querySelectorAll('.c-tab-panel'));
+      const editProfileModal = document.getElementById('editProfileModal');
+      const settingsModal = document.getElementById('settingsModal');
+      const editProfileBtn = document.getElementById('editProfileBtn');
+      const settingsBtn = document.getElementById('settingsBtn');
+      const openSettingsFromTab = document.getElementById('openSettingsFromTab');
+      const profileForm = document.getElementById('profileForm');
+      const profileImage = document.getElementById('profileImage');
+
+      let galleryImages = [];
+      let currentImageIndex = 0;
+
+      function lockScroll() {
+        body.style.overflow = 'hidden';
+      }
+
+      function unlockScroll() {
+        body.style.overflow = '';
+      }
+
+      function refreshGalleryImages() {
+        galleryImages = Array.from(document.querySelectorAll('.c-gallery__image'));
+      }
+
+      function setActiveTab(targetId) {
+        tabButtons.forEach((button) => {
+          const isActive = button.dataset.tab === targetId;
+          button.classList.toggle('c-tabs__link--active', isActive);
+          button.setAttribute('aria-selected', String(isActive));
+        });
+
+        tabPanels.forEach((panel) => {
+          const shouldShow = panel.id === targetId;
+          panel.classList.toggle('u-hidden', !shouldShow);
+          panel.setAttribute('aria-hidden', String(!shouldShow));
+        });
+      }
+
+      function updateImageCounter() {
+        const counter = document.getElementById('imageCounter');
+        if (counter) {
+          counter.textContent = galleryImages.length ? `${currentImageIndex + 1} / ${galleryImages.length}` : '0 / 0';
+        }
+      }
+
+      function openGalleryModal(imageElement) {
+        const source = imageElement.dataset.large || imageElement.src;
+        modalLoader.classList.remove('u-hidden');
+        modalImage.classList.add('u-transparent');
+        modalImage.src = source;
+        galleryModal.classList.remove('u-hidden');
+        lockScroll();
+
+        refreshGalleryImages();
+        currentImageIndex = galleryImages.indexOf(imageElement);
+        updateImageCounter();
+      }
+
+      function closeGalleryModal() {
+        galleryModal.classList.add('u-hidden');
+        unlockScroll();
+      }
+
+      function changeImage(direction) {
+        if (!galleryImages.length) return;
+        currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+        const newImage = galleryImages[currentImageIndex];
+        modalLoader.classList.remove('u-hidden');
+        modalImage.classList.add('u-transparent');
+        modalImage.src = newImage.dataset.large || newImage.src;
+        updateImageCounter();
+      }
+
+      function attachGalleryInteraction(imageElement) {
+        if (!imageElement) return;
+        if (!imageElement.dataset.large) {
+          imageElement.dataset.large = imageElement.src;
+        }
+        imageElement.setAttribute('role', 'button');
+        imageElement.setAttribute('tabindex', '0');
+
+        imageElement.addEventListener('click', () => openGalleryModal(imageElement));
+        imageElement.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openGalleryModal(imageElement);
+          }
+        });
+      }
+
+      function openModal(modal) {
+        modal.classList.remove('u-hidden');
+        lockScroll();
+      }
+
+      function closeModal(modal) {
+        modal.classList.add('u-hidden');
+        unlockScroll();
+      }
+
+      function populateInitialGallery() {
+        refreshGalleryImages();
+        galleryImages.forEach(attachGalleryInteraction);
+      }
+
+      populateInitialGallery();
+      setActiveTab('tab-informacion');
+
+      tabButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          setActiveTab(button.dataset.tab);
+        });
+      });
+
+      document.querySelectorAll('.c-modal').forEach((modal) => {
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            closeModal(modal);
+          }
+        });
+      });
+
+      document.querySelectorAll('[data-dismiss]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const target = document.getElementById(button.dataset.dismiss);
+          if (target) {
+            closeModal(target);
+          }
+        });
+      });
+
+      document.querySelectorAll('.c-modal__nav-btn').forEach((button) => {
+        const direction = Number(button.dataset.direction || 0);
+        button.addEventListener('click', () => changeImage(direction));
+      });
+
+      closeGalleryModalBtn.addEventListener('click', closeGalleryModal);
+
+      modalImage.addEventListener('load', () => {
+        modalImage.classList.remove('u-transparent');
+        modalLoader.classList.add('u-hidden');
+      });
+
+      galleryModal.addEventListener('click', (event) => {
+        if (event.target === galleryModal) {
+          closeGalleryModal();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!galleryModal.classList.contains('u-hidden')) {
+          if (event.key === 'Escape') {
+            closeGalleryModal();
+          } else if (event.key === 'ArrowLeft') {
+            changeImage(-1);
+          } else if (event.key === 'ArrowRight') {
+            changeImage(1);
+          }
+        }
+      });
+
+      addPhotoBtn.addEventListener('click', () => galleryPicInput.click());
+
+      galleryPicInput.addEventListener('change', (event) => {
+        const files = Array.from(event.target.files || []);
+
+        files.forEach((file) => {
+          if (!file.type.startsWith('image/')) return;
+
+          const reader = new FileReader();
+          const galleryItem = document.createElement('div');
+          galleryItem.className = 'c-gallery__item';
+          galleryItem.setAttribute('role', 'listitem');
+          galleryItem.innerHTML = `
+            <div class="c-gallery__media">
+              <div class="c-gallery__loader">
+                <div class="loading-spinner">
+                  <i class="fas fa-spinner fa-spin"></i>
+                  <span>Procesando imagen...</span>
+                </div>
+              </div>
+            </div>
+            <div class="c-gallery__overlay"><span>Ver imagen</span></div>
+          `;
+
+          galleryContainer.insertBefore(galleryItem, galleryContainer.firstChild);
+
+          reader.onload = (loadEvent) => {
+            const imageElement = document.createElement('img');
+            imageElement.src = loadEvent.target.result;
+            imageElement.alt = 'Imagen subida';
+            imageElement.className = 'c-gallery__image u-transparent u-transition-opacity';
+            imageElement.dataset.large = loadEvent.target.result;
+
+            imageElement.addEventListener('load', () => {
+              imageElement.classList.remove('u-transparent');
+              const loader = galleryItem.querySelector('.c-gallery__loader');
+              if (loader) loader.remove();
+            });
+
+            galleryItem.querySelector('.c-gallery__media').appendChild(imageElement);
+            attachGalleryInteraction(imageElement);
+            refreshGalleryImages();
+            updateImageCounter();
+          };
+
+          reader.readAsDataURL(file);
+        });
+
+        galleryPicInput.value = '';
+      });
+
+      changeProfilePicBtn.addEventListener('click', () => profilePicInput.click());
+
+      profilePicInput.addEventListener('change', (event) => {
+        const [file] = event.target.files || [];
+        if (!file || !file.type.startsWith('image/')) return;
+
+        const reader = new FileReader();
+        reader.onload = (loadEvent) => {
+          profileImage.src = loadEvent.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      const modalOpeners = [
+        { trigger: editProfileBtn, modal: editProfileModal },
+        { trigger: settingsBtn, modal: settingsModal },
+        { trigger: openSettingsFromTab, modal: settingsModal }
+      ];
+
+      modalOpeners.forEach(({ trigger, modal }) => {
+        if (trigger && modal) {
+          trigger.addEventListener('click', () => openModal(modal));
+        }
+      });
+
+      profileForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('editName').value;
+        const email = document.getElementById('editEmail').value;
+        const phone = document.getElementById('editPhone').value;
+        const location = document.getElementById('editLocation').value;
+        const about = document.getElementById('editAbout').value;
+
+        document.getElementById('profile-heading').textContent = name;
+        document.getElementById('profileEmail').textContent = email;
+        document.getElementById('profileLocation').textContent = location;
+        document.getElementById('profileAbout').textContent = about;
+        document.getElementById('displayName').textContent = name;
+        document.getElementById('displayEmail').textContent = email;
+        document.getElementById('displayPhone').textContent = phone;
+        document.getElementById('displayLocation').textContent = location;
+        document.getElementById('profileBio').textContent = about;
+
+        closeModal(editProfileModal);
+        alert('Perfil actualizado correctamente');
+      });
+    });
+  </script>
+
+  <script src="js/cookies.js"></script>
+
+</body>
+</html>

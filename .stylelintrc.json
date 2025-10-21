@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/stylelintrc",
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "ignoreFiles": [
+    "**/*.min.css",
+    "node_modules/**/*",
+    "dist/**/*",
+    "build/**/*"
+  ],
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z0-9]+(?:-[a-z0-9]+)*(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)*$",
+      {
+        "message": "Usá nombres de clase en minúsculas y formato BEM/kebab-case (ej. c-bloque__elemento--modificador)"
+      }
+    ],
+    "color-function-notation": "modern",
+    "alpha-value-notation": "percentage",
+    "declaration-empty-line-before": null
+  }
+}
