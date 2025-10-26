@@ -336,7 +336,19 @@
     const navbar = document.querySelector('.c-navbar');
     const links = document.querySelectorAll('.c-navbar__link');
     
-    if (!toggle || !menu) return;
+    console.log('🍔 Inicializando navbar toggle...', {
+      toggle: !!toggle,
+      menu: !!menu,
+      navbar: !!navbar,
+      linksCount: links.length
+    });
+    
+    if (!toggle || !menu) {
+      console.warn('⚠️ No se encontró el botón toggle o el menú');
+      return;
+    }
+
+    console.log('✅ Navbar toggle inicializado correctamente');
 
     // Función para alternar el menú
     function toggleMenu() {
