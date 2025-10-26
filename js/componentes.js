@@ -308,44 +308,18 @@
   }
 
   /**
-   * Mejorar cards interactivas
+   * Mejorar funcionalidad de Cards Interactivas
    */
   function enhanceInteractiveCards() {
-    const cards = document.querySelectorAll('.c-service-card, .c-result-card, .c-feature-card');
+    const cards = document.querySelectorAll('.c-feature-card, .c-service-card, .c-directory-card');
     
     cards.forEach(card => {
-      const primaryLink = card.querySelector('a');
-      if (!primaryLink) return;
-
-      // Solo agregar interactividad si la card no es un link en sí misma
-      if (card.tagName.toLowerCase() !== 'a') {
-        card.setAttribute('tabindex', '0');
-        card.setAttribute('role', 'button');
-        
-        const linkText = primaryLink.textContent || primaryLink.getAttribute('aria-label');
-        card.setAttribute('aria-label', `${linkText} - Presiona Enter para acceder`);
-
-        // Click en card activa el primer link
-        card.addEventListener('click', (e) => {
-          // Solo si no se clickeó en un elemento interactivo
-          if (!e.target.closest('a, button')) {
-            primaryLink.click();
-          }
-        });
-
-        // Navegación por teclado
-        card.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            primaryLink.click();
-          }
-        });
-
-        // Efectos visuales mejorados
+      // Solo para navegadores con soporte de focus-visible
+      if ('focus' in card || card.tabIndex >= 0) {
         card.addEventListener('focus', () => {
           card.classList.add('has-focus-visible');
         });
-
+        
         card.addEventListener('blur', () => {
           card.classList.remove('has-focus-visible');
         });
@@ -354,6 +328,108 @@
   }
 
   /**
+   * Funcionalidad del Menú Hamburguesa Responsivo
+   */
+  function enhanceNavbarToggle() {
+    const toggle = document.querySelector('.c-navbar__toggle');
+    const menu = document.querySelector('.c-navbar__menu');
+    const navbar = document.querySelector('.c-navbar');
+    const links = document.querySelectorAll('.c-navbar__link');
+    
+    if (!toggle || !menu) return;
+
+    // Función para alternar el menú
+    function toggleMenu() {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      
+      toggle.setAttribute('aria-expanded', !isOpen);
+      menu.classList.toggle('is-open', !isOpen);
+      
+      // Prevenir scroll del body cuando el menú está abierto
+      document.body.style.overflow = !isOpen ? 'hidden' : '';
+      
+      // Anunciar cambio a lectores de pantalla
+      const announcement = !isOpen ? 'Menú abierto' : 'Menú cerrado';
+      announceToScreenReader(announcement);
+    }
+
+    // Cerrar menú
+    function closeMenu() {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    toggle.addEventListener('click', toggleMenu);
+
+    // Cerrar menú al hacer clic en un enlace
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        setTimeout(closeMenu, 150);
+      });
+    });
+
+    // Cerrar menú con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target) && menu.classList.contains('is-open')) {
+        closeMenu();
+      }
+    });
+
+    // Manejar redimensionamiento de ventana
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && menu.classList.contains('is-open')) {
+        closeMenu();
+      }
+    });
+  }
+
+  /**
+   * Anunciar mensajes a lectores de pantalla
+   */
+  function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+      document.body.removeChild(announcement);
+    }, 1000);
+  }
+
+  /**
+   * Inicializar todas las mejoras de componentes
+   */
+  function init() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+      return;
+    }
+
+    try {
+      enhanceTabs();
+      enhanceGallery();
+      enhanceInteractiveCards();
+      enhanceNavbarToggle();
+      
+      console.log('✓ Componentes interactivos mejorados');
+    } catch (error) {
+      console.error('Error al inicializar componentes interactivos:', error);
+    }
+  }  /**
    * Inicializar todas las mejoras de componentes
    */
   function init() {

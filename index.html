@@ -14,12 +14,38 @@
 
   <header class="c-navbar">
     <div class="container c-navbar__inner">
-      <a class="c-navbar__brand" href="index.html">ServiLocal</a>
-      <nav class="c-navbar__links">
-        <a class="c-navbar__link" href="buscar.html">Buscar servicios</a>
-        <a class="c-navbar__link" href="todos_los_servicios.html">Servicios</a>
-        <a class="c-navbar__link" href="login.html">Iniciar sesión</a>
-        <a class="c-button" href="registro.html">Registrarse</a>
+      <a class="c-navbar__brand" href="index.html">
+        <i class="fas fa-map-marker-alt c-navbar__brand-icon"></i>
+        ServiLocal
+      </a>
+      
+      <!-- Botón hamburguesa para móvil -->
+      <button class="c-navbar__toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navbar-menu">
+        <span class="c-navbar__toggle-line"></span>
+        <span class="c-navbar__toggle-line"></span>
+        <span class="c-navbar__toggle-line"></span>
+      </button>
+      
+      <!-- Menú de navegación -->
+      <nav class="c-navbar__menu" id="navbar-menu">
+        <div class="c-navbar__links">
+          <a class="c-navbar__link" href="buscar.html">
+            <i class="fas fa-search c-navbar__link-icon"></i>
+            Buscar servicios
+          </a>
+          <a class="c-navbar__link" href="todos_los_servicios.html">
+            <i class="fas fa-th-large c-navbar__link-icon"></i>
+            Servicios
+          </a>
+          <a class="c-navbar__link" href="login.html">
+            <i class="fas fa-sign-in-alt c-navbar__link-icon"></i>
+            Iniciar sesión
+          </a>
+          <a class="c-button c-button--primary" href="registro.html">
+            <i class="fas fa-user-plus"></i>
+            Registrarse
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -27,25 +53,85 @@
   <main class="c-main" id="main-content">
     <section class="c-hero">
       <div class="container c-hero__inner">
-        <div>
-          <span class="c-badge-pill">Marketplace local</span>
-          <h1 class="c-hero__title">¿Necesitás un servicio confiable cerca de tu casa?</h1>
+        <div class="c-hero__content">
+          <div class="c-badge-group">
+            <span class="c-badge-pill c-badge-pill--primary">
+              <i class="fas fa-star"></i>
+              Marketplace local
+            </span>
+            <span class="c-badge-pill c-badge-pill--accent">
+              <i class="fas fa-users"></i>
+              +1.200 usuarios
+            </span>
+          </div>
+          <h1 class="c-hero__title">¿Necesitás un servicio <span class="c-hero__title-highlight">confiable</span> cerca de tu casa?</h1>
           <p class="c-hero__text texto-base">Conectamos vecinos con profesionales verificados, reseñas reales y disponibilidad inmediata. Todo en una sola plataforma pensada para barrios y comunidades locales.</p>
           <div class="c-hero__actions">
-            <a class="c-button" href="buscar.html">Buscar servicios</a>
-            <a class="c-navbar__link" href="registro.html">Ofrecer mis servicios</a>
+            <a class="c-button c-button--hero" href="buscar.html">
+              <i class="fas fa-search"></i>
+              Buscar servicios
+            </a>
+            <a class="c-button c-button--secondary c-button--outline" href="registro.html">
+              <i class="fas fa-handshake"></i>
+              Ofrecer mis servicios
+            </a>
+          </div>
+          <div class="c-hero__stats">
+            <div class="c-stat-badge">
+              <i class="fas fa-check-circle c-stat-badge__icon"></i>
+              <div class="c-stat-badge__content">
+                <span class="c-stat-badge__number">1.200+</span>
+                <span class="c-stat-badge__label">Trabajos completados</span>
+              </div>
+            </div>
+            <div class="c-stat-badge">
+              <i class="fas fa-shield-alt c-stat-badge__icon"></i>
+              <div class="c-stat-badge__content">
+                <span class="c-stat-badge__number">100%</span>
+                <span class="c-stat-badge__label">Verificados</span>
+              </div>
+            </div>
+            <div class="c-stat-badge">
+              <i class="fas fa-clock c-stat-badge__icon"></i>
+              <div class="c-stat-badge__content">
+                <span class="c-stat-badge__number">24h</span>
+                <span class="c-stat-badge__label">Respuesta promedio</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div>
-          <article class="c-card-post">
-            <span class="c-card-post__category">Destacado</span>
+        <div class="c-hero__visual">
+          <article class="c-card-post c-card-post--featured">
+            <div class="c-card-post__header">
+              <span class="c-card-post__category">
+                <i class="fas fa-fire"></i>
+                Destacado
+              </span>
+              <div class="c-card-post__rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0</span>
+              </div>
+            </div>
             <h2 class="c-card-post__title">+1.200 trabajos completados con reseñas 5 estrellas</h2>
             <p class="c-card-post__excerpt">Cada profesional pasa por un proceso de verificación y seguimiento de calidad para garantizar seguridad, puntualidad y transparencia en cada visita.</p>
             <div class="c-card-post__meta">
-              <span>Guía de onboarding</span>
-              <span>Actualizada 2025</span>
+              <div class="c-card-post__meta-item">
+                <i class="fas fa-bookmark"></i>
+                <span>Guía de onboarding</span>
+              </div>
+              <div class="c-card-post__meta-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Actualizada 2025</span>
+              </div>
             </div>
-            <a class="c-card-post__link" href="proveedor.html">Ver proveedor de ejemplo →</a>
+            <a class="c-card-post__link" href="proveedor.html">
+              <span>Ver proveedor de ejemplo</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </article>
         </div>
       </div>
