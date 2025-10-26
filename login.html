@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar sesión – ServiLocal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="c-page">
+
+  <header class="c-navbar">
+    <div class="container c-navbar__inner">
+      <a class="c-navbar__brand" href="index.html">ServiLocal</a>
+      <nav class="c-navbar__links">
+        <a class="c-navbar__link" href="buscar.html">Buscar servicios</a>
+        <a class="c-navbar__link" href="registro.html">Registrarse</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="c-main">
+    <section class="c-section c-section--tight">
+      <div class="container c-center-container">
+        <article class="c-panel c-panel--spacious u-max-420" role="region" aria-labelledby="login-heading">
+          <div class="c-panel__header c-panel__header--center">
+            <h1 class="c-panel__title" id="login-heading">Iniciar sesión</h1>
+            <p class="texto-base u-no-margin">Accedé a tu cuenta para continuar</p>
+          </div>
+          <form class="c-form" novalidate>
+            <div class="c-form-field">
+              <label class="c-label" for="email">Correo electrónico</label>
+              <input class="c-input" type="email" id="email" name="email" placeholder="tu@email.com">
+            </div>
+            <div class="c-form-field">
+              <label class="c-label" for="password">Contraseña</label>
+              <input class="c-input" type="password" id="password" name="password" placeholder="••••••••">
+            </div>
+            <div class="c-panel__actions c-panel__actions--spread">
+              <label class="texto-base c-inline-flex c-inline-flex--gap">
+                <input type="checkbox" id="remember">
+                Recordarme
+              </label>
+              <a class="c-navbar__link" href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button class="c-button" type="submit">Iniciar sesión</button>
+          </form>
+          <div class="texto-base c-text-muted c-text-center">
+            ¿No tenés una cuenta?
+            <a class="c-navbar__link" href="registro.html">Registrate aquí</a>
+          </div>
+          <div class="c-panel__actions c-panel__actions--column">
+            <span class="texto-base c-text-muted">Iniciá sesión con redes sociales</span>
+            <div class="c-inline-flex c-inline-flex--gap">
+              <button class="c-button c-button--secondary" type="button" aria-label="Ingresar con Google">
+                <i class="fab fa-google"></i>
+              </button>
+              <button class="c-button c-button--secondary" type="button" aria-label="Ingresar con Facebook">
+                <i class="fab fa-facebook"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="c-footer">
+    <div class="container c-footer__inner">
+      <div>
+        <h2 class="texto-subtitulo c-footer__title">ServiLocal</h2>
+        <p class="c-footer__meta">Conectando vecinos con profesionales de confianza.</p>
+      </div>
+      <div class="c-footer__links">
+        <a class="c-footer__link" href="todos_los_servicios.html">Todos los servicios</a>
+        <a class="c-footer__link" href="buscar.html">Buscar profesionales</a>
+        <a class="c-footer__link" href="proveedor.html">Ver proveedores</a>
+        <a class="c-footer__link" href="registro.html">Crear una cuenta</a>
+        <a class="c-footer__link" href="politicas.html">Políticas de privacidad</a>
+      </div>
+      <div class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</div>
+    </div>
+  </footer>
+
+  <script src="js/cookies.js"></script>
+
+</body>
+</html>
