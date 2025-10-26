@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"/>
   <title>Iniciar sesión – ServiLocal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +59,7 @@
             <h1 class="c-panel__title" id="login-heading">Iniciar sesión</h1>
             <p class="texto-base u-no-margin">Accedé a tu cuenta para continuar</p>
           </div>
-          <form class="c-form" novalidate>
+          <form class="c-form" id="loginForm" novalidate>
             <div class="c-form-field">
               <label class="c-label" for="email">Correo electrónico</label>
               <input class="c-input" type="email" id="email" name="email" placeholder="tu@email.com">
@@ -83,9 +84,12 @@
           <div class="c-panel__actions c-panel__actions--column">
             <span class="texto-base c-text-muted">Iniciá sesión con redes sociales</span>
             <div class="c-inline-flex c-inline-flex--gap">
-              <button class="c-button c-button--secondary" type="button" aria-label="Ingresar con Google">
-                <i class="fab fa-google"></i>
-              </button>
+              <div class="c-google-button" data-google-button="login" aria-live="polite">
+                <button class="c-button c-button--secondary" type="button" aria-label="Ingresar con Google">
+                  <i class="fab fa-google c-icon-left" aria-hidden="true"></i>
+                  Google
+                </button>
+              </div>
               <button class="c-button c-button--secondary" type="button" aria-label="Ingresar con Facebook">
                 <i class="fab fa-facebook"></i>
               </button>
@@ -116,6 +120,7 @@
   <script src="js/cookies.js"></script>
 
   <script src="js/accesibilidad.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/componentes.js"></script>
 </body>
 </html>

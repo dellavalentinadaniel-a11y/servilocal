@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"/>
   <title>Regístrate – ServiLocal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,31 +60,31 @@
             <p class="texto-base u-no-margin">Unite a la comunidad de usuarios y proveedores de ServiLocal</p>
           </div>
 
-          <form class="c-form" novalidate>
+          <form class="c-form" id="registerForm" novalidate>
             <div class="c-form-grid c-form-grid--responsive">
               <div class="c-form-field">
                 <label class="c-label" for="firstName">Nombre</label>
-                <input class="c-input" type="text" id="firstName" name="firstName" placeholder="Tu nombre">
+                <input class="c-input" type="text" id="firstName" name="firstName" placeholder="Tu nombre" required>
               </div>
               <div class="c-form-field">
                 <label class="c-label" for="lastName">Apellido</label>
-                <input class="c-input" type="text" id="lastName" name="lastName" placeholder="Tu apellido">
+                <input class="c-input" type="text" id="lastName" name="lastName" placeholder="Tu apellido" required>
               </div>
             </div>
 
             <div class="c-form-field">
               <label class="c-label" for="email">Correo electrónico</label>
-              <input class="c-input" type="email" id="email" name="email" placeholder="tu@email.com">
+              <input class="c-input" type="email" id="email" name="email" placeholder="tu@email.com" required>
             </div>
 
             <div class="c-form-field">
               <label class="c-label" for="phone">Teléfono</label>
-              <input class="c-input" type="tel" id="phone" name="phone" placeholder="+52 123 456 7890">
+              <input class="c-input" type="tel" id="phone" name="phone" placeholder="+52 123 456 7890" required>
             </div>
 
             <div class="c-form-field">
               <label class="c-label" for="role">Tipo de cuenta</label>
-              <select class="c-select" id="role" name="role">
+              <select class="c-select" id="role" name="role" required>
                 <option value="">Seleccioná una opción</option>
                 <option value="cliente">Cliente (busco servicios)</option>
                 <option value="proveedor">Proveedor (ofrezco servicios)</option>
@@ -93,16 +94,16 @@
             <div class="c-form-grid c-form-grid--responsive">
               <div class="c-form-field">
                 <label class="c-label" for="password">Contraseña</label>
-                <input class="c-input" type="password" id="password" name="password" placeholder="••••••••">
+                <input class="c-input" type="password" id="password" name="password" placeholder="••••••••" required>
               </div>
               <div class="c-form-field">
                 <label class="c-label" for="confirmPassword">Confirmar contraseña</label>
-                <input class="c-input" type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••">
+                <input class="c-input" type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required>
               </div>
             </div>
 
             <label class="texto-base c-inline-flex c-inline-flex--gap c-align-top">
-              <input type="checkbox" id="terms">
+              <input type="checkbox" id="terms" required>
               <span>Acepto los <a class="c-navbar__link" href="#">Términos y Condiciones</a> y la <a class="c-navbar__link" href="#">Política de Privacidad</a>.</span>
             </label>
 
@@ -117,9 +118,12 @@
           <div class="c-panel__actions c-panel__actions--column">
             <span class="texto-base c-text-muted">Registrate con tus redes</span>
             <div class="c-inline-flex c-inline-flex--gap">
-              <button class="c-button c-button--secondary" type="button" aria-label="Registrarse con Google">
-                <i class="fab fa-google"></i>
-              </button>
+              <div class="c-google-button" data-google-button="register" aria-live="polite">
+                <button class="c-button c-button--secondary" type="button" aria-label="Registrarse con Google">
+                  <i class="fab fa-google c-icon-left" aria-hidden="true"></i>
+                  Google
+                </button>
+              </div>
               <button class="c-button c-button--secondary" type="button" aria-label="Registrarse con Facebook">
                 <i class="fab fa-facebook"></i>
               </button>
@@ -150,6 +154,7 @@
   <script src="js/cookies.js"></script>
 
   <script src="js/accesibilidad.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/componentes.js"></script>
 </body>
 </html>

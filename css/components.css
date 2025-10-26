@@ -737,6 +737,16 @@ a {
   gap: var(--espacio-chico);
 }
 
+.c-google-button {
+  display: inline-flex;
+  justify-content: center;
+  min-width: 180px;
+}
+
+.c-google-button > div {
+  width: 100%;
+}
+
 .c-center-container {
   display: flex;
   justify-content: center;
