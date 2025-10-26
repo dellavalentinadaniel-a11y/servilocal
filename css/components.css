@@ -1,6 +1,37 @@
 /* Tokens de diseño base para ServiLocal */
 @import url('tokens.css');
 
+/* Animaciones */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 80%;
+  }
+}
+
 /* Accesibilidad y Skip Links */
 .c-skip-link {
   position: absolute;
@@ -135,9 +166,10 @@ a {
 }
 
 .c-navbar {
-  background-color: var(--color-superficie);
-  border-bottom: 1px solid rgb(31 41 55 / 8%);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-texto) 8%, transparent);
+  background: var(--color-superficie);
+  border-bottom: 1px solid var(--color-neutro-200);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--sombra-sutil);
 }
 
 .c-navbar__inner {
@@ -149,71 +181,100 @@ a {
 .c-navbar__brand {
   font-weight: 700;
   font-size: var(--font-subtitulo);
+  background: var(--gradiente-principal);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: var(--color-principal);
 }
 
 .c-navbar__links {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--espacio-chico) * 0.75);
+  gap: var(--espacio-pequeno);
 }
 
 .c-navbar__link {
   font-size: var(--font-texto);
   font-weight: 500;
-  padding: calc(var(--espacio-chico) * 0.75);
+  padding: var(--espacio-chico);
   border-radius: var(--borde-suave);
   background-color: transparent;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: var(--transicion-normal);
+  position: relative;
+  overflow: hidden;
 }
 
 .c-navbar__link:hover,
 .c-navbar__link:focus-visible {
-  background-color: rgb(15 118 110 / 12%);
-  background-color: color-mix(in srgb, var(--color-acento) 12%, transparent);
-  color: rgb(15 118 110 / 100%);
+  background-color: var(--color-fondo-secundario);
   color: var(--color-acento);
+  transform: translateX(4px);
 }
 
 .c-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--espacio-chico) * 0.5);
-  padding: calc(var(--espacio-chico) * 0.75) calc(var(--espacio-medio));
+  gap: var(--espacio-pequeno);
+  padding: var(--espacio-chico) var(--espacio-medio);
   border-radius: var(--borde-suave);
-  background-color: var(--color-principal);
+  background: var(--gradiente-principal);
   color: var(--color-superficie);
   font-weight: 600;
   font-size: var(--font-texto);
+  line-height: 1.2;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transicion-normal);
+  box-shadow: var(--sombra-pequena);
+}
+
+.c-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 15%), transparent);
+  transition: left var(--transicion-normal);
 }
 
 .c-button:hover {
-  background-color: rgb(15 118 110 / 100%);
-  background-color: var(--color-acento);
-  box-shadow: 0 10px 25px rgb(15 118 110 / 25%);
-  box-shadow: 0 10px 25px color-mix(in srgb, var(--color-acento) 25%, transparent);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-principal);
+  background: var(--gradiente-acento);
+}
+
+.c-button:hover::before {
+  left: 100%;
 }
 
 .c-button:focus-visible {
-  outline: 3px solid rgb(15 118 110 / 50%);
-  outline: 3px solid color-mix(in srgb, var(--color-acento) 50%, transparent);
+  outline: 3px solid var(--color-acento-claro);
   outline-offset: 3px;
+}
+
+.c-button:active {
+  transform: translateY(-1px);
+  transition: var(--transicion-rapida);
 }
 
 .c-button:disabled,
 .c-button[aria-disabled="true"] {
   cursor: not-allowed;
-  background-color: rgb(22 163 74 / 45%);
-  background-color: color-mix(in srgb, var(--color-principal) 45%, transparent);
-  color: rgb(255 255 255 / 70%);
+  background: var(--color-neutro-300);
+  color: var(--color-neutro-500);
   box-shadow: none;
   transform: none;
   pointer-events: none;
+}
+
+.c-button:disabled::before,
+.c-button[aria-disabled="true"]::before {
+  display: none;
 }
 
 .c-button:disabled:hover,
@@ -225,22 +286,40 @@ a {
 }
 
 .c-hero {
-  background: linear-gradient(135deg, var(--color-principal), var(--color-acento));
+  background: var(--gradiente-principal);
   color: var(--color-superficie);
-  padding: var(--espacio-grande) 0;
+  padding: var(--espacio-masivo) 0 var(--espacio-grande) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.c-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='%23ffffff' points='50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40'/%3E%3C/g%3E%3C/svg%3E") 50% 50%;
+  opacity: 10%;
+  animation: float 20s ease-in-out infinite;
 }
 
 .c-hero__inner {
   display: grid;
   gap: var(--espacio-medio);
+  position: relative;
+  z-index: 1;
 }
 
 .c-hero__title {
-  font-size: var(--font-titulo);
-  line-height: 1.15;
-  font-weight: 700;
-  margin: 0;
+  font-size: clamp(2rem, 5vw, var(--font-titulo));
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
+  margin: 0;
 
 .c-hero__text {
   font-size: var(--font-texto);
@@ -422,18 +501,18 @@ a {
   background-color: var(--color-superficie);
   border-radius: var(--borde-suave);
   padding: var(--espacio-medio);
-  box-shadow: 0 12px 30px rgb(15 118 110 / 10%);
-  box-shadow: 0 12px 30px color-mix(in srgb, var(--color-acento) 10%, transparent);
+  box-shadow: var(--sombra-pequena);
   display: grid;
-  gap: calc(var(--espacio-chico) * 0.75);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: var(--espacio-chico);
+  transition: var(--transicion-normal);
+  border: 1px solid var(--color-neutro-200);
 }
 
 .c-feature-card:hover,
 .c-feature-card:focus-within {
-  transform: translateY(-3px);
-  box-shadow: 0 24px 45px rgb(15 118 110 / 15%);
-  box-shadow: 0 24px 45px color-mix(in srgb, var(--color-acento) 15%, transparent);
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-media);
+  border-color: var(--color-acento-claro);
 }
 
 .c-feature-card__icon {
@@ -445,8 +524,8 @@ a {
   justify-content: center;
   font-size: 1.75rem;
   color: var(--color-principal);
-  background-color: rgb(22 163 74 / 12%);
-  background-color: color-mix(in srgb, var(--color-principal) 12%, transparent);
+  background: var(--gradiente-sutil);
+  box-shadow: var(--sombra-sutil);
 }
 
 .c-feature-card__title {
@@ -458,8 +537,8 @@ a {
 
 .c-feature-card__text {
   margin: 0;
-  color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
+  color: var(--color-texto-secundario);
+  line-height: 1.6;
 }
 
 .c-showcase-grid {
@@ -1101,29 +1180,25 @@ a {
 }
 
 .c-button--secondary {
-  background-color: transparent;
-  color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
-  border: 1px solid rgb(31 41 55 / 20%);
-  border: 1px solid color-mix(in srgb, var(--color-texto) 20%, transparent);
+  background-color: var(--color-superficie);
+  color: var(--color-texto-secundario);
+  border: 1px solid var(--color-neutro-300);
+  box-shadow: var(--sombra-sutil);
 }
 
 .c-button--secondary:hover,
 .c-button--secondary:focus-visible {
-  color: rgb(15 118 110 / 100%);
   color: var(--color-acento);
-  border-color: rgb(15 118 110 / 35%);
-  border-color: color-mix(in srgb, var(--color-acento) 35%, transparent);
+  border-color: var(--color-acento-claro);
+  background-color: var(--color-fondo-secundario);
+  box-shadow: var(--sombra-pequena);
 }
 
 .c-button--secondary:disabled,
 .c-button--secondary[aria-disabled="true"] {
-  background-color: rgb(31 41 55 / 8%);
-  background-color: color-mix(in srgb, var(--color-texto) 8%, transparent);
-  color: rgb(31 41 55 / 45%);
-  color: color-mix(in srgb, var(--color-texto) 45%, transparent);
-  border-color: rgb(31 41 55 / 20%);
-  border-color: color-mix(in srgb, var(--color-texto) 20%, transparent);
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-texto-terciario);
+  border-color: var(--color-neutro-200);
 }
 
 .c-testimonial {
