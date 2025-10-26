@@ -207,7 +207,7 @@ a {
   background: var(--gradiente-principal);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: pulse 2s ease-in-out infinite;
+  animation: pulse 2s ease-in-out 1;
 }
 
 /* Botón hamburguesa */
@@ -2103,6 +2103,23 @@ a {
 }
 
 @media (min-width: 768px) {
+  /* Ocultar botón hamburguesa en desktop */
+  .c-navbar__toggle {
+    display: none;
+  }
+
+  /* Menú siempre visible en desktop */
+  .c-navbar__menu {
+    position: static;
+    transform: none;
+    opacity: 100%;
+    visibility: visible;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* Navigation links en desktop */
   .c-navbar__inner {
     flex-direction: row;
     align-items: center;
@@ -2113,6 +2130,25 @@ a {
     flex-direction: row;
     align-items: center;
     gap: var(--espacio-medio);
+    padding: 0;
+  }
+
+  /* Estilo de links para desktop */
+  .c-navbar__link {
+    background: transparent;
+    color: var(--color-texto);
+    border: none;
+    padding: var(--espacio-pequeno) var(--espacio-chico);
+    animation: none;
+  }
+
+  .c-navbar__link:hover,
+  .c-navbar__link:focus-visible {
+    background: var(--color-principal-light);
+    color: var(--color-principal);
+    transform: translateY(-1px);
+    box-shadow: none;
+    border-color: transparent;
   }
 
   .c-hero__inner {
