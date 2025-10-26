@@ -2430,12 +2430,32 @@ a {
   font-size: 1rem;
 }
 
+/* Pull to refresh - spinner icon */
+.c-pull-refresh__spinner > i {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.c-pull-refresh.is-ready .c-pull-refresh__spinner > i {
+  transform: rotate(180deg);
+}
+
+.c-pull-refresh.is-refreshing .c-pull-refresh__spinner > i {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Sistema de favoritos */
 .c-button.is-favorite {
   color: var(--color-error);
 }
 
-.c-button.is-favorite > i {
+.c-button.is-favorite > .fa-heart {
   color: var(--color-error);
   animation: latido-corazon 0.3s ease-in-out;
 }
@@ -2622,5 +2642,85 @@ a {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.25rem;
+  }
+}
+
+/* Gestos táctiles - Ripple effect */
+.c-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 50%);
+  transform: scale(0);
+  animation: ripple 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0%;
+  }
+}
+
+/* Touch active state */
+.is-touch-active {
+  transform: scale(0.98);
+  opacity: 80%;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+/* Pull to refresh */
+.c-pull-refresh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-chico);
+  transform: translateY(-100%);
+  opacity: 0%;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.c-pull-refresh__spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  color: var(--color-principal);
+}
+
+.c-pull-refresh__text {
+  font-size: 0.875rem;
+  color: var(--color-neutro-600);
+  font-weight: 500;
+}
+
+/* Modal swipe indicator */
+.c-modal__content::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5rem;
+  height: 0.25rem;
+  background: var(--color-neutro-300);
+  border-radius: 999px;
+}
+
+@media (min-width: 768px) {
+  .c-modal__content::before {
+    display: none;
   }
 }
