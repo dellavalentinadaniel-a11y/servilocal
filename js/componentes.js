@@ -429,24 +429,6 @@
     } catch (error) {
       console.error('Error al inicializar componentes interactivos:', error);
     }
-  }  /**
-   * Inicializar todas las mejoras de componentes
-   */
-  function init() {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-      return;
-    }
-
-    try {
-      enhanceTabs();
-      enhanceGallery();
-      enhanceInteractiveCards();
-      
-      console.log('✓ Componentes interactivos mejorados');
-    } catch (error) {
-      console.error('Error al inicializar componentes interactivos:', error);
-    }
   }
 
   // Inicializar

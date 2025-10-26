@@ -14,11 +14,38 @@
 
   <header class="c-navbar">
     <div class="container c-navbar__inner">
-      <a class="c-navbar__brand" href="index.html">ServiLocal</a>
-      <nav class="c-navbar__links">
-        <a class="c-navbar__link" href="buscar.html">Buscar servicios</a>
-        <a class="c-navbar__link" href="perfil.html">Mi perfil</a>
-        <a class="c-navbar__link" href="index.html">Cerrar sesión</a>
+      <a class="c-navbar__brand" href="index.html">
+        <i class="fas fa-map-marker-alt c-navbar__brand-icon"></i>
+        ServiLocal
+      </a>
+      
+      <!-- Botón hamburguesa para móvil -->
+      <button class="c-navbar__toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navbar-menu">
+        <span class="c-navbar__toggle-line"></span>
+        <span class="c-navbar__toggle-line"></span>
+        <span class="c-navbar__toggle-line"></span>
+      </button>
+      
+      <!-- Menú de navegación -->
+      <nav class="c-navbar__menu" id="navbar-menu">
+        <div class="c-navbar__links">
+          <a class="c-navbar__link" href="index.html">
+            <i class="fas fa-home c-navbar__link-icon"></i>
+            Inicio
+          </a>
+          <a class="c-navbar__link" href="buscar.html">
+            <i class="fas fa-search c-navbar__link-icon"></i>
+            Buscar
+          </a>
+          <a class="c-navbar__link" href="todos_los_servicios.html">
+            <i class="fas fa-th-large c-navbar__link-icon"></i>
+            Servicios
+          </a>
+          <a class="c-navbar__link" href="perfil.html">
+            <i class="fas fa-user c-navbar__link-icon"></i>
+            Mi perfil
+          </a>
+        </div>
       </nav>
     </div>
   </header>
