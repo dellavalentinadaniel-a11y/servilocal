@@ -110,7 +110,7 @@
                 <div role="img" aria-label="Calificación 4.5 de 5 estrellas">
                   <span aria-hidden="true">★★★★☆</span>
                 </div>
-                <span class="c-profile-rating__meta">(<span aria-label="Calificación de 4.5">4.5</span> • <span aria-label="24 reseñas">24 reseñas</span>)</span>
+                <span class="c-profile-rating__meta">(<span id="calificacion-promedio" aria-label="Calificación promedio">4.5</span> • <span><span id="contador-resenas-header">24</span> reseñas</span>)</span>
               </div>
               <p class="c-profile-description">Jardinero certificado • +10 años de experiencia</p>
             </div>
@@ -279,25 +279,103 @@
     <section class="c-section">
       <div class="container">
         <article class="c-panel" role="region" aria-labelledby="resenas-heading">
-          <h2 id="resenas-heading" class="c-panel__title">Reseñas (24)</h2>
+          <div class="c-panel__header">
+            <h2 id="resenas-heading" class="c-panel__title">Reseñas (<span id="contador-resenas">2</span>)</h2>
+            <p class="texto-base u-no-margin">
+              Calificación promedio: <strong id="calificacion-promedio">4.5</strong> ★
+            </p>
+          </div>
+
+          <!-- Formulario para agregar reseña -->
+          <form id="formResena" class="c-form-card u-margin-bottom-grande">
+            <h3 class="texto-subtitulo u-margin-bottom-chico">Deja tu reseña</h3>
+            
+            <div class="c-form-field">
+              <label class="c-label" for="calificacion">
+                Calificación <span aria-label="campo requerido">*</span>
+              </label>
+              <div class="c-rating-input" role="radiogroup" aria-label="Selecciona tu calificación">
+                <span class="c-rating-input__star is-empty" data-value="1" role="radio" tabindex="0" aria-label="1 estrella" aria-checked="false">★</span>
+                <span class="c-rating-input__star is-empty" data-value="2" role="radio" tabindex="0" aria-label="2 estrellas" aria-checked="false">★</span>
+                <span class="c-rating-input__star is-empty" data-value="3" role="radio" tabindex="0" aria-label="3 estrellas" aria-checked="false">★</span>
+                <span class="c-rating-input__star is-empty" data-value="4" role="radio" tabindex="0" aria-label="4 estrellas" aria-checked="false">★</span>
+                <span class="c-rating-input__star is-empty" data-value="5" role="radio" tabindex="0" aria-label="5 estrellas" aria-checked="false">★</span>
+              </div>
+              <input type="hidden" id="calificacion" name="calificacion" value="0">
+            </div>
+
+            <div class="c-form-field">
+              <label class="c-label" for="comentario">
+                Tu comentario <span aria-label="campo requerido">*</span>
+              </label>
+              <textarea 
+                id="comentario" 
+                name="comentario" 
+                class="c-input" 
+                rows="4" 
+                maxlength="500" 
+                placeholder="Comparte tu experiencia con este profesional..."
+                required
+              ></textarea>
+              <div id="contador-caracteres" class="c-character-counter">0/500</div>
+            </div>
+
+            <div class="c-form-card__footer">
+              <button type="submit" class="c-button">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                Publicar reseña
+              </button>
+            </div>
+          </form>
+
+          <!-- Lista de reseñas -->
           <div class="c-review-list" role="list" aria-label="Lista de reseñas de clientes">
             <article class="c-review" role="listitem">
               <div class="c-review__header">
-                <div class="c-rating" role="img" aria-label="Calificación 5 de 5 estrellas">
-                  <span aria-hidden="true">★★★★★</span>
+                <div>
+                  <strong>Martín González</strong>
+                  <div class="c-rating" role="img" aria-label="Calificación 5 de 5 estrellas">
+                    <span aria-hidden="true">★★★★★</span>
+                  </div>
+                  <time class="c-review__date" datetime="2025-10-12">Hace 2 semanas</time>
                 </div>
-                <span class="texto-base">– Martín, 12/10/2025</span>
               </div>
               <blockquote class="c-review__text">Excelente trabajo. Mi jardín nunca había lucido tan bien. Muy responsable y puntual.</blockquote>
+              <div class="c-review__actions">
+                <span class="texto-base u-color-neutro-600">¿Te resultó útil?</span>
+                <button class="c-button c-button--secondary c-button--small" disabled>
+                  <i class="far fa-thumbs-up" aria-hidden="true"></i>
+                  Útil (5)
+                </button>
+                <button class="c-button c-button--secondary c-button--small" disabled>
+                  <i class="far fa-thumbs-down" aria-hidden="true"></i>
+                  No útil (0)
+                </button>
+              </div>
             </article>
+
             <article class="c-review" role="listitem">
               <div class="c-review__header">
-                <div class="c-rating" role="img" aria-label="Calificación 4 de 5 estrellas">
-                  <span aria-hidden="true">★★★★☆</span>
+                <div>
+                  <strong>Sofía Ramírez</strong>
+                  <div class="c-rating" role="img" aria-label="Calificación 4 de 5 estrellas">
+                    <span aria-hidden="true">★★★★☆</span>
+                  </div>
+                  <time class="c-review__date" datetime="2025-10-05">Hace 3 semanas</time>
                 </div>
-                <span class="texto-base">– Sofía, 05/10/2025</span>
               </div>
               <blockquote class="c-review__text">Buen profesional, aunque llegó 15 minutos tarde. El trabajo fue muy bueno.</blockquote>
+              <div class="c-review__actions">
+                <span class="texto-base u-color-neutro-600">¿Te resultó útil?</span>
+                <button class="c-button c-button--secondary c-button--small" disabled>
+                  <i class="far fa-thumbs-up" aria-hidden="true"></i>
+                  Útil (3)
+                </button>
+                <button class="c-button c-button--secondary c-button--small" disabled>
+                  <i class="far fa-thumbs-down" aria-hidden="true"></i>
+                  No útil (1)
+                </button>
+              </div>
             </article>
           </div>
         </article>
@@ -546,7 +624,10 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/accesibilidad.js"></script>
+  <script src="js/schema.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/componentes.js"></script>
+  <script src="js/resenas.js"></script>
   <script src="js/mapa.js"></script>
   <script src="js/cookies.js"></script>
 
