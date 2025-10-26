@@ -4,3 +4,13 @@ node_modules/
 *.tmp
 .DS_Store
 Thumbs.db
+
+# Backend - Archivos sensibles
+backend/.env
+backend/node_modules/
+backend/*.log
+
+# Variables de entorno
+.env
+.env.local
+.env.production

@@ -37,43 +37,43 @@
           </div>
         </div>
         <div>
-          <div class="c-form-card">
+          <form class="c-form-card" id="form-busqueda" autocomplete="off">
             <div class="c-form-grid c-form-grid--responsive">
               <div class="c-form-field">
                 <label class="c-label" for="categoria">Categoría</label>
-                <select id="categoria" class="c-select">
-                  <option>Todas</option>
-                  <option>Jardinería</option>
-                  <option>Plomería</option>
-                  <option>Electricidad</option>
-                  <option>Limpieza</option>
-                  <option>Construcción</option>
-                  <option>Abogacía</option>
-                  <option>Contaduría</option>
-                  <option>Veterinaria</option>
-                  <option>Ferretería</option>
-                  <option>Corralón</option>
-                  <option>Mecánica del automotor</option>
+                <select id="categoria" name="categoria" class="c-select">
+                  <option value="Todas">Todas</option>
+                  <option value="Jardinería">Jardinería</option>
+                  <option value="Plomería">Plomería</option>
+                  <option value="Electricidad">Electricidad</option>
+                  <option value="Limpieza">Limpieza</option>
+                  <option value="Construcción">Construcción</option>
+                  <option value="Abogacía">Abogacía</option>
+                  <option value="Contaduría">Contaduría</option>
+                  <option value="Veterinaria">Veterinaria</option>
+                  <option value="Ferretería">Ferretería</option>
+                  <option value="Corralón">Corralón</option>
+                  <option value="Mecánica del automotor">Mecánica del automotor</option>
                 </select>
               </div>
               <div class="c-form-field">
                 <label class="c-label" for="ubicacion">Ubicación</label>
-                <input id="ubicacion" type="text" class="c-input" placeholder="Ej: Ciudad de México">
+                <input id="ubicacion" name="ubicacion" type="text" class="c-input" placeholder="Ej: Palermo, CABA">
               </div>
               <div class="c-form-field">
                 <label class="c-label" for="orden">Ordenar por</label>
-                <select id="orden" class="c-select">
-                  <option>Recomendados</option>
-                  <option>Mejor calificados</option>
-                  <option>Más cercanos</option>
+                <select id="orden" name="orden" class="c-select">
+                  <option value="Recomendados">Recomendados</option>
+                  <option value="Mejor calificados">Mejor calificados</option>
+                  <option value="Más cercanos">Más cercanos</option>
                 </select>
               </div>
             </div>
             <div class="c-form-card__footer">
-              <button class="c-button" type="button">Buscar</button>
-              <a class="c-navbar__link" href="#resultados">Ver resultados</a>
+              <button class="c-button" type="submit" id="boton-buscar">Buscar</button>
+              <a class="c-navbar__link" href="#resultados">Ir a resultados</a>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
@@ -81,88 +81,47 @@
     <section class="c-section" id="resultados">
       <div class="container">
         <header class="c-section__heading c-section__heading--left">
-          <h2 class="texto-subtitulo u-no-margin">Resultados (3)</h2>
-          <p class="texto-base u-no-margin">Mostrando profesionales disponibles en tu zona. Podés ajustar los filtros para refinar la búsqueda.</p>
+          <h2 class="texto-subtitulo u-no-margin">Resultados (<span id="resultado-cantidad">0</span>)</h2>
+          <p class="texto-base u-no-margin" id="resultado-mensaje" role="status">Mostramos las recomendaciones destacadas para tu zona.</p>
         </header>
-        <div class="c-result-list">
-          <article class="c-result-card">
-            <div class="c-result-card__media" aria-hidden="true"></div>
-            <div class="c-result-card__body">
-              <header class="c-result-card__header">
-                <h3 class="c-result-card__title">Carlos – Jardinería</h3>
-                <div class="c-result-card__meta">
-                  <span class="c-rating" aria-hidden="true">★★★★☆</span>
-                  <span class="c-rating__value">(4.5)</span>
-                  <span>+10 años de experiencia</span>
-                </div>
-              </header>
-              <p class="texto-base u-no-margin">Podado, diseño de jardines y sistemas de riego automático. Servicio en barrios del norte y turnos express en 24 hs.</p>
-              <div class="c-result-card__actions">
-                <a class="c-button" href="proveedor.html">Ver perfil</a>
-                <a class="c-navbar__link" href="#">Guardar</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="c-result-card">
-            <div class="c-result-card__media" aria-hidden="true"></div>
-            <div class="c-result-card__body">
-              <header class="c-result-card__header">
-                <h3 class="c-result-card__title">Laura – Limpieza</h3>
-                <div class="c-result-card__meta">
-                  <span class="c-rating" aria-hidden="true">★★★★★</span>
-                  <span class="c-rating__value">(5.0)</span>
-                  <span>Servicios residenciales y oficinas</span>
-                </div>
-              </header>
-              <p class="texto-base u-no-margin">Limpieza profunda, mudanzas y espacios comerciales. Planes con productos ecológicos y equipo propio.</p>
-              <div class="c-result-card__actions">
-                <a class="c-button" href="proveedor.html">Ver perfil</a>
-                <a class="c-navbar__link" href="#">Solicitar disponibilidad</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="c-result-card">
-            <div class="c-result-card__media" aria-hidden="true"></div>
-            <div class="c-result-card__body">
-              <header class="c-result-card__header">
-                <h3 class="c-result-card__title">Mecánica Exprés</h3>
-                <div class="c-result-card__meta">
-                  <span class="c-rating" aria-hidden="true">★★★★☆</span>
-                  <span class="c-rating__value">(4.6)</span>
-                  <span>Responde en menos de 2 hs</span>
-                </div>
-              </header>
-              <p class="texto-base u-no-margin">Diagnóstico computarizado, eléctricos y mecánica ligera a domicilio. Cobertura en toda el área metropolitana.</p>
-              <div class="c-result-card__actions">
-                <a class="c-button" href="proveedor.html">Ver perfil</a>
-                <a class="c-navbar__link" href="#">Compartir</a>
-              </div>
-            </div>
-          </article>
-        </div>
+        <div class="c-result-list" id="lista-resultados" aria-live="polite"></div>
       </div>
     </section>
   </main>
-
   <footer class="c-footer">
-    <div class="container c-footer__inner">
-      <div>
-        <h2 class="texto-subtitulo c-footer__title">¿No encontraste lo que buscás?</h2>
-        <p class="c-footer__meta">Nuestro equipo puede ayudarte a contactar especialistas fuera de la lista para proyectos personalizados.</p>
+    <div class="container">
+      <div class="c-footer__inner">
+        <div class="c-footer__column">
+          <h2 class="c-footer__heading">Legal</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="politicas.html">Política de privacidad</a></li>
+            <li><a class="c-footer__link" href="terminos.html">Términos de servicio</a></li>
+            <li><a class="c-footer__link" href="cookies.html">Política de cookies</a></li>
+          </ul>
+        </div>
+        <div class="c-footer__column c-footer__column--center">
+          <h2 class="c-footer__brand">ServiLocal</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="registro.html">Sumar mi negocio</a></li>
+            <li><a class="c-footer__link" href="buscar.html">Buscar profesionales</a></li>
+            <li><a class="c-footer__link" href="proveedor.html">Ofrecer un servicio</a></li>
+          </ul>
+        </div>
+        <div class="c-footer__column">
+          <h2 class="c-footer__heading">Conocenos</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="sobre_nosotros.html">Sobre nosotros</a></li>
+            <li><a class="c-footer__link" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="c-footer__links">
-        <a class="c-footer__link" href="todos_los_servicios.html">Explorar categorías</a>
-        <a class="c-footer__link" href="proveedor.html">Ver proveedores destacados</a>
-        <a class="c-footer__link" href="registro.html">Postularse como proveedor</a>
-        <a class="c-footer__link" href="politicas.html">Políticas de privacidad</a>
-      </div>
-      <div class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</div>
+      <p class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</p>
     </div>
   </footer>
 
   <script src="js/cookies.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/buscar.js"></script>
 
 </body>
 </html>

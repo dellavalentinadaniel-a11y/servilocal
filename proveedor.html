@@ -55,7 +55,8 @@
               <p class="c-profile-description">Jardinero certificado • +10 años de experiencia</p>
             </div>
             <div class="c-profile-header__actions">
-              <button class="c-button" type="button" aria-label="Contactar a Carlos">
+              <button class="c-button" type="button" aria-label="Contactar a Carlos" onclick="contactarProveedor('user-7', 'Carlos Martínez', 'imagenes/perfile/images%20(1).png')">
+                <i class="fas fa-envelope c-icon-left"></i>
                 Contactar
               </button>
             </div>
@@ -240,30 +241,46 @@
         <div class="c-cta">
           <div>
             <h2 class="c-cta__title">¿Listo para contactar a Carlos?</h2>
-            <p class="c-cta__text">Te conectaremos de forma segura sin revelar tu número.</p>
+            <p class="c-cta__text">Envía un mensaje directo y coordina los detalles del servicio.</p>
           </div>
           <div class="c-cta__actions">
-            <button class="c-button" type="button">Contactar a Carlos</button>
+            <button class="c-button" type="button" onclick="contactarProveedor('user-7', 'Carlos Martínez', 'imagenes/perfile/images%20(1).png')">
+              <i class="fas fa-envelope c-icon-left"></i>
+              Contactar a Carlos
+            </button>
           </div>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="c-footer">
-    <div class="container c-footer__inner">
-      <div>
-        <h2 class="texto-subtitulo c-footer__title">ServiLocal</h2>
-        <p class="c-footer__meta">Conectamos vecinos con profesionales de confianza para que cada servicio sea simple y seguro.</p>
+    <div class="container">
+      <div class="c-footer__inner">
+        <div class="c-footer__column">
+          <h2 class="c-footer__heading">Legal</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="politicas.html">Política de privacidad</a></li>
+            <li><a class="c-footer__link" href="terminos.html">Términos de servicio</a></li>
+            <li><a class="c-footer__link" href="cookies.html">Política de cookies</a></li>
+          </ul>
+        </div>
+        <div class="c-footer__column c-footer__column--center">
+          <h2 class="c-footer__brand">ServiLocal</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="registro.html">Sumar mi negocio</a></li>
+            <li><a class="c-footer__link" href="buscar.html">Buscar profesionales</a></li>
+            <li><a class="c-footer__link" href="proveedor.html">Ofrecer un servicio</a></li>
+          </ul>
+        </div>
+        <div class="c-footer__column">
+          <h2 class="c-footer__heading">Conocenos</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="sobre_nosotros.html">Sobre nosotros</a></li>
+            <li><a class="c-footer__link" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="c-footer__links">
-        <a class="c-footer__link" href="todos_los_servicios.html">Todos los servicios</a>
-        <a class="c-footer__link" href="buscar.html">Buscar profesionales</a>
-        <a class="c-footer__link" href="registro.html">Sumar mi negocio</a>
-        <a class="c-footer__link" href="perfil.html">Panel de usuario</a>
-        <a class="c-footer__link" href="politicas.html">Políticas de privacidad</a>
-      </div>
-      <div class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</div>
+      <p class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</p>
     </div>
   </footer>
 
@@ -479,6 +496,43 @@
   <script src="js/mapa.js"></script>
 
   <script src="js/cookies.js"></script>
+  <script src="js/navbar.js"></script>
+  
+  <script>
+    // Función para contactar al proveedor
+    function contactarProveedor(userId, userName, userAvatar) {
+      // Obtener o crear conversaciones
+      let conversations = JSON.parse(localStorage.getItem('servilocal_conversations') || '[]');
+      let messages = JSON.parse(localStorage.getItem('servilocal_messages') || '{}');
+      
+      // Verificar si ya existe una conversación
+      let conversation = conversations.find(c => c.userId === userId);
+      
+      if (!conversation) {
+        // Crear nueva conversación
+        conversation = {
+          id: `conv-${Date.now()}`,
+          userId: userId,
+          userName: userName,
+          userAvatar: userAvatar,
+          lastMessage: 'Nueva conversación',
+          lastMessageTime: new Date().toISOString(),
+          unreadCount: 0,
+          isOnline: Math.random() > 0.5
+        };
+        
+        conversations.unshift(conversation);
+        messages[conversation.id] = [];
+        
+        // Guardar en localStorage
+        localStorage.setItem('servilocal_conversations', JSON.stringify(conversations));
+        localStorage.setItem('servilocal_messages', JSON.stringify(messages));
+      }
+      
+      // Redirigir a la página de mensajes
+      window.location.href = `mensajes.html?conv=${conversation.id}`;
+    }
+  </script>
 
 </body>
 </html>

@@ -18,6 +18,9 @@
       <nav class="c-navbar__links">
         <a class="c-navbar__link" href="buscar.html" aria-label="Buscar servicios">Buscar servicios</a>
         <a class="c-navbar__link" href="todos_los_servicios.html" aria-label="Ver todas las categorías">Servicios</a>
+        <a class="c-navbar__link" href="mensajes.html" aria-label="Mis mensajes">
+          <i class="fas fa-envelope"></i> Mensajes
+        </a>
         <a class="c-navbar__link" href="index.html" aria-label="Cerrar sesión">Cerrar sesión</a>
       </nav>
     </div>
@@ -189,15 +192,15 @@
 
     <section class="c-section">
       <div class="container">
-        <div class="c-tabs" role="tablist" aria-label="Secciones del perfil">
-          <nav class="c-tabs__nav">
-            <button class="c-tabs__link c-tabs__link--active" data-tab="tab-informacion" type="button" role="tab" aria-controls="tab-informacion" aria-selected="true">Mi perfil</button>
-            <button class="c-tabs__link" data-tab="tab-servicios" type="button" role="tab" aria-controls="tab-servicios" aria-selected="false">Servicios</button>
-            <button class="c-tabs__link" data-tab="tab-favoritos" type="button" role="tab" aria-controls="tab-favoritos" aria-selected="false">Favoritos</button>
-            <button class="c-tabs__link" data-tab="tab-configuracion" type="button" role="tab" aria-controls="tab-configuracion" aria-selected="false">Configuración</button>
+        <div class="c-tabs">
+          <nav class="c-tabs__nav" role="tablist" aria-label="Secciones del perfil">
+            <button id="tab-informacion-tab" class="c-tabs__link c-tabs__link--active" data-tab="tab-informacion" type="button" role="tab" aria-controls="tab-informacion" aria-selected="true">Mi perfil</button>
+            <button id="tab-servicios-tab" class="c-tabs__link" data-tab="tab-servicios" type="button" role="tab" aria-controls="tab-servicios" aria-selected="false">Servicios</button>
+            <button id="tab-favoritos-tab" class="c-tabs__link" data-tab="tab-favoritos" type="button" role="tab" aria-controls="tab-favoritos" aria-selected="false">Favoritos</button>
+            <button id="tab-configuracion-tab" class="c-tabs__link" data-tab="tab-configuracion" type="button" role="tab" aria-controls="tab-configuracion" aria-selected="false">Configuración</button>
           </nav>
 
-          <div id="tab-informacion" class="c-tab-panel" role="tabpanel" aria-labelledby="tab-informacion">
+          <div id="tab-informacion" class="c-tab-panel" role="tabpanel" aria-labelledby="tab-informacion-tab">
             <article class="c-panel">
               <h2 class="c-panel__title">Información personal</h2>
               <dl class="c-description-list">
@@ -229,7 +232,7 @@
             </article>
           </div>
 
-          <div id="tab-servicios" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-servicios">
+          <div id="tab-servicios" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-servicios-tab">
             <div class="c-grid c-grid--two">
               <article class="c-card">
                 <div class="c-card__header">
@@ -286,7 +289,7 @@
             </div>
           </div>
 
-          <div id="tab-favoritos" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-favoritos">
+          <div id="tab-favoritos" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-favoritos-tab">
             <div class="c-grid c-grid--three">
               <article class="c-card">
                 <div class="c-card__header">
@@ -330,7 +333,7 @@
             </div>
           </div>
 
-          <div id="tab-configuracion" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-configuracion">
+          <div id="tab-configuracion" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-configuracion-tab">
             <article class="c-panel">
               <h2 class="c-panel__title">Preferencias rápidas</h2>
               <div class="c-simple-list">
@@ -349,21 +352,34 @@
       </div>
     </section>
   </main>
-
   <footer class="c-footer">
-    <div class="container c-footer__inner">
-      <div>
-        <h2 class="texto-subtitulo c-footer__title">ServiLocal</h2>
-        <p class="c-footer__meta">Conectando vecinos con profesionales de confianza.</p>
+    <div class="container">
+      <div class="c-footer__inner">
+        <div class="c-footer__column">
+          <h2 class="c-footer__heading">Legal</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="politicas.html">Política de privacidad</a></li>
+            <li><a class="c-footer__link" href="terminos.html">Términos de servicio</a></li>
+            <li><a class="c-footer__link" href="cookies.html">Política de cookies</a></li>
+          </ul>
+        </div>
+        <div class="c-footer__column c-footer__column--center">
+          <h2 class="c-footer__brand">ServiLocal</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="registro.html">Sumar mi negocio</a></li>
+            <li><a class="c-footer__link" href="buscar.html">Buscar profesionales</a></li>
+            <li><a class="c-footer__link" href="proveedor.html">Ofrecer un servicio</a></li>
+          </ul>
+        </div>
+        <div class="c-footer__column">
+          <h2 class="c-footer__heading">Conocenos</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="sobre_nosotros.html">Sobre nosotros</a></li>
+            <li><a class="c-footer__link" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="c-footer__links">
-        <a class="c-footer__link" href="todos_los_servicios.html">Todos los servicios</a>
-        <a class="c-footer__link" href="buscar.html">Buscar profesionales</a>
-        <a class="c-footer__link" href="proveedor.html">Ver proveedores</a>
-        <a class="c-footer__link" href="registro.html">Sumar mi negocio</a>
-        <a class="c-footer__link" href="politicas.html">Políticas de privacidad</a>
-      </div>
-      <div class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</div>
+      <p class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</p>
     </div>
   </footer>
 
@@ -746,6 +762,7 @@
   </script>
 
   <script src="js/cookies.js"></script>
+  <script src="js/navbar.js"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Iniciar sesión – ServiLocal</title>
+  <title>Política de cookies - ServiLocal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,53 +17,43 @@
       <a class="c-navbar__brand" href="index.html">ServiLocal</a>
       <nav class="c-navbar__links">
         <a class="c-navbar__link" href="buscar.html">Buscar servicios</a>
-        <a class="c-navbar__link" href="registro.html">Registrarse</a>
+        <a class="c-navbar__link" href="todos_los_servicios.html">Servicios</a>
+        <a class="c-navbar__link" href="login.html">Iniciar sesión</a>
+        <a class="c-button" href="registro.html">Registrarse</a>
       </nav>
     </div>
   </header>
 
   <main class="c-main">
-    <section class="c-section c-section--tight">
-      <div class="container c-center-container">
-        <article class="c-panel c-panel--spacious u-max-420" role="region" aria-labelledby="login-heading">
-          <div class="c-panel__header c-panel__header--center">
-            <h1 class="c-panel__title" id="login-heading">Iniciar sesión</h1>
-            <p class="texto-base u-no-margin">Accedé a tu cuenta para continuar</p>
+    <section class="c-section">
+      <div class="container">
+        <div class="c-section__heading">
+          <span class="c-badge-pill">Transparencia digital</span>
+          <h1 class="texto-subtitulo">Política de cookies</h1>
+          <p class="texto-base u-no-margin">Explicamos qué cookies usamos en ServiLocal, con qué finalidad y cómo podés gestionarlas.</p>
+        </div>
+        <div class="c-panel c-panel--spacious">
+          <div>
+            <h2 class="texto-subtitulo">1. Qué son las cookies</h2>
+            <p class="texto-base">Son pequeños archivos que se almacenan en tu dispositivo para recordar preferencias, analizar el uso de la plataforma y mejorar tu experiencia.</p>
           </div>
-          <form class="c-form" novalidate>
-            <div class="c-form-field">
-              <label class="c-label" for="email">Correo electrónico</label>
-              <input class="c-input" type="email" id="email" name="email" placeholder="tu@email.com">
-            </div>
-            <div class="c-form-field">
-              <label class="c-label" for="password">Contraseña</label>
-              <input class="c-input" type="password" id="password" name="password" placeholder="••••••••">
-            </div>
-            <div class="c-panel__actions c-panel__actions--spread">
-              <label class="texto-base c-inline-flex c-inline-flex--gap">
-                <input type="checkbox" id="remember">
-                Recordarme
-              </label>
-              <a class="c-navbar__link" href="#">¿Olvidaste tu contraseña?</a>
-            </div>
-            <button class="c-button" type="submit">Iniciar sesión</button>
-          </form>
-          <div class="texto-base c-text-muted c-text-center">
-            ¿No tenés una cuenta?
-            <a class="c-navbar__link" href="registro.html">Registrate aquí</a>
+          <div>
+            <h2 class="texto-subtitulo">2. Tipos que utilizamos</h2>
+            <ul class="c-simple-list">
+              <li>Cookies esenciales: permiten iniciar sesión y operar la plataforma.</li>
+              <li>Cookies de rendimiento: nos ayudan a entender qué secciones se visitan más.</li>
+              <li>Cookies de marketing: muestran contenido y comunicaciones relevantes.</li>
+            </ul>
           </div>
-          <div class="c-panel__actions c-panel__actions--column">
-            <span class="texto-base c-text-muted">Iniciá sesión con redes sociales</span>
-            <div class="c-inline-flex c-inline-flex--gap">
-              <button class="c-button c-button--secondary" type="button" aria-label="Ingresar con Google">
-                <i class="fab fa-google"></i>
-              </button>
-              <button class="c-button c-button--secondary" type="button" aria-label="Ingresar con Facebook">
-                <i class="fab fa-facebook"></i>
-              </button>
-            </div>
+          <div>
+            <h2 class="texto-subtitulo">3. Gestión</h2>
+            <p class="texto-base">Podés aceptar o rechazar cookies desde el banner inicial, ajustar preferencias en la configuración de tu cuenta o limpiar el historial desde tu navegador.</p>
           </div>
-        </article>
+          <div>
+            <h2 class="texto-subtitulo">4. Vigencia</h2>
+            <p class="texto-base">Revisamos esta política cada seis meses. Los cambios se publican en esta página y se notifican a usuarios registrados vía correo electrónico.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
