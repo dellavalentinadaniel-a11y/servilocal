@@ -1,0 +1,118 @@
+{
+  "name": "ServiLocal - Profesionales de Confianza",
+  "short_name": "ServiLocal",
+  "description": "Conecta con profesionales verificados en tu zona. Jardinería, plomería, electricidad y más servicios locales.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es-AR",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "imagen/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagen/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagen/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagen/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagen/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagen/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagen/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagen/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "imagen/screenshot-mobile.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "imagen/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": ["business", "lifestyle", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Buscar profesionales",
+      "short_name": "Buscar",
+      "description": "Encuentra profesionales en tu zona",
+      "url": "/buscar.html",
+      "icons": [
+        {
+          "src": "imagen/icon-search.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Mis favoritos",
+      "short_name": "Favoritos",
+      "description": "Ver profesionales guardados",
+      "url": "/perfil.html#favoritos",
+      "icons": [
+        {
+          "src": "imagen/icon-heart.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Mi perfil",
+      "short_name": "Perfil",
+      "description": "Configuración de cuenta",
+      "url": "/perfil.html",
+      "icons": [
+        {
+          "src": "imagen/icon-user.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

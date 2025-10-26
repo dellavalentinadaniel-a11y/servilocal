@@ -2425,12 +2425,17 @@ a {
   color: var(--color-neutro-600);
 }
 
+/* PWA - Banner offline */
+.c-offline-banner > i {
+  font-size: 1rem;
+}
+
 /* Sistema de favoritos */
 .c-button.is-favorite {
   color: var(--color-error);
 }
 
-.c-button.is-favorite i {
+.c-button.is-favorite > i {
   color: var(--color-error);
   animation: latido-corazon 0.3s ease-in-out;
 }
@@ -2471,4 +2476,151 @@ a {
   border-radius: 999px;
   min-width: 1.25rem;
   text-align: center;
+}
+
+/* PWA - Banners de instalación y actualización */
+.c-install-banner,
+.c-update-banner,
+.c-offline-banner {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 -4px 12px rgb(0 0 0 / 15%);
+  padding: var(--espacio-medio);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-medio);
+  z-index: 1000;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.c-install-banner.is-visible,
+.c-update-banner.is-visible {
+  bottom: 0;
+}
+
+.c-install-banner__content,
+.c-update-banner__content {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-medio);
+  flex: 1;
+}
+
+.c-install-banner__icon {
+  width: 3rem;
+  height: 3rem;
+  background: var(--gradiente-principal);
+  border-radius: var(--borde-redondeado);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.c-install-banner__text strong,
+.c-update-banner__content strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-neutro-900);
+  margin-bottom: 0.25rem;
+}
+
+.c-install-banner__text p,
+.c-update-banner__content p {
+  font-size: 0.75rem;
+  color: var(--color-neutro-600);
+  margin: 0;
+}
+
+.c-install-banner__actions,
+.c-update-banner__actions {
+  display: flex;
+  gap: var(--espacio-chico);
+  flex-shrink: 0;
+}
+
+.c-offline-banner {
+  bottom: -100%;
+  background: var(--color-warning);
+  color: white;
+  justify-content: center;
+  padding: var(--espacio-chico) var(--espacio-medio);
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: var(--espacio-chico);
+}
+
+.c-offline-banner.is-visible {
+  bottom: 0;
+}
+
+/* Mejoras móviles - Touch targets */
+@media (max-width: 768px) {
+  .c-button,
+  .c-navbar__link,
+  .c-tabs__link,
+  a[role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .c-install-banner,
+  .c-update-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--espacio-medio);
+  }
+
+  .c-install-banner__actions,
+  .c-update-banner__actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .c-install-banner__actions button,
+  .c-update-banner__actions button {
+    flex: 1;
+  }
+}
+
+/* Safe area para dispositivos con notch */
+@supports (padding: env(safe-area-inset-top)) {
+  .c-navbar {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .c-install-banner,
+  .c-update-banner,
+  .c-offline-banner {
+    padding-bottom: calc(var(--espacio-medio) + env(safe-area-inset-bottom));
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .c-hero {
+    min-height: 60vh;
+  }
+
+  .c-install-banner,
+  .c-update-banner {
+    flex-direction: row;
+    padding: var(--espacio-chico) var(--espacio-medio);
+  }
+
+  .c-install-banner__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
 }
