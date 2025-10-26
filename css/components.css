@@ -2424,3 +2424,51 @@ a {
 .u-color-neutro-600 {
   color: var(--color-neutro-600);
 }
+
+/* Sistema de favoritos */
+.c-button.is-favorite {
+  color: var(--color-error);
+}
+
+.c-button.is-favorite i {
+  color: var(--color-error);
+  animation: latido-corazon 0.3s ease-in-out;
+}
+
+@keyframes latido-corazon {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.c-button--icon {
+  padding: 0.5rem;
+  width: auto;
+  min-width: 2.5rem;
+}
+
+.c-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espacio-extra-grande);
+  text-align: center;
+}
+
+.c-badge {
+  display: inline-block;
+  background-color: var(--color-error);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  min-width: 1.25rem;
+  text-align: center;
+}

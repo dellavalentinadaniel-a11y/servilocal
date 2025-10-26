@@ -240,7 +240,7 @@
               <span class="c-stat-card__label">Reseñas dejadas</span>
             </div>
             <div class="c-stat-card">
-              <span class="c-stat-card__value">5</span>
+              <span id="contador-favoritos" class="c-stat-card__value">0</span>
               <span class="c-stat-card__label">Favoritos</span>
             </div>
           </div>
@@ -388,46 +388,8 @@
           </div>
 
           <div id="tab-favoritos" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-favoritos-tab">
-            <div class="c-grid c-grid--three">
-              <article class="c-card">
-                <div class="c-card__header">
-                  <h3 class="c-card__title">Carlos Jardinería</h3>
-                  <span class="c-chip">Mantenimiento</span>
-                </div>
-                <div class="c-card__body">
-                  Especialista en jardines residenciales. Disponible en zona norte.
-                </div>
-                <div class="c-card__meta">
-                  <span><i class="fas fa-star"></i> 4.8</span>
-                  <span>$500/hr</span>
-                </div>
-              </article>
-              <article class="c-card">
-                <div class="c-card__header">
-                  <h3 class="c-card__title">ElectroFix</h3>
-                  <span class="c-chip">Hogar</span>
-                </div>
-                <div class="c-card__body">
-                  Técnicos eléctricos certificados. Atención en 24 horas.
-                </div>
-                <div class="c-card__meta">
-                  <span><i class="fas fa-star"></i> 4.9</span>
-                  <span>+120 trabajos</span>
-                </div>
-              </article>
-              <article class="c-card">
-                <div class="c-card__header">
-                  <h3 class="c-card__title">LimpioMax</h3>
-                  <span class="c-chip">Limpieza</span>
-                </div>
-                <div class="c-card__body">
-                  Planes mensuales para oficinas y hogares. Productos ecológicos incluidos.
-                </div>
-                <div class="c-card__meta">
-                  <span><i class="fas fa-star"></i> 4.7</span>
-                  <span>Desde $750</span>
-                </div>
-              </article>
+            <div id="lista-favoritos" class="c-grid c-grid--three">
+              <!-- El contenido se carga dinámicamente desde js/favoritos.js -->
             </div>
           </div>
 
@@ -861,6 +823,24 @@
   <script src="js/accesibilidad.js"></script>
   <script src="js/schema.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/busqueda.js"></script>
+  <script src="js/favoritos.js"></script>
   <script src="js/componentes.js"></script>
+  
+  <script>
+    // Renderizar favoritos cuando se carga la página
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ServiLocalFavoritos) {
+        window.ServiLocalFavoritos.renderizarFavoritos('lista-favoritos');
+      }
+    });
+    
+    // Re-renderizar cuando cambian los favoritos
+    document.addEventListener('favoritoChanged', function() {
+      if (window.ServiLocalFavoritos) {
+        window.ServiLocalFavoritos.renderizarFavoritos('lista-favoritos');
+      }
+    });
+  </script>
 </body>
 </html>

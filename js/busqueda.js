@@ -413,6 +413,11 @@
         elementos.resultadosList.innerHTML = resultados.map(prof => 
           crearTarjetaResultado(prof)
         ).join('');
+        
+        // Re-inicializar botones de favoritos después de renderizar
+        if (window.ServiLocalFavoritos) {
+          window.ServiLocalFavoritos.inicializarBotonesFavoritos();
+        }
       }
 
       // Fade in
@@ -475,9 +480,14 @@
             <a class="c-button" href="proveedor.html?id=${profesional.id}" aria-label="Ver perfil completo de ${profesional.nombre}">
               Ver perfil
             </a>
-            <button class="c-button c-button--secondary" type="button" onclick="window.toggleFavorito(${profesional.id})" aria-label="Guardar en favoritos">
+            <button 
+              class="c-button c-button--secondary c-button--icon" 
+              type="button" 
+              data-favorito-id="${profesional.id}"
+              aria-label="Agregar a favoritos"
+              aria-pressed="false"
+            >
               <i class="far fa-heart" aria-hidden="true"></i>
-              Guardar
             </button>
           </div>
         </div>
