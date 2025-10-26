@@ -1,4 +1,88 @@
+/* Tokens de diseño base para ServiLocal */
 @import url('tokens.css');
+
+/* Accesibilidad y Skip Links */
+.c-skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background-color: var(--color-principal);
+  color: var(--color-superficie);
+  padding: calc(var(--espacio-chico) * 0.5) var(--espacio-chico);
+  border-radius: var(--borde-suave);
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.c-skip-link:focus {
+  top: 6px;
+}
+
+/* Estilos para focus visible mejorado */
+.has-focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 2px;
+  border-radius: var(--borde-suave);
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Feedback de formularios */
+.c-field-feedback {
+  margin-top: calc(var(--espacio-chico) * 0.5);
+  padding: calc(var(--espacio-chico) * 0.5);
+  border-radius: var(--borde-suave);
+  font-size: var(--font-texto-pequeno);
+  font-weight: 500;
+}
+
+.c-field-feedback--error {
+  background-color: rgb(254 242 242);
+  background-color: color-mix(in srgb, #fef2f2 100%, transparent);
+  color: rgb(185 28 28);
+  color: color-mix(in srgb, #b91c1c 100%, transparent);
+  border: 1px solid rgb(252 165 165);
+  border: 1px solid color-mix(in srgb, #fca5a5 100%, transparent);
+}
+
+.c-field-feedback--success {
+  background-color: rgb(240 253 244);
+  background-color: color-mix(in srgb, #f0fdf4 100%, transparent);
+  color: rgb(21 128 61);
+  color: color-mix(in srgb, #15803d 100%, transparent);
+  border: 1px solid rgb(134 239 172);
+  border: 1px solid color-mix(in srgb, #86efac 100%, transparent);
+}
+
+/* Estados de validación para inputs */
+.c-input[aria-invalid="true"],
+.c-select[aria-invalid="true"] {
+  border-color: rgb(239 68 68);
+  border-color: color-mix(in srgb, #ef4444 100%, transparent);
+  box-shadow: 0 0 0 3px rgb(239 68 68 / 10%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, #ef4444 10%, transparent);
+}
+
+.c-input[aria-invalid="false"],
+.c-select[aria-invalid="false"] {
+  border-color: rgb(34 197 94);
+  border-color: color-mix(in srgb, #22c55e 100%, transparent);
+  box-shadow: 0 0 0 3px rgb(34 197 94 / 10%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, #22c55e 10%, transparent);
+}
 
 *,
 *::before,

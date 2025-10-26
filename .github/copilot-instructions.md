@@ -29,12 +29,33 @@ ServiLocal is a **Spanish-language local marketplace** connecting neighbors with
 - **Commands**: `npm run lint:css` (check) and `npm run lint:css:fix` (auto-fix)
 - **Git hooks**: Pre-commit automatically runs CSS linting via Husky
 
+### JavaScript Architecture
+- **Modular approach**: Separate scripts for specific functionality
+- **`js/accesibilidad.js`**: Focus management, skip links, keyboard navigation
+- **`js/formularios.js`**: Form validation, live feedback, UX enhancements
+- **`js/componentes.js`**: Interactive components (modals, tabs, gallery)
+- **`js/cookies.js`**: GDPR-compliant cookie consent banner
+- **`js/mapa.js`**: Leaflet map integration
+
 ### Key Dependencies
 - **Font Awesome 6.5**: Icons throughout the interface
 - **Google Fonts**: Inter font family (400, 500, 600, 700 weights)
 - **Leaflet**: Maps integration (see `proveedor.html`)
 
 ## Project-Specific Patterns
+
+### Accessibility Implementation
+- **Skip links**: Automatic generation for keyboard navigation
+- **Focus management**: Visual indicators and proper tab order
+- **ARIA labels**: Comprehensive screen reader support
+- **Live regions**: Real-time announcements for dynamic content
+- **Form validation**: Accessible error messages and feedback
+
+### Interactive Components
+- **Modular gallery**: Keyboard-navigable with modal view
+- **Enhanced forms**: Live validation with visual feedback
+- **Accessible tabs**: ARIA-compliant with keyboard navigation
+- **Interactive cards**: Keyboard navigation and proper focus states
 
 ### Cookie Consent
 - Self-contained IIFE in `js/cookies.js`
@@ -66,9 +87,18 @@ Core services: jardinería, plomería, electricidad, limpieza, construcción, ab
 1. Use existing design tokens from `css/tokens.css`
 2. Follow BEM naming: `c-component__element--modifier`
 3. Test CSS changes with `npm run lint:css`
-4. Maintain Spanish language throughout content
-5. Include proper ARIA labels for accessibility
-6. Use consistent `container` wrapper for content width
+4. **Include accessibility scripts**: Add relevant JS modules (`accesibilidad.js`, `componentes.js`, etc.)
+5. **Implement ARIA properly**: Use semantic HTML, proper roles, and labels
+6. **Test keyboard navigation**: Ensure all interactive elements are accessible via keyboard
+7. Maintain Spanish language throughout content
+8. Use consistent `container` wrapper for content width
+
+## Accessibility Standards
+- **Skip links**: Always include for keyboard users
+- **Focus indicators**: Use `.has-focus-visible` class for enhanced focus states
+- **Screen reader support**: Include `.sr-only` elements and `aria-live` regions
+- **Form feedback**: Use `.c-field-feedback` classes for validation states
+- **Interactive elements**: Ensure proper `role`, `aria-label`, and keyboard support
 
 ## Testing
 - **CSS**: Automated via Stylelint + Husky pre-commit hooks

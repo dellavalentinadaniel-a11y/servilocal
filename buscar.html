@@ -24,7 +24,7 @@
     </div>
   </header>
 
-  <main class="c-main">
+  <main class="c-main" id="main-content">
     <section class="c-hero">
       <div class="container c-hero__inner">
         <div>
@@ -32,48 +32,55 @@
           <h1 class="c-hero__title">Buscar profesionales verificados</h1>
           <p class="c-hero__text">Filtrá por categoría, ubicación y reputación para conectar con especialistas confiables cerca de tu barrio.</p>
           <div class="c-hero__actions">
-            <a class="c-button" href="#resultados">Ver resultados disponibles</a>
+            <a class="c-button" href="#resultados" aria-describedby="resultados-descripcion">Ver resultados disponibles</a>
             <a class="c-navbar__link" href="todos_los_servicios.html">Explorar categorías</a>
           </div>
         </div>
         <div>
-          <div class="c-form-card">
+          <form class="c-form-card" role="search" aria-label="Filtros de búsqueda de servicios">
+            <h2 class="sr-only">Filtros de búsqueda</h2>
             <div class="c-form-grid c-form-grid--responsive">
               <div class="c-form-field">
                 <label class="c-label" for="categoria">Categoría</label>
-                <select id="categoria" class="c-select">
-                  <option>Todas</option>
-                  <option>Jardinería</option>
-                  <option>Plomería</option>
-                  <option>Electricidad</option>
-                  <option>Limpieza</option>
-                  <option>Construcción</option>
-                  <option>Abogacía</option>
-                  <option>Contaduría</option>
-                  <option>Veterinaria</option>
-                  <option>Ferretería</option>
-                  <option>Corralón</option>
-                  <option>Mecánica del automotor</option>
+                <select id="categoria" class="c-select" aria-describedby="categoria-hint">
+                  <option value="">Todas las categorías</option>
+                  <option value="jardineria">Jardinería</option>
+                  <option value="plomeria">Plomería</option>
+                  <option value="electricidad">Electricidad</option>
+                  <option value="limpieza">Limpieza</option>
+                  <option value="construccion">Construcción</option>
+                  <option value="abogacia">Abogacía</option>
+                  <option value="contaduria">Contaduría</option>
+                  <option value="veterinaria">Veterinaria</option>
+                  <option value="ferreteria">Ferretería</option>
+                  <option value="corralon">Corralón</option>
+                  <option value="mecanica">Mecánica del automotor</option>
                 </select>
+                <div id="categoria-hint" class="sr-only">Seleccioná una categoría de servicio o dejá en "Todas" para ver todos los profesionales</div>
               </div>
               <div class="c-form-field">
                 <label class="c-label" for="ubicacion">Ubicación</label>
-                <input id="ubicacion" type="text" class="c-input" placeholder="Ej: Ciudad de México">
+                <input id="ubicacion" type="text" class="c-input" placeholder="Ej: Ciudad de México" aria-describedby="ubicacion-hint">
+                <div id="ubicacion-hint" class="sr-only">Ingresá tu ubicación para encontrar profesionales cerca tuyo</div>
               </div>
               <div class="c-form-field">
                 <label class="c-label" for="orden">Ordenar por</label>
                 <select id="orden" class="c-select">
-                  <option>Recomendados</option>
-                  <option>Mejor calificados</option>
-                  <option>Más cercanos</option>
+                  <option value="recomendados">Recomendados</option>
+                  <option value="calificados">Mejor calificados</option>
+                  <option value="cercanos">Más cercanos</option>
                 </select>
               </div>
             </div>
             <div class="c-form-card__footer">
-              <button class="c-button" type="button">Buscar</button>
-              <a class="c-navbar__link" href="#resultados">Ver resultados</a>
+              <button class="c-button" type="submit" aria-describedby="buscar-descripcion">
+                <i class="fas fa-search c-icon-left" aria-hidden="true"></i>
+                Buscar
+              </button>
+              <a class="c-navbar__link" href="#resultados">Ver resultados actuales</a>
+              <div id="buscar-descripcion" class="sr-only">Ejecutar búsqueda con los filtros seleccionados</div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
@@ -81,24 +88,31 @@
     <section class="c-section" id="resultados">
       <div class="container">
         <header class="c-section__heading c-section__heading--left">
-          <h2 class="texto-subtitulo u-no-margin">Resultados (3)</h2>
-          <p class="texto-base u-no-margin">Mostrando profesionales disponibles en tu zona. Podés ajustar los filtros para refinar la búsqueda.</p>
+          <h2 class="texto-subtitulo u-no-margin">Resultados de búsqueda</h2>
+          <p id="resultados-descripcion" class="texto-base u-no-margin">
+            <span aria-live="polite" id="resultados-count">Mostrando 3 profesionales</span> 
+            disponibles en tu zona. Podés ajustar los filtros para refinar la búsqueda.
+          </p>
         </header>
-        <div class="c-result-list">
+        <div class="c-result-list" aria-label="Lista de profesionales encontrados">
           <article class="c-result-card">
-            <div class="c-result-card__media" aria-hidden="true"></div>
+            <img src="imagenes/perfile/images%20(1).png" alt="Foto de perfil de Carlos" class="c-result-card__media" loading="lazy">
             <div class="c-result-card__body">
               <header class="c-result-card__header">
-                <h3 class="c-result-card__title">Carlos – Jardinería</h3>
+                <h3 class="c-result-card__title">
+                  <a href="proveedor.html" class="c-result-card__link">Carlos – Jardinería</a>
+                </h3>
                 <div class="c-result-card__meta">
-                  <span class="c-rating" aria-hidden="true">★★★★☆</span>
-                  <span class="c-rating__value">(4.5)</span>
+                  <div class="c-rating" role="img" aria-label="Calificación 4.5 de 5 estrellas">
+                    <span aria-hidden="true">★★★★☆</span>
+                  </div>
+                  <span class="c-rating__value" aria-label="Calificación numérica">(4.5)</span>
                   <span>+10 años de experiencia</span>
                 </div>
               </header>
               <p class="texto-base u-no-margin">Podado, diseño de jardines y sistemas de riego automático. Servicio en barrios del norte y turnos express en 24 hs.</p>
               <div class="c-result-card__actions">
-                <a class="c-button" href="proveedor.html">Ver perfil</a>
+                <a class="c-button" href="proveedor.html" aria-label="Ver perfil completo de Carlos">Ver perfil</a>
                 <a class="c-navbar__link" href="#">Guardar</a>
               </div>
             </div>
@@ -162,6 +176,9 @@
     </div>
   </footer>
 
+  <script src="js/accesibilidad.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/formularios.js"></script>
   <script src="js/cookies.js"></script>
 
 </body>

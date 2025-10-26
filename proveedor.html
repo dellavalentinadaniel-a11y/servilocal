@@ -24,7 +24,7 @@
     </div>
   </header>
 
-  <main class="c-main" role="main">
+  <main class="c-main" id="main-content">
     <section class="c-section c-section--tight">
       <div class="container">
         <article class="c-panel c-panel--spacious" role="region" aria-labelledby="perfil-heading">
@@ -49,13 +49,16 @@
             <div class="c-profile-header__body">
               <h1 id="perfil-heading" class="texto-subtitulo">Carlos Martínez</h1>
               <div class="c-profile-rating">
-                <span aria-label="4.5 de 5 estrellas">★★★★☆</span>
+                <div role="img" aria-label="Calificación 4.5 de 5 estrellas">
+                  <span aria-hidden="true">★★★★☆</span>
+                </div>
                 <span class="c-profile-rating__meta">(<span aria-label="Calificación de 4.5">4.5</span> • <span aria-label="24 reseñas">24 reseñas</span>)</span>
               </div>
               <p class="c-profile-description">Jardinero certificado • +10 años de experiencia</p>
             </div>
             <div class="c-profile-header__actions">
               <button class="c-button" type="button" aria-label="Contactar a Carlos">
+                <i class="fas fa-phone c-icon-left" aria-hidden="true"></i>
                 Contactar
               </button>
             </div>
@@ -187,7 +190,11 @@
       <div class="container">
         <article class="c-panel" role="region" aria-labelledby="ubicacion-heading">
           <h2 id="ubicacion-heading" class="c-panel__title">Ubicación</h2>
-          <div id="map" class="c-map"></div>
+          <div id="map" class="c-map" role="application" aria-label="Mapa interactivo mostrando la ubicación de Carlos en Zona Centro, Ciudad de México" aria-describedby="mapa-descripcion"></div>
+          <div id="mapa-descripcion" class="sr-only">
+            Mapa interactivo que muestra la ubicación del proveedor Carlos en Zona Centro, Ciudad de México. 
+            Utiliza las teclas de flecha para navegar o el enlace de direcciones para obtener rutas.
+          </div>
           <div class="c-panel__actions">
             <a class="c-navbar__link" href="#" aria-label="Obtener direcciones hacia la ubicación de Carlos">
               <i class="fas fa-directions c-icon-left" aria-hidden="true"></i>Obtener direcciones
@@ -215,20 +222,24 @@
       <div class="container">
         <article class="c-panel" role="region" aria-labelledby="resenas-heading">
           <h2 id="resenas-heading" class="c-panel__title">Reseñas (24)</h2>
-          <div class="c-review-list">
-            <article class="c-review">
+          <div class="c-review-list" role="list" aria-label="Lista de reseñas de clientes">
+            <article class="c-review" role="listitem">
               <div class="c-review__header">
-                <span class="c-rating" aria-hidden="true">★★★★★</span>
+                <div class="c-rating" role="img" aria-label="Calificación 5 de 5 estrellas">
+                  <span aria-hidden="true">★★★★★</span>
+                </div>
                 <span class="texto-base">– Martín, 12/10/2025</span>
               </div>
-              <p class="c-review__text">Excelente trabajo. Mi jardín nunca había lucido tan bien. Muy responsable y puntual.</p>
+              <blockquote class="c-review__text">Excelente trabajo. Mi jardín nunca había lucido tan bien. Muy responsable y puntual.</blockquote>
             </article>
-            <article class="c-review">
+            <article class="c-review" role="listitem">
               <div class="c-review__header">
-                <span class="c-rating" aria-hidden="true">★★★★☆</span>
+                <div class="c-rating" role="img" aria-label="Calificación 4 de 5 estrellas">
+                  <span aria-hidden="true">★★★★☆</span>
+                </div>
                 <span class="texto-base">– Sofía, 05/10/2025</span>
               </div>
-              <p class="c-review__text">Buen profesional, aunque llegó 15 minutos tarde. El trabajo fue muy bueno.</p>
+              <blockquote class="c-review__text">Buen profesional, aunque llegó 15 minutos tarde. El trabajo fue muy bueno.</blockquote>
             </article>
           </div>
         </article>
@@ -476,8 +487,9 @@
   </script>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/accesibilidad.js"></script>
+  <script src="js/componentes.js"></script>
   <script src="js/mapa.js"></script>
-
   <script src="js/cookies.js"></script>
 
 </body>
