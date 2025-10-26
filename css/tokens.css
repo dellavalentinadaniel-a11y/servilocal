@@ -2,7 +2,7 @@
 :root {
   /* Colores */
   --color-fondo: #f3f4f6;
-  --color-superficie: #ffffff;
+  --color-superficie: #fff;
   --color-texto: #1f2937;
   --color-principal: #16a34a;
   --color-acento: #0f766e;
@@ -24,11 +24,11 @@
   --borde-grande: 9999px;
 
   /* Sombras reutilizables */
-  --sombra-elevacion-media-fallback: 0 20px 35px rgba(15, 118, 110, 0.12);
+  --sombra-elevacion-media-fallback: 0 20px 35px rgb(15 118 110 / 12%);
   --sombra-elevacion-media: 0 20px 35px color-mix(in srgb, var(--color-acento) 12%, transparent);
-  --sombra-elevacion-alta-fallback: 0 24px 45px rgba(15, 118, 110, 0.12);
+  --sombra-elevacion-alta-fallback: 0 24px 45px rgb(15 118 110 / 12%);
   --sombra-elevacion-alta: 0 24px 45px color-mix(in srgb, var(--color-acento) 12%, transparent);
-  --sombra-elevacion-pronunciada-fallback: 0 20px 40px rgba(15, 118, 110, 0.15);
+  --sombra-elevacion-pronunciada-fallback: 0 20px 40px rgb(15 118 110 / 15%);
   --sombra-elevacion-pronunciada: 0 20px 40px color-mix(in srgb, var(--color-acento) 15%, transparent);
 }
 
