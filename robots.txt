@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+
+# Páginas principales
+Allow: /index.html
+Allow: /buscar.html
+Allow: /proveedor.html
+Allow: /todos_los_servicios.html
+
+# Servicios
+Allow: /jardineria.html
+Allow: /plomeria.html
+Allow: /electricidad.html
+Allow: /limpieza.html
+Allow: /construccion.html
+Allow: /abogacia.html
+Allow: /contaduria.html
+Allow: /veterinaria.html
+Allow: /mecanica.html
+Allow: /ferreteria.html
+Allow: /corralon.html
+
+# Autenticación (no indexar)
+Disallow: /login.html
+Disallow: /registro.html
+Disallow: /perfil.html
+
+# Assets
+Disallow: /js/
+Disallow: /css/
+Disallow: /imagenes/
+
+# Archivos
+Allow: /manifest.json
+Allow: /sitemap.xml
+
+# Sitemap
+Sitemap: https://servilocal.com/sitemap.xml
+
+# Crawl-delay para bots (1 segundo)
+Crawl-delay: 1

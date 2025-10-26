@@ -2724,3 +2724,53 @@ a {
     display: none;
   }
 }
+
+/* Performance - Reduce motion */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Performance - Conexión lenta */
+.slow-connection img {
+  background: var(--color-neutro-200);
+}
+
+.slow-connection .c-gallery__loader {
+  display: flex;
+}
+
+/* Performance - Lazy loading placeholder */
+img[loading="lazy"]:not([src]) {
+  background: linear-gradient(90deg, var(--color-neutro-200) 25%, var(--color-neutro-100) 50%, var(--color-neutro-200) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Performance - Font loading */
+.fonts-loaded {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Performance - Will-change para animaciones frecuentes */
+.c-navbar,
+.c-modal,
+.c-install-banner,
+.c-update-banner,
+.c-offline-banner {
+  will-change: transform;
+}

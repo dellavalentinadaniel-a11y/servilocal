@@ -30,12 +30,12 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <!-- PWA Meta Tags -->
+  <!-- PWA Meta Tags -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="ServiLocal">
-  <meta name="theme-color" content="#4338CA">
+  <!-- meta[name="theme-color"] removed for compatibility with Firefox/Opera; use theme_color in manifest.json -->
   <meta name="msapplication-TileColor" content="#4338CA">
   <meta name="msapplication-tap-highlight" content="no">
   
@@ -275,6 +275,7 @@
     </div>
   </footer>
 
+  <script src="js/performance.js"></script>
   <script src="js/accesibilidad.js"></script>
   <script src="js/pwa.js"></script>
   <script src="js/gestos.js"></script>

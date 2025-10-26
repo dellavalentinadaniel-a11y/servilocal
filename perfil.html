@@ -30,14 +30,27 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <!-- PWA Meta Tags -->
+  <!-- PWA Meta Tags -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="ServiLocal">
-  <meta name="theme-color" content="#4F46E5">
   <meta name="msapplication-TileColor" content="#4F46E5">
   <meta name="msapplication-tap-highlight" content="no">
+  <script>
+    (function() {
+      // Añade meta[name="theme-color"] dinámicamente solo en navegadores Chromium/WebKit
+      // Evita el meta estático para no disparar advertencias en navegadores no compatibles (Firefox, Opera, etc.).
+      var ua = navigator.userAgent || '';
+      var isChromiumLike = /Chrome|Chromium|CriOS|Edg|SamsungBrowser/.test(ua) && !/Firefox/.test(ua);
+      if (isChromiumLike) {
+        var meta = document.createElement('meta');
+        meta.name = 'theme-color';
+        meta.content = '#4F46E5';
+        document.head.appendChild(meta);
+      }
+    })();
+  </script>
   
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json">
@@ -842,6 +855,7 @@
 
   <script src="js/cookies.js"></script>
 
+  <script src="js/performance.js"></script>
   <script src="js/accesibilidad.js"></script>
   <script src="js/pwa.js"></script>
   <script src="js/gestos.js"></script>
