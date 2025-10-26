@@ -16,6 +16,19 @@
   --color-acento: #0891b2;
   --color-acento-hover: #0e7490;
   --color-acento-light: #cffafe;
+  --color-acento-claro: #67e8f9;
+  
+  /* Neutros para UI */
+  --color-neutro-50: #f8fafc;
+  --color-neutro-100: #f1f5f9;
+  --color-neutro-200: #e2e8f0;
+  --color-neutro-300: #cbd5e1;
+  --color-neutro-400: #94a3b8;
+  --color-neutro-500: #64748b;
+  --color-neutro-600: #475569;
+  --color-neutro-700: #334155;
+  --color-neutro-800: #1e293b;
+  --color-neutro-900: #0f172a;
   
   /* Colores de Estado */
   --color-exito: #10b981;
@@ -67,9 +80,20 @@
   
   /* Gradientes Modernos */
   --gradiente-principal: linear-gradient(135deg, var(--color-principal) 0%, var(--color-acento) 100%);
-  --gradiente-principal-suave: linear-gradient(135deg, var(--color-principal-light) 0%, var(--color-acento-light) 100%);
+  --gradiente-acento: linear-gradient(135deg, var(--color-acento) 0%, var(--color-principal) 100%);
+  --gradiente-sutil: linear-gradient(135deg, var(--color-principal-light) 0%, var(--color-acento-light) 100%);
   --gradiente-hero: linear-gradient(135deg, #0f766e 0%, #059669 50%, #0891b2 100%);
   --gradiente-superficie: linear-gradient(180deg, var(--color-superficie) 0%, var(--color-fondo) 100%);
+  
+  /* Variables específicas para móvil */
+  --espaciado-movil-xs: 0.5rem;
+  --espaciado-movil-sm: 1rem;
+  --espaciado-movil-md: 1.5rem;
+  --espaciado-movil-lg: 2rem;
+  --font-movil-titulo: clamp(1.75rem, 6vw, 2.5rem);
+  --font-movil-subtitulo: clamp(1.25rem, 5vw, 1.75rem);
+  --sombra-movil-card: 0 4px 12px rgb(0 0 0 / 15%);
+  --border-movil: 8px;
   
   /* Transiciones Suaves */
   --transicion-rapida: 150ms ease-out;

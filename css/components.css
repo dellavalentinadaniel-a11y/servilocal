@@ -318,8 +318,8 @@ a {
   font-weight: 800;
   letter-spacing: -0.025em;
   text-shadow: 0 2px 4px rgb(0 0 0 / 10%);
-}
   margin: 0;
+}
 
 .c-hero__text {
   font-size: var(--font-texto);
@@ -416,7 +416,7 @@ a {
 
 .c-panel__subtitle {
   font-size: var(--font-texto);
-  color: rgb(31 41 55 / 70%);
+  color: #1f2937b3;
   color: color-mix(in srgb, var(--color-texto) 70%, transparent);
   margin: 0;
 }
@@ -488,7 +488,6 @@ a {
 
 .c-section__intro p {
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
   margin: 0;
 }
 
@@ -1926,5 +1925,167 @@ a {
   .c-footer__inner {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
+  }
+}
+
+/* ===== OPTIMIZACIONES ESPECÍFICAS PARA MÓVIL ===== */
+
+/* Mejoras generales para dispositivos móviles */
+@media (max-width: 767px) {
+  /* Hero section más impactante en móvil */
+  .c-hero {
+    padding: var(--espaciado-movil-lg) 0;
+    text-align: center;
+  }
+  
+  .c-hero__title {
+    font-size: var(--font-movil-titulo);
+    margin-bottom: var(--espaciado-movil-sm);
+    text-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+  }
+  
+  .c-hero__subtitle {
+    font-size: var(--font-movil-subtitulo);
+    margin-bottom: var(--espaciado-movil-md);
+  }
+  
+  /* Botones más grandes y táctiles en móvil */
+  .c-button {
+    padding: var(--espaciado-movil-sm) var(--espaciado-movil-md);
+    font-size: 1.1rem;
+    min-height: 48px;
+    border-radius: var(--border-movil);
+    box-shadow: var(--sombra-movil-card);
+  }
+  
+  .c-button:hover {
+    transform: translateY(-1px);
+  }
+  
+  /* Cards más prominentes en móvil */
+  .c-feature-card {
+    padding: var(--espaciado-movil-md);
+    border-radius: var(--border-movil);
+    box-shadow: var(--sombra-movil-card);
+    border: 2px solid var(--color-neutro-200);
+  }
+  
+  .c-feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgb(5 150 105 / 15%);
+    border-color: var(--color-acento-claro);
+  }
+  
+  .c-feature-card__icon {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    background: var(--gradiente-principal);
+    color: white;
+    border-radius: var(--border-movil);
+    box-shadow: var(--sombra-pequena);
+  }
+  
+  /* Navegación móvil más espaciada */
+  .c-navbar {
+    padding: var(--espaciado-movil-sm) 0;
+    background: var(--gradiente-superficie);
+    box-shadow: 0 2px 12px rgb(0 0 0 / 10%);
+  }
+  
+  .c-navbar__brand {
+    font-size: 1.5rem;
+    padding: var(--espaciado-movil-xs);
+  }
+  
+  .c-navbar__link {
+    padding: var(--espaciado-movil-sm);
+    border-radius: var(--border-movil);
+    font-weight: 600;
+  }
+  
+  /* Espaciado mejorado para móvil */
+  .container {
+    padding-left: var(--espaciado-movil-sm);
+    padding-right: var(--espaciado-movil-sm);
+  }
+  
+  /* Secciones con mejor espaciado */
+  .c-section {
+    padding: var(--espaciado-movil-lg) 0;
+  }
+  
+  .c-section--tight {
+    padding: var(--espaciado-movil-md) 0;
+  }
+  
+  /* Cards de servicios más atractivas */
+  .c-service-card,
+  .c-directory-card {
+    padding: var(--espaciado-movil-md);
+    border-radius: var(--border-movil);
+    border: 2px solid var(--color-neutro-200);
+    box-shadow: var(--sombra-movil-card);
+    transition: var(--transicion-normal);
+  }
+  
+  .c-service-card:hover,
+  .c-directory-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgb(8 145 178 / 15%);
+    border-color: var(--color-principal);
+  }
+  
+  /* Mejorar grid spacing en móvil */
+  .c-feature-grid,
+  .c-service-grid,
+  .c-directory-grid {
+    gap: var(--espaciado-movil-md);
+  }
+  
+  /* Typography mejorada para legibilidad */
+  .c-section__title {
+    font-size: var(--font-movil-titulo);
+    text-align: center;
+    margin-bottom: var(--espaciado-movil-md);
+  }
+  
+  .c-section__subtitle {
+    font-size: var(--font-movil-subtitulo);
+    text-align: center;
+    margin-bottom: var(--espaciado-movil-md);
+    color: var(--color-texto-secundario);
+  }
+  
+  /* Badges más prominentes */
+  .c-badge-pill {
+    padding: var(--espaciado-movil-xs) var(--espaciado-movil-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: var(--gradiente-principal);
+    color: white;
+    border-radius: var(--borde-grande);
+    box-shadow: var(--sombra-pequena);
+  }
+}
+
+/* Optimizaciones para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .c-hero__title {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+  
+  .c-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .c-navbar__links {
+    gap: var(--espaciado-movil-xs);
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
