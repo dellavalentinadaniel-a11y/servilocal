@@ -216,15 +216,55 @@
 
     <section class="c-section">
       <div class="container">
-        <div class="c-tabs" role="tablist" aria-label="Secciones del perfil">
-          <nav class="c-tabs__nav">
-            <button class="c-tabs__link c-tabs__link--active" data-tab="tab-informacion" type="button" role="tab" aria-controls="tab-informacion" aria-selected="true">Mi perfil</button>
-            <button class="c-tabs__link" data-tab="tab-servicios" type="button" role="tab" aria-controls="tab-servicios" aria-selected="false">Servicios</button>
-            <button class="c-tabs__link" data-tab="tab-favoritos" type="button" role="tab" aria-controls="tab-favoritos" aria-selected="false">Favoritos</button>
-            <button class="c-tabs__link" data-tab="tab-configuracion" type="button" role="tab" aria-controls="tab-configuracion" aria-selected="false">Configuración</button>
+        <div class="c-tabs">
+          <nav class="c-tabs__nav" role="tablist" aria-label="Secciones del perfil">
+            <button
+              class="c-tabs__link c-tabs__link--active"
+              id="tab-informacion-tab"
+              data-tab="tab-informacion"
+              type="button"
+              role="tab"
+              aria-controls="tab-informacion"
+              aria-selected="true"
+            >
+              Mi perfil
+            </button>
+            <button
+              class="c-tabs__link"
+              id="tab-servicios-tab"
+              data-tab="tab-servicios"
+              type="button"
+              role="tab"
+              aria-controls="tab-servicios"
+              aria-selected="false"
+            >
+              Servicios
+            </button>
+            <button
+              class="c-tabs__link"
+              id="tab-favoritos-tab"
+              data-tab="tab-favoritos"
+              type="button"
+              role="tab"
+              aria-controls="tab-favoritos"
+              aria-selected="false"
+            >
+              Favoritos
+            </button>
+            <button
+              class="c-tabs__link"
+              id="tab-configuracion-tab"
+              data-tab="tab-configuracion"
+              type="button"
+              role="tab"
+              aria-controls="tab-configuracion"
+              aria-selected="false"
+            >
+              Configuración
+            </button>
           </nav>
 
-          <div id="tab-informacion" class="c-tab-panel" role="tabpanel" aria-labelledby="tab-informacion">
+          <div id="tab-informacion" class="c-tab-panel" role="tabpanel" aria-labelledby="tab-informacion-tab">
             <article class="c-panel">
               <h2 class="c-panel__title">Información personal</h2>
               <dl class="c-description-list">
@@ -256,7 +296,7 @@
             </article>
           </div>
 
-          <div id="tab-servicios" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-servicios">
+          <div id="tab-servicios" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-servicios-tab">
             <div class="c-grid c-grid--two">
               <article class="c-card">
                 <div class="c-card__header">
@@ -313,7 +353,7 @@
             </div>
           </div>
 
-          <div id="tab-favoritos" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-favoritos">
+          <div id="tab-favoritos" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-favoritos-tab">
             <div class="c-grid c-grid--three">
               <article class="c-card">
                 <div class="c-card__header">
@@ -357,7 +397,7 @@
             </div>
           </div>
 
-          <div id="tab-configuracion" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-configuracion">
+          <div id="tab-configuracion" class="c-tab-panel u-hidden" role="tabpanel" aria-labelledby="tab-configuracion-tab">
             <article class="c-panel">
               <h2 class="c-panel__title">Preferencias rápidas</h2>
               <div class="c-simple-list">

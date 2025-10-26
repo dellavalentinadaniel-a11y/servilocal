@@ -82,37 +82,27 @@
 
 .c-field-feedback--error {
   background-color: rgb(254 242 242);
-  background-color: color-mix(in srgb, #fef2f2 100%, transparent);
   color: rgb(185 28 28);
-  color: color-mix(in srgb, #b91c1c 100%, transparent);
   border: 1px solid rgb(252 165 165);
-  border: 1px solid color-mix(in srgb, #fca5a5 100%, transparent);
 }
 
 .c-field-feedback--success {
   background-color: rgb(240 253 244);
-  background-color: color-mix(in srgb, #f0fdf4 100%, transparent);
   color: rgb(21 128 61);
-  color: color-mix(in srgb, #15803d 100%, transparent);
   border: 1px solid rgb(134 239 172);
-  border: 1px solid color-mix(in srgb, #86efac 100%, transparent);
 }
 
 /* Estados de validación para inputs */
 .c-input[aria-invalid="true"],
 .c-select[aria-invalid="true"] {
   border-color: rgb(239 68 68);
-  border-color: color-mix(in srgb, #ef4444 100%, transparent);
   box-shadow: 0 0 0 3px rgb(239 68 68 / 10%);
-  box-shadow: 0 0 0 3px color-mix(in srgb, #ef4444 10%, transparent);
 }
 
 .c-input[aria-invalid="false"],
 .c-select[aria-invalid="false"] {
   border-color: rgb(34 197 94);
-  border-color: color-mix(in srgb, #22c55e 100%, transparent);
   box-shadow: 0 0 0 3px rgb(34 197 94 / 10%);
-  box-shadow: 0 0 0 3px color-mix(in srgb, #22c55e 10%, transparent);
 }
 
 *,
@@ -169,6 +159,7 @@ a {
 
 .c-navbar {
   background: var(--gradiente-glass);
+  -webkit-backdrop-filter: blur(12px); /* stylelint-disable-line property-no-vendor-prefix */
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-neutro-200);
   box-shadow: var(--sombra-pequena);
@@ -258,6 +249,7 @@ a {
   left: 0;
   right: 0;
   background: var(--gradiente-overlay);
+  -webkit-backdrop-filter: blur(20px); /* stylelint-disable-line property-no-vendor-prefix */
   backdrop-filter: blur(20px);
   transform: translateY(-100%);
   opacity: 0%;
@@ -553,6 +545,7 @@ a {
   gap: var(--espacio-pequeno);
   padding: var(--espacio-chico) var(--espacio-medio);
   background: var(--gradiente-glass);
+  -webkit-backdrop-filter: blur(10px); /* stylelint-disable-line property-no-vendor-prefix */
   backdrop-filter: blur(10px);
   border: 1px solid rgb(255 255 255 / 20%);
   border-radius: var(--borde-suave);
@@ -585,6 +578,7 @@ a {
 .c-card-post--featured {
   border: 2px solid var(--color-acento-claro);
   background: var(--gradiente-glass);
+  -webkit-backdrop-filter: blur(15px); /* stylelint-disable-line property-no-vendor-prefix */
   backdrop-filter: blur(15px);
   animation: float 3s ease-in-out infinite;
 }
@@ -659,7 +653,6 @@ a {
   padding: calc(var(--espacio-chico) * 0.5) calc(var(--espacio-chico));
   border-radius: var(--borde-grande);
   background-color: rgb(22 163 74 / 12%);
-  background-color: color-mix(in srgb, var(--color-principal) 12%, transparent);
   color: var(--color-principal);
   font-size: var(--font-texto-pequeno);
   font-weight: 600;
@@ -718,7 +711,6 @@ a {
 .c-panel__subtitle {
   font-size: var(--font-texto);
   color: #1f2937b3;
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
   margin: 0;
 }
 
@@ -730,6 +722,10 @@ a {
   justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
+}
+
+.c-panel__actions--spaced {
+  margin-top: var(--espacio-medio);
 }
 
 .c-inline-flex {
@@ -756,7 +752,6 @@ a {
 
 .c-text-muted {
   color: rgb(31 41 55 / 60%);
-  color: color-mix(in srgb, var(--color-texto) 60%, transparent);
 }
 
 .u-max-420 {
@@ -884,7 +879,6 @@ a {
   border: 3px solid var(--color-superficie);
   font-weight: 700;
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
 }
 
 .c-showcase-card__title {
@@ -903,7 +897,6 @@ a {
   justify-content: center;
   gap: calc(var(--espacio-chico) * 0.5);
   color: rgb(31 41 55 / 65%);
-  color: color-mix(in srgb, var(--color-texto) 65%, transparent);
 }
 
 .c-showcase-card__actions {
@@ -916,7 +909,6 @@ a {
   border-radius: var(--borde-suave);
   padding: var(--espacio-grande);
   box-shadow: 0 20px 40px rgb(15 118 110 / 10%);
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--color-acento) 10%, transparent);
 }
 
 .c-process__grid {
@@ -962,11 +954,9 @@ a {
   border-radius: var(--borde-suave);
   padding: var(--espacio-medio);
   border: 1px solid rgb(31 41 55 / 10%);
-  border: 1px solid color-mix(in srgb, var(--color-texto) 10%, transparent);
   text-decoration: none;
   color: inherit;
   box-shadow: 0 15px 30px rgb(15 118 110 / 10%);
-  box-shadow: 0 15px 30px color-mix(in srgb, var(--color-acento) 10%, transparent);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -974,7 +964,6 @@ a {
 .c-directory-card:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 22px 40px rgb(15 118 110 / 15%);
-  box-shadow: 0 22px 40px color-mix(in srgb, var(--color-acento) 15%, transparent);
 }
 
 .c-directory-card__icon {
@@ -987,7 +976,6 @@ a {
   font-size: 1.6rem;
   color: var(--color-principal);
   background-color: rgb(22 163 74 / 12%);
-  background-color: color-mix(in srgb, var(--color-principal) 12%, transparent);
   flex-shrink: 0;
 }
 
@@ -1000,7 +988,6 @@ a {
 .c-directory-card__text {
   margin: calc(var(--espacio-chico) * 0.25) 0 0;
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
 }
 
 .c-card-grid__title {
@@ -1064,7 +1051,6 @@ a {
   padding: calc(var(--espacio-chico) * 0.85);
   border-radius: var(--borde-suave);
   border: 1px solid rgb(31 41 55 / 12%);
-  border: 1px solid color-mix(in srgb, var(--color-texto) 12%, transparent);
   background-color: var(--color-superficie);
   font-size: var(--font-texto);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -1075,12 +1061,10 @@ a {
   outline: none;
   border-color: var(--color-principal);
   box-shadow: 0 0 0 3px rgb(22 163 74 / 30%);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-principal) 30%, transparent);
 }
 
 .c-input::placeholder {
   color: rgb(31 41 55 / 50%);
-  color: color-mix(in srgb, var(--color-texto) 50%, transparent);
 }
 
 .c-service-grid {
@@ -1123,7 +1107,6 @@ a {
   border-radius: var(--borde-suave);
   padding: var(--espacio-medio);
   box-shadow: 0 16px 30px rgb(22 163 74 / 10%);
-  box-shadow: 0 16px 30px color-mix(in srgb, var(--color-principal) 10%, transparent);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: grid;
   gap: calc(var(--espacio-chico) * 0.5);
@@ -1134,7 +1117,6 @@ a {
 .c-service-card:focus-within {
   transform: translateY(-3px);
   box-shadow: 0 20px 40px rgb(15 118 110 / 15%);
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--color-acento) 15%, transparent);
 }
 
 .c-service-card__icon {
@@ -1146,7 +1128,6 @@ a {
   align-items: center;
   justify-content: center;
   background-color: rgb(22 163 74 / 15%);
-  background-color: color-mix(in srgb, var(--color-principal) 15%, transparent);
   color: var(--color-principal);
   font-size: 1.5rem;
 }
@@ -1178,9 +1159,7 @@ a {
   align-items: center;
   justify-content: center;
   background-color: rgb(31 41 55 / 8%);
-  background-color: color-mix(in srgb, var(--color-texto) 8%, transparent);
   border: 2px dashed rgb(31 41 55 / 18%);
-  border: 2px dashed color-mix(in srgb, var(--color-texto) 18%, transparent);
 }
 
 .c-avatar__image {
@@ -1196,9 +1175,7 @@ a {
   align-items: center;
   justify-content: center;
   background-color: rgb(255 255 255 / 80%);
-  background-color: color-mix(in srgb, var(--color-superficie) 80%, transparent);
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
 }
 
 .c-avatar__button {
@@ -1237,12 +1214,10 @@ a {
 
 .c-profile-rating__meta {
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
 }
 
 .c-profile-description {
   color: rgb(31 41 55 / 80%);
-  color: color-mix(in srgb, var(--color-texto) 80%, transparent);
   margin: 0;
 }
 
@@ -1297,7 +1272,6 @@ a {
   display: grid;
   gap: calc(var(--espacio-chico) * 0.35);
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
 }
 
 .c-grid {
@@ -1328,12 +1302,10 @@ a {
 .c-description-list__term {
   font-weight: 600;
   color: rgb(31 41 55 / 65%);
-  color: color-mix(in srgb, var(--color-texto) 65%, transparent);
 }
 
 .c-description-list__detail {
   color: rgb(31 41 55 / 80%);
-  color: color-mix(in srgb, var(--color-texto) 80%, transparent);
 }
 
 .c-stat-grid {
@@ -1343,7 +1315,6 @@ a {
 
 .c-stat-card {
   background: rgb(22 163 74 / 9%);
-  background: color-mix(in srgb, var(--color-principal) 9%, transparent);
   border-radius: var(--borde-suave);
   padding: var(--espacio-chico);
   display: grid;
@@ -1358,7 +1329,6 @@ a {
 
 .c-stat-card__label {
   color: rgb(31 41 55 / 65%);
-  color: color-mix(in srgb, var(--color-texto) 65%, transparent);
 }
 
 .c-card {
@@ -1366,7 +1336,6 @@ a {
   border-radius: var(--borde-suave);
   padding: var(--espacio-medio);
   border: 1px solid rgb(31 41 55 / 10%);
-  border: 1px solid color-mix(in srgb, var(--color-texto) 10%, transparent);
   display: grid;
   gap: var(--espacio-chico);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -1376,7 +1345,6 @@ a {
 .c-card:focus-within {
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgb(15 118 110 / 15%);
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--color-acento) 15%, transparent);
 }
 
 .c-card__header {
@@ -1397,13 +1365,11 @@ a {
   flex-wrap: wrap;
   gap: calc(var(--espacio-chico) * 0.5);
   color: rgb(31 41 55 / 65%);
-  color: color-mix(in srgb, var(--color-texto) 65%, transparent);
   font-size: var(--font-texto-pequeno);
 }
 
 .c-card__body {
   color: rgb(31 41 55 / 80%);
-  color: color-mix(in srgb, var(--color-texto) 80%, transparent);
 }
 
 .c-card__actions {
@@ -1419,7 +1385,6 @@ a {
   padding: calc(var(--espacio-chico) * 0.25) calc(var(--espacio-chico) * 0.75);
   border-radius: var(--borde-grande);
   background-color: rgb(22 163 74 / 12%);
-  background-color: color-mix(in srgb, var(--color-principal) 12%, transparent);
   color: var(--color-principal);
   font-size: var(--font-texto-pequeno);
   font-weight: 600;
@@ -1427,9 +1392,7 @@ a {
 
 .c-chip--neutral {
   background-color: rgb(31 41 55 / 10%);
-  background-color: color-mix(in srgb, var(--color-texto) 10%, transparent);
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
 }
 
 .c-tabs {
@@ -1442,7 +1405,6 @@ a {
   flex-wrap: wrap;
   gap: var(--espacio-chico);
   border-bottom: 1px solid rgb(31 41 55 / 10%);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-texto) 10%, transparent);
 }
 
 .c-tabs__link {
@@ -1452,7 +1414,6 @@ a {
   font-size: var(--font-texto);
   font-weight: 600;
   color: rgb(31 41 55 / 65%);
-  color: color-mix(in srgb, var(--color-texto) 65%, transparent);
   border-bottom: 2px solid transparent;
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease;
@@ -1465,7 +1426,6 @@ a {
 
 .c-tabs__link:focus-visible {
   outline: 3px solid rgb(15 118 110 / 35%);
-  outline: 3px solid color-mix(in srgb, var(--color-acento) 35%, transparent);
   outline-offset: 3px;
 }
 
@@ -1537,9 +1497,7 @@ a {
   position: relative;
   height: 9rem;
   background-color: rgb(31 41 55 / 12%);
-  background-color: color-mix(in srgb, var(--color-texto) 12%, transparent);
   border: 2px dashed rgb(31 41 55 / 15%);
-  border: 2px dashed color-mix(in srgb, var(--color-texto) 15%, transparent);
   border-radius: var(--borde-suave);
   overflow: hidden;
 }
@@ -1551,9 +1509,7 @@ a {
   align-items: center;
   justify-content: center;
   background-color: rgb(255 255 255 / 80%);
-  background-color: color-mix(in srgb, var(--color-superficie) 80%, transparent);
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
 }
 
 .loading-spinner {
@@ -1562,7 +1518,6 @@ a {
   justify-content: center;
   gap: calc(var(--espacio-chico) * 0.5);
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
   font-size: var(--font-texto);
 }
 
@@ -1577,7 +1532,6 @@ a {
   position: absolute;
   inset: 0;
   background-color: rgb(31 41 55 / 55%);
-  background-color: color-mix(in srgb, var(--color-texto) 55%, transparent);
   color: var(--color-superficie);
   display: flex;
   align-items: center;
@@ -1603,7 +1557,6 @@ a {
   border-radius: var(--borde-suave);
   padding: var(--espacio-medio);
   box-shadow: 0 18px 30px rgb(15 118 110 / 10%);
-  box-shadow: 0 18px 30px color-mix(in srgb, var(--color-acento) 10%, transparent);
   display: grid;
   gap: var(--espacio-medio);
 }
@@ -1631,7 +1584,6 @@ a {
   gap: calc(var(--espacio-chico) * 0.75);
   align-items: center;
   color: rgb(31 41 55 / 75%);
-  color: color-mix(in srgb, var(--color-texto) 75%, transparent);
   flex-wrap: wrap;
 }
 
@@ -1647,9 +1599,7 @@ a {
   height: 100px;
   border-radius: var(--borde-suave);
   background-color: rgb(31 41 55 / 12%);
-  background-color: color-mix(in srgb, var(--color-texto) 12%, transparent);
   border: 2px dashed rgb(31 41 55 / 20%);
-  border: 2px dashed color-mix(in srgb, var(--color-texto) 20%, transparent);
   justify-self: flex-start;
 }
 
@@ -1660,7 +1610,6 @@ a {
 
 .c-rating__value {
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
   font-weight: 600;
 }
 
@@ -1668,7 +1617,6 @@ a {
   position: fixed;
   inset: 0;
   background-color: rgb(0 0 0 / 75%);
-  background-color: color-mix(in srgb, #000 75%, transparent);
   display: none;
   align-items: center;
   justify-content: center;
@@ -1707,7 +1655,6 @@ a {
 .c-modal__close:hover,
 .c-modal__close:focus-visible {
   color: rgb(255 255 255 / 70%);
-  color: color-mix(in srgb, var(--color-superficie) 70%, transparent);
 }
 
 .c-modal__image-wrapper {
@@ -1728,7 +1675,6 @@ a {
   align-items: center;
   justify-content: center;
   background-color: rgb(0 0 0 / 50%);
-  background-color: color-mix(in srgb, #000 50%, transparent);
   color: var(--color-superficie);
 }
 
@@ -1747,7 +1693,6 @@ a {
 
 .c-modal__nav-btn {
   background-color: rgb(255 255 255 / 15%);
-  background-color: color-mix(in srgb, var(--color-superficie) 15%, transparent);
   border: none;
   border-radius: var(--borde-grande);
   padding: calc(var(--espacio-chico) * 0.6);
@@ -1759,7 +1704,6 @@ a {
 .c-modal__nav-btn:hover,
 .c-modal__nav-btn:focus-visible {
   background-color: rgb(255 255 255 / 30%);
-  background-color: color-mix(in srgb, var(--color-superficie) 30%, transparent);
 }
 
 .c-modal__counter {
@@ -1771,7 +1715,6 @@ a {
   background-color: var(--color-superficie);
   border-radius: var(--borde-suave);
   box-shadow: 0 40px 70px rgb(0 0 0 / 35%);
-  box-shadow: 0 40px 70px color-mix(in srgb, #000 35%, transparent);
   padding: var(--espacio-medio);
   width: min(640px, 100%);
   max-height: 90vh;
@@ -1818,7 +1761,6 @@ a {
 .c-card-post:focus-within {
   transform: translateY(-3px);
   box-shadow: 0 24px 45px rgb(15 118 110 / 18%);
-  box-shadow: 0 24px 45px color-mix(in srgb, var(--color-acento) 18%, transparent);
 }
 
 .c-card-post__category {
@@ -1827,7 +1769,6 @@ a {
   padding: calc(var(--espacio-chico) * 0.5) calc(var(--espacio-chico));
   border-radius: var(--borde-grande);
   background-color: rgb(15 118 110 / 15%);
-  background-color: color-mix(in srgb, var(--color-acento) 15%, transparent);
   color: var(--color-acento);
   font-size: var(--font-texto-pequeno);
   font-weight: 600;
@@ -1844,7 +1785,6 @@ a {
   font-size: var(--font-texto);
   margin: 0;
   color: rgb(31 41 55 / 75%);
-  color: color-mix(in srgb, var(--color-texto) 75%, transparent);
 }
 
 .c-card-post__meta {
@@ -1853,7 +1793,6 @@ a {
   gap: calc(var(--espacio-chico) * 0.5);
   font-size: var(--font-texto-pequeno);
   color: rgb(31 41 55 / 60%);
-  color: color-mix(in srgb, var(--color-texto) 60%, transparent);
 }
 
 .c-simple-list {
@@ -1863,7 +1802,6 @@ a {
   display: grid;
   gap: calc(var(--espacio-chico) * 0.5);
   color: rgb(31 41 55 / 75%);
-  color: color-mix(in srgb, var(--color-texto) 75%, transparent);
 }
 
 .c-simple-list li {
@@ -1886,7 +1824,6 @@ a {
   height: 16rem;
   border-radius: var(--borde-suave);
   border: 1px solid rgb(31 41 55 / 10%);
-  border: 1px solid color-mix(in srgb, var(--color-texto) 10%, transparent);
   overflow: hidden;
 }
 
@@ -1908,13 +1845,11 @@ a {
   align-items: center;
   gap: calc(var(--espacio-chico) * 0.5);
   color: rgb(31 41 55 / 70%);
-  color: color-mix(in srgb, var(--color-texto) 70%, transparent);
 }
 
 .c-review__text {
   margin: 0;
   color: rgb(31 41 55 / 80%);
-  color: color-mix(in srgb, var(--color-texto) 80%, transparent);
 }
 
 .c-cta__actions {
@@ -1929,7 +1864,6 @@ a {
   border-radius: var(--borde-suave);
   padding: var(--espacio-grande) var(--espacio-medio);
   box-shadow: 0 30px 60px rgb(15 118 110 / 15%);
-  box-shadow: 0 30px 60px color-mix(in srgb, var(--color-acento) 15%, transparent);
   display: grid;
   gap: var(--espacio-medio);
   text-align: center;
@@ -1944,7 +1878,6 @@ a {
   font-size: var(--font-texto);
   margin: 0;
   color: rgb(31 41 55 / 75%);
-  color: color-mix(in srgb, var(--color-texto) 75%, transparent);
 }
 
 .c-footer {
@@ -1975,23 +1908,19 @@ a {
 .c-footer__link:hover,
 .c-footer__link:focus-visible {
   color: rgb(255 255 255 / 85%);
-  color: color-mix(in srgb, var(--color-superficie) 85%, transparent);
   text-decoration: underline;
 }
 
 .c-footer__meta {
   font-size: var(--font-texto-pequeno);
   color: rgb(255 255 255 / 75%);
-  color: color-mix(in srgb, var(--color-superficie) 75%, transparent);
 }
 
 .c-cookie-banner {
   position: fixed;
   inset: auto var(--espacio-medio) var(--espacio-medio);
   background-color: rgb(255 255 255 / 95%);
-  background-color: color-mix(in srgb, var(--color-superficie) 95%, transparent);
   border: 1px solid rgb(31 41 55 / 12%);
-  border: 1px solid color-mix(in srgb, var(--color-texto) 12%, transparent);
   border-radius: var(--borde-grande);
   box-shadow: 0 18px 45px rgb(16 24 40 / 18%);
   padding: var(--espacio-medio);
@@ -2013,7 +1942,6 @@ a {
   margin: 0 0 var(--espacio-medio);
   font-size: var(--font-texto);
   color: rgb(31 41 55 / 90%);
-  color: color-mix(in srgb, var(--color-texto) 90%, transparent);
 }
 
 .c-cookie-banner__actions {
@@ -2048,7 +1976,6 @@ a {
 .c-cookie-banner__button:hover,
 .c-cookie-banner__button:focus-visible {
   outline: 3px solid rgb(15 118 110 / 35%);
-  outline: 3px solid color-mix(in srgb, var(--color-acento) 35%, transparent);
   outline-offset: 2px;
   filter: brightness(0.95);
 }
