@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mensajes – ServiLocal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Sistema de Mensajería */
+    .c-messaging {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      height: calc(100vh - 80px);
+      background: var(--color-neutral-50);
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .c-messaging {
+        grid-template-columns: 1fr;
+      }
+      .c-messaging__sidebar {
+        display: none;
+      }
+      .c-messaging__sidebar.is-active {
+        display: block;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        background: white;
+      }
+    }
+
+    /* Sidebar de conversaciones */
+    .c-messaging__sidebar {
+      background: white;
+      border-right: 1px solid var(--color-neutral-200);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .c-messaging__sidebar-header {
+      padding: var(--spacing-4);
+      border-bottom: 1px solid var(--color-neutral-200);
+    }
+
+    .c-messaging__title {
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--color-neutral-900);
+      margin-bottom: var(--spacing-3);
+    }
+
+    .c-messaging__search {
+      position: relative;
+    }
+
+    .c-messaging__search-icon {
+      position: absolute;
+      left: var(--spacing-3);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-neutral-400);
+    }
+
+    .c-messaging__search-input {
+      width: 100%;
+      padding: var(--spacing-2) var(--spacing-3) var(--spacing-2) var(--spacing-10);
+      border: 1px solid var(--color-neutral-200);
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-sm);
+      transition: all 0.2s;
+    }
+
+    .c-messaging__search-input:focus {
+      outline: none;
+      border-color: var(--color-primary-500);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    .c-messaging__conversations {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--spacing-2);
+    }
+
+    /* Conversación item */
+    .c-conversation {
+      display: flex;
+      gap: var(--spacing-3);
+      padding: var(--spacing-3);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      margin-bottom: var(--spacing-1);
+    }
+
+    .c-conversation:hover {
+      background: var(--color-neutral-50);
+    }
+
+    .c-conversation.is-active {
+      background: var(--color-primary-50);
+    }
+
+    .c-conversation.is-unread {
+      background: var(--color-primary-50);
+    }
+
+    .c-conversation__avatar {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .c-conversation__avatar img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .c-conversation__avatar-status {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid white;
+      background: var(--color-success-500);
+    }
+
+    .c-conversation__avatar-status.is-offline {
+      background: var(--color-neutral-300);
+    }
+
+    .c-conversation__content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .c-conversation__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: var(--spacing-1);
+    }
+
+    .c-conversation__name {
+      font-weight: 600;
+      color: var(--color-neutral-900);
+      font-size: var(--font-size-sm);
+    }
+
+    .c-conversation__time {
+      font-size: var(--font-size-xs);
+      color: var(--color-neutral-500);
+    }
+
+    .c-conversation__preview {
+      font-size: var(--font-size-sm);
+      color: var(--color-neutral-600);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .c-conversation.is-unread .c-conversation__preview {
+      font-weight: 600;
+      color: var(--color-neutral-900);
+    }
+
+    .c-conversation__badge {
+      position: absolute;
+      top: var(--spacing-3);
+      right: var(--spacing-3);
+      background: var(--color-primary-600);
+      color: white;
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 10px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* Área del chat */
+    .c-messaging__chat {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      overflow: hidden;
+    }
+
+    .c-messaging__chat-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-3);
+      padding: var(--spacing-4);
+      border-bottom: 1px solid var(--color-neutral-200);
+      background: white;
+    }
+
+    .c-messaging__back-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-neutral-600);
+      font-size: var(--font-size-lg);
+      cursor: pointer;
+      padding: var(--spacing-2);
+    }
+
+    @media (max-width: 768px) {
+      .c-messaging__back-btn {
+        display: block;
+      }
+    }
+
+    .c-messaging__chat-avatar img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .c-messaging__chat-info {
+      flex: 1;
+    }
+
+    .c-messaging__chat-name {
+      font-weight: 600;
+      color: var(--color-neutral-900);
+      font-size: var(--font-size-base);
+      margin-bottom: 2px;
+    }
+
+    .c-messaging__chat-status {
+      font-size: var(--font-size-sm);
+      color: var(--color-neutral-500);
+    }
+
+    .c-messaging__chat-status.is-online {
+      color: var(--color-success-600);
+    }
+
+    .c-messaging__chat-actions {
+      display: flex;
+      gap: var(--spacing-2);
+    }
+
+    .c-messaging__chat-action {
+      background: none;
+      border: none;
+      color: var(--color-neutral-600);
+      font-size: var(--font-size-lg);
+      cursor: pointer;
+      padding: var(--spacing-2);
+      border-radius: var(--radius-md);
+      transition: all 0.2s;
+    }
+
+    .c-messaging__chat-action:hover {
+      background: var(--color-neutral-100);
+      color: var(--color-neutral-900);
+    }
+
+    .c-messaging__messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--spacing-4);
+      background: var(--color-neutral-50);
+    }
+
+    /* Mensajes */
+    .c-message {
+      display: flex;
+      gap: var(--spacing-2);
+      margin-bottom: var(--spacing-4);
+      max-width: 80%;
+    }
+
+    .c-message.is-own {
+      margin-left: auto;
+      flex-direction: row-reverse;
+    }
+
+    .c-message__avatar img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .c-message__content {
+      flex: 1;
+    }
+
+    .c-message__bubble {
+      background: white;
+      padding: var(--spacing-3);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .c-message.is-own .c-message__bubble {
+      background: var(--color-primary-600);
+      color: white;
+    }
+
+    .c-message__text {
+      font-size: var(--font-size-sm);
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+
+    .c-message__meta {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-2);
+      margin-top: var(--spacing-1);
+      padding: 0 var(--spacing-1);
+    }
+
+    .c-message.is-own .c-message__meta {
+      justify-content: flex-end;
+    }
+
+    .c-message__time {
+      font-size: var(--font-size-xs);
+      color: var(--color-neutral-500);
+    }
+
+    .c-message__status {
+      font-size: var(--font-size-xs);
+      color: var(--color-neutral-500);
+    }
+
+    .c-message__status i {
+      margin-right: 2px;
+    }
+
+    /* Fecha separadora */
+    .c-message-date {
+      text-align: center;
+      margin: var(--spacing-4) 0;
+    }
+
+    .c-message-date__text {
+      display: inline-block;
+      background: white;
+      padding: var(--spacing-1) var(--spacing-3);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 500;
+      color: var(--color-neutral-600);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Input de mensaje */
+    .c-messaging__input {
+      padding: var(--spacing-4);
+      background: white;
+      border-top: 1px solid var(--color-neutral-200);
+    }
+
+    .c-messaging__input-form {
+      display: flex;
+      gap: var(--spacing-2);
+      align-items: flex-end;
+    }
+
+    .c-messaging__input-actions {
+      display: flex;
+      gap: var(--spacing-1);
+    }
+
+    .c-messaging__input-btn {
+      background: none;
+      border: none;
+      color: var(--color-neutral-500);
+      font-size: var(--font-size-lg);
+      cursor: pointer;
+      padding: var(--spacing-2);
+      border-radius: var(--radius-md);
+      transition: all 0.2s;
+    }
+
+    .c-messaging__input-btn:hover {
+      background: var(--color-neutral-100);
+      color: var(--color-neutral-700);
+    }
+
+    .c-messaging__input-field {
+      flex: 1;
+      min-height: 44px;
+      max-height: 120px;
+      padding: var(--spacing-3);
+      border: 1px solid var(--color-neutral-200);
+      border-radius: var(--radius-lg);
+      font-family: inherit;
+      font-size: var(--font-size-sm);
+      resize: none;
+      transition: all 0.2s;
+    }
+
+    .c-messaging__input-field:focus {
+      outline: none;
+      border-color: var(--color-primary-500);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    .c-messaging__send-btn {
+      background: var(--color-primary-600);
+      color: white;
+      border: none;
+      padding: var(--spacing-3);
+      border-radius: var(--radius-lg);
+      font-size: var(--font-size-lg);
+      cursor: pointer;
+      transition: all 0.2s;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .c-messaging__send-btn:hover:not(:disabled) {
+      background: var(--color-primary-700);
+    }
+
+    .c-messaging__send-btn:disabled {
+      background: var(--color-neutral-300);
+      cursor: not-allowed;
+    }
+
+    /* Estado vacío */
+    .c-messaging__empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: var(--spacing-8);
+      text-align: center;
+    }
+
+    .c-messaging__empty-icon {
+      font-size: 64px;
+      color: var(--color-neutral-300);
+      margin-bottom: var(--spacing-4);
+    }
+
+    .c-messaging__empty-title {
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--color-neutral-900);
+      margin-bottom: var(--spacing-2);
+    }
+
+    .c-messaging__empty-text {
+      font-size: var(--font-size-sm);
+      color: var(--color-neutral-600);
+      max-width: 400px;
+    }
+
+    /* Typing indicator */
+    .c-typing-indicator {
+      display: flex;
+      gap: var(--spacing-2);
+      margin-bottom: var(--spacing-4);
+      max-width: 80px;
+    }
+
+    .c-typing-indicator__avatar img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .c-typing-indicator__bubble {
+      background: white;
+      padding: var(--spacing-3);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      display: flex;
+      gap: 4px;
+    }
+
+    .c-typing-indicator__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-neutral-400);
+      animation: typing 1.4s infinite;
+    }
+
+    .c-typing-indicator__dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .c-typing-indicator__dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+      0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.7;
+      }
+      30% {
+        transform: translateY(-8px);
+        opacity: 1;
+      }
+    }
+
+    /* Utilidades */
+    .u-hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="c-page">
+
+  <header class="c-navbar" role="banner">
+    <div class="container c-navbar__inner">
+      <a class="c-navbar__brand" href="index.html" aria-label="Inicio de ServiLocal">ServiLocal</a>
+      <nav class="c-navbar__links">
+        <a class="c-navbar__link" href="buscar.html">Buscar servicios</a>
+        <a class="c-navbar__link" href="todos_los_servicios.html">Servicios</a>
+        <a class="c-navbar__link is-active" href="mensajes.html">
+          <i class="fas fa-envelope"></i> Mensajes
+          <span id="navMessageBadge" class="c-badge-pill u-hidden">0</span>
+        </a>
+        <a class="c-navbar__link" href="perfil.html">Perfil</a>
+        <a class="c-navbar__link" href="index.html">Cerrar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="c-messaging">
+    <!-- Sidebar de conversaciones -->
+    <aside class="c-messaging__sidebar" id="conversationsSidebar">
+      <div class="c-messaging__sidebar-header">
+        <h1 class="c-messaging__title">Mensajes</h1>
+        <div class="c-messaging__search">
+          <i class="fas fa-search c-messaging__search-icon"></i>
+          <input 
+            type="text" 
+            class="c-messaging__search-input" 
+            id="searchInput"
+            placeholder="Buscar conversaciones..."
+            aria-label="Buscar conversaciones"
+          >
+        </div>
+      </div>
+      <div class="c-messaging__conversations" id="conversationsList">
+        <!-- Las conversaciones se cargarán dinámicamente -->
+      </div>
+    </aside>
+
+    <!-- Área del chat -->
+    <main class="c-messaging__chat" id="chatArea">
+      <div class="c-messaging__empty" id="emptyState">
+        <i class="fas fa-comments c-messaging__empty-icon"></i>
+        <h2 class="c-messaging__empty-title">Selecciona una conversación</h2>
+        <p class="c-messaging__empty-text">
+          Elige una conversación de la lista para comenzar a chatear con otros usuarios de ServiLocal.
+        </p>
+      </div>
+
+      <!-- Header del chat (oculto inicialmente) -->
+      <div class="c-messaging__chat-header u-hidden" id="chatHeader">
+        <button class="c-messaging__back-btn" id="backBtn" aria-label="Volver a conversaciones">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="c-messaging__chat-avatar">
+          <img id="chatHeaderAvatar" src="" alt="">
+        </div>
+        <div class="c-messaging__chat-info">
+          <div class="c-messaging__chat-name" id="chatHeaderName"></div>
+          <div class="c-messaging__chat-status" id="chatHeaderStatus"></div>
+        </div>
+        <div class="c-messaging__chat-actions">
+          <button class="c-messaging__chat-action" aria-label="Llamar" title="Llamar">
+            <i class="fas fa-phone"></i>
+          </button>
+          <button class="c-messaging__chat-action" aria-label="Videollamada" title="Videollamada">
+            <i class="fas fa-video"></i>
+          </button>
+          <button class="c-messaging__chat-action" aria-label="Más opciones" title="Más opciones">
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Área de mensajes -->
+      <div class="c-messaging__messages u-hidden" id="messagesArea">
+        <!-- Los mensajes se cargarán dinámicamente -->
+      </div>
+
+      <!-- Input de mensaje -->
+      <div class="c-messaging__input u-hidden" id="messageInput">
+        <form class="c-messaging__input-form" id="messageForm">
+          <div class="c-messaging__input-actions">
+            <button type="button" class="c-messaging__input-btn" aria-label="Adjuntar archivo" title="Adjuntar archivo">
+              <i class="fas fa-paperclip"></i>
+            </button>
+            <button type="button" class="c-messaging__input-btn" aria-label="Emoji" title="Emoji">
+              <i class="fas fa-smile"></i>
+            </button>
+          </div>
+          <textarea 
+            class="c-messaging__input-field" 
+            id="messageTextarea"
+            placeholder="Escribe un mensaje..."
+            rows="1"
+            aria-label="Escribe un mensaje"
+          ></textarea>
+          <button type="submit" class="c-messaging__send-btn" id="sendBtn" disabled aria-label="Enviar mensaje">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/mensajes.js"></script>
+</body>
+</html>
