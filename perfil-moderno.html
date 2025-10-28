@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Perfil profesional estilo LinkedIn en ServiLocal. Red profesional, publicaciones y conexiones.">
+    <meta name="keywords" content="perfil profesional, red social, linkedin, servilocal, networking">
+    <meta name="author" content="ServiLocal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://servilocal.com/linkedin-perfil.html">
+    <meta property="og:title" content="Mi Red Profesional - ServiLocal">
+    <meta property="og:description" content="Perfil profesional estilo LinkedIn en ServiLocal">
+    <meta property="og:image" content="https://servilocal.com/imagenes/og-image.svg">
+    
+    <title>Mi Red Profesional - ServiLocal</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/linkedin-style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+    <nav class="navbar">
+       <div class="navbar-left">
+        <a href="index.html" class="logo">
+            <i class="fas fa-map-marker-alt" style="color: #0a66c2; font-size: 24px;"></i>
+            <span style="margin-left: 8px; font-weight: 600; color: #0a66c2;">ServiLocal</span>
+        </a>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar servicios, profesionales...">
+        </div>
+       </div>
+       <div class="navbar-center">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> <span>Inicio</span></a></li>
+            <li><a href="#" class="active-link"><i class="fas fa-users"></i> <span>Mi Red</span></a></li>
+            <li><a href="linkedin-servicios.html"><i class="fas fa-briefcase"></i> <span>Servicios</span></a></li>
+            <li><a href="linkedin-feed.html"><i class="fas fa-newspaper"></i> <span>Feed</span></a></li>
+            <li><a href="linkedin-productos.html"><i class="fas fa-store"></i> <span>Productos</span></a></li>
+        </ul>
+       </div>
+       <div class="navbar-right">
+        <div class="online">
+        <img src="imagenes/perfile/perfil1243fger32t43.png" class="nav-profile-img" onclick="toggleMenu()">
+        </div> 
+       </div>
+       
+       <!-- Dropdown menu -->
+       <div class="profile-menu-wrap" id="profileMenu">
+        <div class="profile-menu">
+            <div class="user-info">
+                <img src="imagenes/perfile/perfil1243fger32t43.png">
+                <div>
+                    <h3>Usuario Ejemplo</h3>
+                    <a href="perfil-moderno.html">Ver perfil completo</a>
+                </div>
+            </div>
+            <hr>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-comment-alt"></i>
+                <p>Dar Feedback</p>
+                <span>></span>
+            </a>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-cog"></i>
+                <p>Configuración y Privacidad</p>
+                <span>></span>
+            </a>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-question-circle"></i>
+                <p>Ayuda y Soporte</p>
+                <span>></span>
+            </a>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-palette"></i>
+                <p>Pantalla y Accesibilidad</p>
+                <span>></span>
+            </a>
+            <a href="linkedin-login.html" class="profile-menu-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Cerrar Sesión</p>
+                <span>></span>
+            </a>
+        </div>
+       </div>
+    </nav>
+
+    <div class="container">
+        <div class="left-sidebar"> 
+            <div class="sidebar-profile-box">
+                <div class="profile-cover-container">
+                    <img src="imagenes/albune/albun1.png" width="100%" id="coverImage">
+                    <button class="edit-cover-btn" id="editCoverBtn" title="Cambiar foto de portada">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <div class="sidebar-profile-info">
+                    <div class="profile-avatar-container">
+                        <img src="imagenes/perfile/perfil1243fger32t43.png" id="profileAvatar">
+                        <button class="edit-avatar-btn" id="editAvatarBtn" title="Cambiar foto de perfil">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <h1>Usuario Ejemplo</h1>
+                    <h3>Profesional en Servicios Locales</h3>
+                    <ul>
+                        <li>Vistas del perfil <span>24</span></li>
+                        <li>Vistas de publicaciones <span>128</span></li>
+                        <li>Tus conexiones <span>108</span></li>
+                    </ul>
+                </div>
+                <div class="sidebar-profile-link">
+                    <a href="#"><i class="fas fa-bookmark"></i>Mis Elementos</a>
+                    <a href="#"><i class="fas fa-crown"></i>Probar Premium</a>
+                </div>
+            </div>
+
+            <div class="sidebar-activity" id="sidebarActivity">
+                <h3>RECIENTE</h3>
+                <a href="#"><i class="fas fa-hashtag"></i>Diseño UX/UI</a>
+                <a href="#"><i class="fas fa-hashtag"></i>Desarrollo Web</a>
+                <a href="#"><i class="fas fa-hashtag"></i>Branding</a>
+                <a href="#"><i class="fas fa-hashtag"></i>Consultoría Digital</a>
+                <a href="#"><i class="fas fa-hashtag"></i>Marketing Digital</a>
+                <a href="#"><i class="fas fa-hashtag"></i>Tecnologías Web</a>
+                <h3>GRUPOS</h3>
+                <a href="#"><i class="fas fa-users"></i>Diseñadores UX/UI</a>
+                <a href="#"><i class="fas fa-users"></i>Desarrolladores Web</a>
+                <a href="#"><i class="fas fa-users"></i>Emprendedores Digitales</a>
+                <a href="#"><i class="fas fa-users"></i>Marketing y Branding</a> 
+                <h3>HASHTAGS</h3>
+                <a href="#"><i class="fas fa-hashtag"></i>diseñoui</a>
+                <a href="#"><i class="fas fa-hashtag"></i>desarrolloweb</a>
+                <a href="#"><i class="fas fa-hashtag"></i>branding</a>
+                <a href="#"><i class="fas fa-hashtag"></i>servilocal</a> 
+                <div class="discover-more-link">
+                    <a href="#">Descubrir Más</a>
+                </div>
+            </div>
+            <p id="showMoreLink" onclick="toggleActivity()">Mostrar más <b>+</b></p>
+            
+            <!-- Sidebar Ad Section -->
+            <div class="sidebar-ad">
+                <div class="ad-label">Publicidad</div>
+                <div class="sidebar-ad-content">
+                    <video class="sidebar-ad-video" muted loop autoplay playsinline>
+                        <source src="imagenes/publicidad/publicidad654.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                    <div class="sidebar-ad-text">
+                        <h4>Impulsa tu negocio</h4>
+                        <p>Conecta con más clientes en ServiLocal</p>
+                        <a href="linkedin-register.html" class="sidebar-ad-btn">
+                            Comenzar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content"> 
+            <div class="create-post">
+                <div class="create-post-input">
+                    <img src="imagenes/perfilemuestra/professional-headshot.png">
+                    <textarea rows="2" placeholder="¿Qué estás pensando?"></textarea>
+                </div>
+                <div class="create-post-links">
+                    <li><i class="fas fa-image" style="color: #70b5f9;"></i>Foto</li>
+                    <li><i class="fas fa-video" style="color: #7fc15e;"></i>Video</li>
+                    <li><i class="fas fa-calendar" style="color: #e7a33e;"></i>Evento</li>
+                    <li class="post-btn">Publicar</li>
+                </div>
+            </div>
+            
+            <div class="sort-by">
+                <hr>
+                <p>Ordenar por: <span>destacados <i class="fas fa-chevron-down"></i></span></p>
+            </div>
+            
+            <div class="post">
+                <div class="post-author">
+                    <img src="imagenes/perfilemuestra/user-3.jpg">
+                    <div>
+                        <h1>María González</h1>
+                        <small>Diseñadora UX/UI Senior | Consultora Digital</small>
+                        <small>2 horas</small>
+                    </div>
+                </div>
+                <p>El éxito de cada proyecto digital depende de una estrategia de UX bien definida y un diseño centrado en el usuario. 
+                   Si no priorizas la experiencia del usuario desde el inicio, estarás perdiendo oportunidades valiosas de conversión y engagement.
+                </p>
+                <img src="imagenes/perfilemuestra/modern-ui-design-trends.jpg" width="100%">
+
+                <div class="post-stats">
+                    <div>
+                        <i class="fas fa-thumbs-up" style="color: #0a66c2;"></i>
+                        <i class="fas fa-heart" style="color: #df704d;"></i>
+                        <i class="fas fa-lightbulb" style="color: #f5c75d;"></i>
+                        <span class="liked-users">Ana Pérez y 89 otros</span>
+                    </div>
+                    <div>
+                        <span>22 comentarios • 40 compartidos</span>
+                    </div>
+                </div>
+                <div class="post-activity">
+                    <div>
+                        <img src="imagenes/perfilemuestra/professional-headshot.png" class="post-activity-user-icon">
+                        <i class="fas fa-chevron-down post-activity-arrow-icon"></i>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>Me gusta</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fas fa-comment"></i>
+                        <span>Comentar</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fas fa-share"></i>
+                        <span>Compartir</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Enviar</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-author">
+                    <img src="imagenes/perfilemuestra/user-4.jpg">
+                    <div>
+                        <h1>Carlos Rodríguez</h1>
+                        <small>Desarrollador Full Stack | Emprendedor Tech</small>
+                        <small>4 horas</small>
+                    </div>
+                </div>
+                <p>Acabamos de lanzar nuestra nueva plataforma de servicios locales. 
+                   La tecnología puede transformar la manera en que conectamos profesionales con clientes. 
+                   ¡Emocionado por ver el impacto que tendremos en la comunidad! 🚀
+                </p>
+                <img src="imagenes/perfilemuestra/brand-identity-design.png" width="100%">
+
+                <div class="post-stats">
+                    <div>
+                        <i class="fas fa-thumbs-up" style="color: #0a66c2;"></i>
+                        <i class="fas fa-heart" style="color: #df704d;"></i>
+                        <i class="fas fa-lightbulb" style="color: #f5c75d;"></i>
+                        <span class="liked-users">Luis Martín y 156 otros</span>
+                    </div>
+                    <div>
+                        <span>45 comentarios • 78 compartidos</span>
+                    </div>
+                </div>
+                <div class="post-activity">
+                    <div>
+                        <img src="imagenes/perfilemuestra/professional-headshot.png" class="post-activity-user-icon">
+                        <i class="fas fa-chevron-down post-activity-arrow-icon"></i>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>Me gusta</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fas fa-comment"></i>
+                        <span>Comentar</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fas fa-share"></i>
+                        <span>Compartir</span>
+                    </div>
+                    <div class="post-activity-link">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Enviar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Álbum de fotos -->
+            <div class="profile-album-section">
+                <div class="album-header">
+                    <h3><i class="fas fa-images"></i> Mi Portafolio</h3>
+                    <span class="album-count">24 fotos</span>
+                </div>
+                <div class="profile-album-grid">
+                    <div class="album-item">
+                        <img src="imagenes/albune/albun1.png" alt="Proyecto 1" class="album-photo">
+                        <div class="album-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="album-item">
+                        <img src="imagenes/albune/albun12.png" alt="Proyecto 2" class="album-photo">
+                        <div class="album-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="album-item">
+                        <img src="imagenes/albune/albun4.png" alt="Proyecto 3" class="album-photo">
+                        <div class="album-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="album-item">
+                        <img src="imagenes/albune/albun5.png" alt="Proyecto 4" class="album-photo">
+                        <div class="album-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="album-item">
+                        <img src="imagenes/albune/albun6.png" alt="Proyecto 5" class="album-photo">
+                        <div class="album-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="album-item">
+                        <img src="imagenes/albune/albun63867.png" alt="Proyecto 6" class="album-photo">
+                        <div class="album-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="album-item">
+                        <img src="imagenes/albune/albun1r32.png" alt="Proyecto 7" class="album-photo">
+                        <div class="album-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="album-item album-more-item">
+                        <img src="imagenes/albune/albun3265bv.png" alt="Más proyectos" class="album-photo">
+                        <div class="album-overlay album-more-overlay">
+                            <span class="more-count">+17</span>
+                            <span class="more-text">Ver más</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-sidebar">
+            <div class="sidebar-news">
+                <i class="fas fa-info-circle info-icon"></i>
+                <h3>Noticias Destacadas</h3>
+
+                <a href="#">Alta Demanda de Profesionales Digitales</a>
+                <span>1d • 10,934 lectores</span>
+
+                <a href="#">Crecimiento del Trabajo Remoto en LATAM</a>
+                <span>2d • 7,043 lectores</span>
+
+                <a href="#">Nuevas Tendencias en UX/UI Design</a>
+                <span>4d • 17,789 lectores</span>
+
+                <a href="#">El Futuro de las Plataformas Digitales</a>
+                <span>9d • 2,436 lectores</span>
+
+                <a href="#" class="read-more-link">Leer Más</a>
+            </div> 
+
+            <div class="sidebar-ad">
+                <small>Publicidad • • •</small>
+                <p>Domina el Desarrollo Web</p>
+                 <div>
+                    <img src="imagenes/perfilemuestra/professional-headshot.png">
+                    <i class="fas fa-map-marker-alt" style="color: #0a66c2; font-size: 20px;"></i>
+                 </div>
+                 <b>Crece tu marca en ServiLocal</b>
+                 <a href="#" class="ad-link">Saber Más</a>
+            </div>
+
+            <div class="sidebar-useful-links">
+                <a href="sobre_nosotros.html">Acerca de</a>
+                <a href="#">Accesibilidad</a>
+                <a href="#">Centro de Ayuda</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Publicidad</a>
+                <a href="#">Obtener la App</a>
+                <a href="#">Más</a>
+
+                <div class="copyright-msg">
+                    <i class="fas fa-map-marker-alt" style="color: #0a66c2;"></i>
+                    <p>ServiLocal © 2024. Todos los Derechos Reservados</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden file inputs -->
+    <input type="file" id="coverImageInput" accept="image/*" style="display: none;">
+    <input type="file" id="avatarImageInput" accept="image/*" style="display: none;">
+
+    <!-- Image Crop Modal -->
+    <div id="imageCropModal" class="crop-modal">
+        <div class="crop-modal__content">
+            <div class="crop-modal__header">
+                <h3 id="cropModalTitle">Recortar imagen</h3>
+                <button class="crop-modal__close" id="closeCropModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="crop-modal__body">
+                <div class="crop-container">
+                    <canvas id="cropCanvas"></canvas>
+                </div>
+                <div class="crop-controls">
+                    <div class="crop-control-group">
+                        <label for="cropScale">Tamaño:</label>
+                        <input type="range" id="cropScale" min="0.5" max="3" step="0.1" value="1">
+                    </div>
+                    <div class="crop-control-group">
+                        <label for="cropRotation">Rotación:</label>
+                        <input type="range" id="cropRotation" min="0" max="360" step="1" value="0">
+                    </div>
+                </div>
+
+    let sideActivity = document.getElementById("sidebarActivity");
+    let moreLink = document.getElementById("showMoreLink");
+
+    function toggleActivity(){
+        sideActivity.classList.toggle("open-activity");
+        if (sideActivity.classList.contains("open-activity")) {
+            moreLink.innerHTML="Mostrar menos <b>-</b>";
+        }
+        else{
+            moreLink.innerHTML="Mostrar más <b>+</b>";
+        }
+    }
+
+    // Funcionalidad de publicación
+    document.querySelector('.post-btn').addEventListener('click', function() {
+        const textarea = document.querySelector('.create-post-input textarea');
+        const content = textarea.value.trim();
+        
+        if (content) {
+            // Aquí podrías agregar la lógica para crear una nueva publicación
+            alert('Publicación creada: ' + content);
+            textarea.value = '';
+        }
+    });
+
+    // Funcionalidad de interacciones en posts
+    document.querySelectorAll('.post-activity-link').forEach(link => {
+        link.addEventListener('click', function() {
+            const action = this.querySelector('span').textContent;
+            console.log('Acción:', action);
+            // Aquí podrías agregar la lógica para cada acción
+        });
+    });
+
+    // Función de logout
+    function logout() {
+        localStorage.removeItem('userLoggedIn');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userProfession');
+        localStorage.removeItem('userLocation');
+        localStorage.removeItem('rememberUser');
+    }
+
+    // Verificar si el usuario está logueado
+    if (localStorage.getItem('userLoggedIn') !== 'true') {
+        window.location.href = 'linkedin-login.html';
+    }
+
+    // ============================================
+    // IMAGE CROP FUNCTIONALITY
+    // ============================================
+    
+    let currentImageType = null;
+    let currentImageFile = null;
+    let cropCanvas = null;
+    let cropContext = null;
+    let originalImage = null;
+    let imageScale = 1;
+    let imageRotation = 0;
+    let isDragging = false;
+    let dragStart = { x: 0, y: 0 };
+    let imagePosition = { x: 0, y: 0 };
+
+    function initImageCrop() {
+        const coverBtn = document.getElementById('editCoverBtn');
+        const avatarBtn = document.getElementById('editAvatarBtn');
+        const coverInput = document.getElementById('coverImageInput');
+        const avatarInput = document.getElementById('avatarImageInput');
+        const modal = document.getElementById('imageCropModal');
+        const closeBtn = document.getElementById('closeCropModal');
+        const cancelBtn = document.getElementById('cancelCrop');
+        const applyBtn = document.getElementById('applyCrop');
+        
+        cropCanvas = document.getElementById('cropCanvas');
+        cropContext = cropCanvas.getContext('2d');
+        
+        // Set canvas size
+        cropCanvas.width = 400;
+        cropCanvas.height = 400;
+
+        // Event listeners for buttons
+        if (coverBtn && coverInput) {
+            coverBtn.addEventListener('click', () => {
+                currentImageType = 'cover';
+                coverInput.click();
+            });
+            coverInput.addEventListener('change', handleImageSelect);
+        }
+
+        if (avatarBtn && avatarInput) {
+            avatarBtn.addEventListener('click', () => {
+                currentImageType = 'avatar';
+                avatarInput.click();
+            });
+            avatarInput.addEventListener('change', handleImageSelect);
+        }
+
+        // Modal controls
+        closeBtn.addEventListener('click', closeCropModal);
+        cancelBtn.addEventListener('click', closeCropModal);
+        applyBtn.addEventListener('click', applyCroppedImage);
+        
+        // Canvas controls
+        cropCanvas.addEventListener('mousedown', startDrag);
+        cropCanvas.addEventListener('mousemove', drag);
+        cropCanvas.addEventListener('mouseup', endDrag);
+        cropCanvas.addEventListener('wheel', handleZoom);
+        
+        // Scale and rotation controls
+        document.getElementById('cropScale').addEventListener('input', (e) => {
+            imageScale = parseFloat(e.target.value);
+            drawImageOnCanvas();
+        });
+        
+        document.getElementById('cropRotation').addEventListener('input', (e) => {
+            imageRotation = parseFloat(e.target.value);
+            drawImageOnCanvas();
+        });
+
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeCropModal();
+            }
+        });
+    }
+
+    function handleImageSelect(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        currentImageFile = file;
+        
+        // Reset controls
+        imageScale = 1;
+        imageRotation = 0;
+        imagePosition = { x: 0, y: 0 };
+        document.getElementById('cropScale').value = 1;
+        document.getElementById('cropRotation').value = 0;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            originalImage = new Image();
+            originalImage.onload = () => {
+                // Center image
+                const canvasSize = 400;
+                const imgAspect = originalImage.width / originalImage.height;
+                let displayWidth, displayHeight;
+                
+                if (imgAspect > 1) {
+                    displayHeight = canvasSize * 0.8;
+                    displayWidth = displayHeight * imgAspect;
+                } else {
+                    displayWidth = canvasSize * 0.8;
+                    displayHeight = displayWidth / imgAspect;
+                }
+                
+                imagePosition.x = (canvasSize - displayWidth) / 2;
+                imagePosition.y = (canvasSize - displayHeight) / 2;
+                
+                openCropModal();
+                drawImageOnCanvas();
+            };
+            originalImage.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function openCropModal() {
+        const modal = document.getElementById('imageCropModal');
+        const title = document.getElementById('cropModalTitle');
+        
+        title.textContent = currentImageType === 'avatar' ? 
+            'Recortar foto de perfil' : 'Recortar foto de portada';
+        
+        modal.classList.add('crop-modal--open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCropModal() {
+        const modal = document.getElementById('imageCropModal');
+        modal.classList.remove('crop-modal--open');
+        document.body.style.overflow = '';
+        
+        // Reset file inputs
+        document.getElementById('coverImageInput').value = '';
+        document.getElementById('avatarImageInput').value = '';
+    }
+
+    function drawImageOnCanvas() {
+        if (!originalImage) return;
+        
+        const canvasSize = 400;
+        cropContext.clearRect(0, 0, canvasSize, canvasSize);
+        
+        // Save context
+        cropContext.save();
+        
+        // Calculate image dimensions
+        const imgAspect = originalImage.width / originalImage.height;
+        let displayWidth, displayHeight;
+        
+        if (imgAspect > 1) {
+            displayHeight = canvasSize * 0.8 * imageScale;
+            displayWidth = displayHeight * imgAspect;
+        } else {
+            displayWidth = canvasSize * 0.8 * imageScale;
+            displayHeight = displayWidth / imgAspect;
+        }
+        
+        // Apply transformations
+        const centerX = imagePosition.x + displayWidth / 2;
+        const centerY = imagePosition.y + displayHeight / 2;
+        
+        cropContext.translate(centerX, centerY);
+        cropContext.rotate((imageRotation * Math.PI) / 180);
+        cropContext.translate(-displayWidth / 2, -displayHeight / 2);
+        
+        // Draw image
+        cropContext.drawImage(originalImage, 0, 0, displayWidth, displayHeight);
+        
+        // Restore context
+        cropContext.restore();
+        
+        // Draw crop overlay
+        drawCropOverlay();
+    }
+
+    function drawCropOverlay() {
+        const canvasSize = 400;
+        const cropSize = currentImageType === 'avatar' ? 200 : canvasSize;
+        const cropX = (canvasSize - cropSize) / 2;
+        const cropY = (canvasSize - cropSize) / 2;
+        
+        // Draw dark overlay
+        cropContext.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        cropContext.fillRect(0, 0, canvasSize, canvasSize);
+        
+        // Clear crop area
+        cropContext.globalCompositeOperation = 'destination-out';
+        
+        if (currentImageType === 'avatar') {
+            // Circular crop for avatar
+            cropContext.beginPath();
+            cropContext.arc(canvasSize / 2, canvasSize / 2, cropSize / 2, 0, 2 * Math.PI);
+            cropContext.fill();
+        } else {
+            // Rectangular crop for cover
+            cropContext.fillRect(cropX, cropY, cropSize, cropSize * 0.4);
+        }
+        
+        cropContext.globalCompositeOperation = 'source-over';
+        
+        // Draw crop border
+        cropContext.strokeStyle = '#0a66c2';
+        cropContext.lineWidth = 2;
+        
+        if (currentImageType === 'avatar') {
+            cropContext.beginPath();
+            cropContext.arc(canvasSize / 2, canvasSize / 2, cropSize / 2, 0, 2 * Math.PI);
+            cropContext.stroke();
+        } else {
+            cropContext.strokeRect(cropX, cropY, cropSize, cropSize * 0.4);
+        }
+    }
+
+    function startDrag(e) {
+        isDragging = true;
+        const rect = cropCanvas.getBoundingClientRect();
+        dragStart.x = e.clientX - rect.left;
+        dragStart.y = e.clientY - rect.top;
+        cropCanvas.style.cursor = 'grabbing';
+    }
+
+    function drag(e) {
+        if (!isDragging) return;
+        
+        const rect = cropCanvas.getBoundingClientRect();
+        const currentX = e.clientX - rect.left;
+        const currentY = e.clientY - rect.top;
+        
+        imagePosition.x += currentX - dragStart.x;
+        imagePosition.y += currentY - dragStart.y;
+        
+        dragStart.x = currentX;
+        dragStart.y = currentY;
+        
+        drawImageOnCanvas();
+    }
+
+    function endDrag() {
+        isDragging = false;
+        cropCanvas.style.cursor = 'grab';
+    }
+
+    function handleZoom(e) {
+        e.preventDefault();
+        const delta = e.deltaY > 0 ? -0.1 : 0.1;
+        imageScale = Math.max(0.5, Math.min(3, imageScale + delta));
+        document.getElementById('cropScale').value = imageScale;
+        drawImageOnCanvas();
+    }
+
+    function applyCroppedImage() {
+        const canvasSize = 400;
+        const outputCanvas = document.createElement('canvas');
+        const outputContext = outputCanvas.getContext('2d');
+        
+        if (currentImageType === 'avatar') {
+            // Circular crop for avatar
+            const cropSize = 200;
+            outputCanvas.width = cropSize;
+            outputCanvas.height = cropSize;
+            
+            // Create circular clipping path
+            outputContext.beginPath();
+            outputContext.arc(cropSize / 2, cropSize / 2, cropSize / 2, 0, 2 * Math.PI);
+            outputContext.clip();
+            
+            // Draw the cropped portion
+            const sourceX = (canvasSize - cropSize) / 2;
+            const sourceY = (canvasSize - cropSize) / 2;
+            
+            outputContext.drawImage(
+                cropCanvas, 
+                sourceX, sourceY, cropSize, cropSize,
+                0, 0, cropSize, cropSize
+            );
+        } else {
+            // Rectangular crop for cover
+            const cropWidth = canvasSize;
+            const cropHeight = canvasSize * 0.4;
+            outputCanvas.width = cropWidth;
+            outputCanvas.height = cropHeight;
+            
+            const sourceX = 0;
+            const sourceY = (canvasSize - cropHeight) / 2;
+            
+            outputContext.drawImage(
+                cropCanvas,
+                sourceX, sourceY, cropWidth, cropHeight,
+                0, 0, cropWidth, cropHeight
+            );
+        }
+        
+        // Convert to blob and update image
+        outputCanvas.toBlob((blob) => {
+            const url = URL.createObjectURL(blob);
+            
+            if (currentImageType === 'avatar') {
+                const avatarImg = document.getElementById('profileAvatar');
+                avatarImg.src = url;
+                avatarImg.onload = () => URL.revokeObjectURL(url);
+                
+                // Also update navbar avatar
+                const navAvatar = document.querySelector('.nav-profile-img');
+                if (navAvatar) {
+                    navAvatar.src = url;
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('userAvatarImage', url);
+                showToast('Foto de perfil actualizada');
+            } else {
+                const coverImg = document.getElementById('coverImage');
+                coverImg.src = url;
+                coverImg.onload = () => URL.revokeObjectURL(url);
+                
+                // Save to localStorage
+                localStorage.setItem('userCoverImage', url);
+                showToast('Foto de portada actualizada');
+            }
+            
+            closeCropModal();
+        }, 'image/jpeg', 0.9);
+    }
+
+    // Load saved images on page load
+    function loadSavedImages() {
+        const savedAvatar = localStorage.getItem('userAvatarImage');
+        const savedCover = localStorage.getItem('userCoverImage');
+        
+        if (savedAvatar) {
+            const avatarImg = document.getElementById('profileAvatar');
+            const navAvatar = document.querySelector('.nav-profile-img');
+            if (avatarImg) avatarImg.src = savedAvatar;
+            if (navAvatar) navAvatar.src = savedAvatar;
+        }
+        
+        if (savedCover) {
+            const coverImg = document.getElementById('coverImage');
+            if (coverImg) coverImg.src = savedCover;
+        }
+    }
+
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', () => {
+        initImageCrop();
+        loadSavedImages();
+    });
+</script>
+</body>
+</html>

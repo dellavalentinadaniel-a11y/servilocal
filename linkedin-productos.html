@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubre productos y soluciones empresariales en ServiLocal. Herramientas, software y recursos para hacer crecer tu negocio.">
+    <meta name="keywords" content="productos empresariales, software, herramientas, negocios, empresas, soluciones">
+    <meta name="author" content="ServiLocal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://servilocal.com/linkedin-productos.html">
+    <meta property="og:title" content="Productos Empresariales - ServiLocal">
+    <meta property="og:description" content="Encuentra productos y soluciones para hacer crecer tu empresa">
+    <meta property="og:image" content="https://servilocal.com/imagenes/og-image.svg">
+    
+    <title>Productos Empresariales - ServiLocal</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/linkedin-style.css">
+    <link rel="stylesheet" href="css/linkedin-listings.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+    <nav class="navbar">
+       <div class="navbar-left">
+        <a href="index.html" class="logo">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ServiLocal</span>
+        </a>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar productos, soluciones...">
+        </div>
+       </div>
+       <div class="navbar-center">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> <span>Inicio</span></a></li>
+            <li><a href="perfil-moderno.html"><i class="fas fa-users"></i> <span>Mi Red</span></a></li>
+            <li><a href="#" class="active-link"><i class="fas fa-store"></i> <span>Productos</span></a></li>
+            <li><a href="mensajes.html"><i class="fas fa-envelope"></i> <span>Mensajes</span></a></li>
+            <li><a href="#"><i class="fas fa-bell"></i> <span>Notificaciones</span></a></li>
+        </ul>
+       </div>
+       <div class="navbar-right">
+        <div class="online">
+        <img src="imagenes/perfilemuestra/professional-headshot.png" class="nav-profile-img" onclick="toggleMenu()">
+        </div> 
+       </div>
+       
+       <!-- Dropdown menu -->
+       <div class="profile-menu-wrap" id="profileMenu">
+        <div class="profile-menu">
+            <div class="user-info">
+                <img src="imagenes/perfilemuestra/professional-headshot.png">
+                <div>
+                    <h3>Usuario Ejemplo</h3>
+                    <a href="perfil-moderno.html">Ver perfil completo</a>
+                </div>
+            </div>
+            <hr>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-comment-alt"></i>
+                <p>Dar Feedback</p>
+                <span>></span>
+            </a>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-cog"></i>
+                <p>Configuración y Privacidad</p>
+                <span>></span>
+            </a>
+            <a href="linkedin-login.html" class="profile-menu-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Cerrar Sesión</p>
+                <span>></span>
+            </a>
+        </div>
+       </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="listings-hero" style="background: linear-gradient(135deg, #8f5849 0%, #6d4037 100%);">
+        <div class="listings-hero__container">
+            <div class="listings-hero__content">
+                <h1>Productos Empresariales</h1>
+                <p>Soluciones y herramientas para impulsar tu negocio al siguiente nivel</p>
+                <div class="listings-hero__actions">
+                    <a href="#" class="listings-btn listings-btn--primary">
+                        <i class="fas fa-plus"></i>
+                        Listar Producto
+                    </a>
+                    <a href="linkedin-servicios.html" class="listings-btn listings-btn--secondary">
+                        <i class="fas fa-briefcase"></i>
+                        Ver Servicios
+                    </a>
+                </div>
+            </div>
+            <div class="listings-hero__stats">
+                <div class="listings-stat">
+                    <strong>850+</strong>
+                    <span>Productos</span>
+                </div>
+                <div class="listings-stat">
+                    <strong>300+</strong>
+                    <span>Empresas</span>
+                </div>
+                <div class="listings-stat">
+                    <strong>95%</strong>
+                    <span>Satisfacción</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="listings-container">
+        <!-- Sidebar Filters -->
+        <aside class="listings-sidebar">
+            <div class="listings-filter-card">
+                <h3>Filtrar Productos</h3>
+                
+                <div class="listings-filter-group">
+                    <h4>Categorías</h4>
+                    <div class="listings-filter-options">
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="software">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Software</span>
+                            <span class="listings-count">(145)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="saas">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>SaaS</span>
+                            <span class="listings-count">(98)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="tools">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Herramientas</span>
+                            <span class="listings-count">(87)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="templates">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Plantillas</span>
+                            <span class="listings-count">(76)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="courses">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Cursos</span>
+                            <span class="listings-count">(54)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="listings-filter-group">
+                    <h4>Tipo de Precio</h4>
+                    <div class="listings-filter-options">
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="pricing" value="free">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Gratuito</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="pricing" value="one-time">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Pago único</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="pricing" value="subscription">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Suscripción</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="pricing" value="freemium">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Freemium</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="listings-filter-group">
+                    <h4>Tamaño de Empresa</h4>
+                    <div class="listings-filter-options">
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="company-size" value="startup">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Startup</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="company-size" value="small">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Pequeña (1-50)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="company-size" value="medium">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Mediana (51-200)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="company-size" value="large">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Grande (200+)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="listings-btn listings-btn--outline">
+                    <i class="fas fa-filter"></i>
+                    Aplicar Filtros
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="listings-main">
+            <!-- Search Bar -->
+            <div class="listings-search">
+                <div class="listings-search__wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar productos específicos...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                        Buscar
+                    </button>
+                </div>
+                <div class="listings-sort">
+                    <label for="sort">Ordenar por:</label>
+                    <select id="sort" name="sort">
+                        <option value="relevance">Relevancia</option>
+                        <option value="newest">Más Recientes</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="rating">Mejor Valorados</option>
+                        <option value="popular">Más Populares</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results Header -->
+            <div class="listings-results-header">
+                <h2>847 productos encontrados</h2>
+                <div class="listings-view-toggle">
+                    <button class="listings-view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="listings-view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="listings-grid" id="productsGrid">
+                <!-- Product Card 1 -->
+                <div class="listings-card">
+                    <div class="listings-card__header">
+                        <img src="imagenes/perfilemuestra/brand-identity-design.png" alt="TaskFlow Pro" class="listings-card__product-image">
+                        <div class="listings-card__author">
+                            <h3>TaskFlow Pro</h3>
+                            <div class="listings-card__company">
+                                <span>por ProductiveTech</span>
+                            </div>
+                            <div class="listings-card__rating">
+                                <div class="listings-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (127 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="listings-card__price">
+                            <span class="listings-price">$29/mes</span>
+                            <span class="listings-price-note">Prueba gratis</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__content">
+                        <h4>Sistema de Gestión de Proyectos Avanzado</h4>
+                        <p>Plataforma completa para gestionar proyectos, equipos y recursos. Incluye kanban, gantt, time tracking y reportes avanzados.</p>
+                        <div class="listings-card__tags">
+                            <span class="listings-tag">SaaS</span>
+                            <span class="listings-tag">Proyectos</span>
+                            <span class="listings-tag">Equipos</span>
+                            <span class="listings-tag">Analytics</span>
+                        </div>
+                        <div class="listings-card__meta">
+                            <span><i class="fas fa-users"></i> Ideal para equipos de 5-50 personas</span>
+                            <span><i class="fas fa-cloud"></i> Cloud-based</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__actions">
+                        <button class="listings-btn listings-btn--outline">
+                            <i class="fas fa-eye"></i>
+                            Ver Demo
+                        </button>
+                        <button class="listings-btn listings-btn--primary">
+                            <i class="fas fa-shopping-cart"></i>
+                            Probar Gratis
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="listings-card">
+                    <div class="listings-card__header">
+                        <img src="imagenes/perfilemuestra/modern-ui-design-trends.jpg" alt="DesignKit Pro" class="listings-card__product-image">
+                        <div class="listings-card__author">
+                            <h3>DesignKit Pro</h3>
+                            <div class="listings-card__company">
+                                <span>por CreativeStudio</span>
+                            </div>
+                            <div class="listings-card__rating">
+                                <div class="listings-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.7 (89 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="listings-card__price">
+                            <span class="listings-price">$149</span>
+                            <span class="listings-price-note">Pago único</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__content">
+                        <h4>Kit Completo de Plantillas de Diseño</h4>
+                        <p>Más de 500 plantillas profesionales para Figma, Sketch y Adobe XD. Incluye componentes, iconos y recursos premium.</p>
+                        <div class="listings-card__tags">
+                            <span class="listings-tag">Plantillas</span>
+                            <span class="listings-tag">Figma</span>
+                            <span class="listings-tag">UI/UX</span>
+                            <span class="listings-tag">Premium</span>
+                        </div>
+                        <div class="listings-card__meta">
+                            <span><i class="fas fa-download"></i> Descarga instantánea</span>
+                            <span><i class="fas fa-sync"></i> Actualizaciones gratuitas</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__actions">
+                        <button class="listings-btn listings-btn--outline">
+                            <i class="fas fa-eye"></i>
+                            Preview
+                        </button>
+                        <button class="listings-btn listings-btn--primary">
+                            <i class="fas fa-shopping-cart"></i>
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="listings-card">
+                    <div class="listings-card__header">
+                        <img src="imagenes/perfilemuestra/digital-user-experience-design.jpg" alt="AutoCRM" class="listings-card__product-image">
+                        <div class="listings-card__author">
+                            <h3>AutoCRM</h3>
+                            <div class="listings-card__company">
+                                <span>por SalesBoost</span>
+                            </div>
+                            <div class="listings-card__rating">
+                                <div class="listings-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.8 (203 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="listings-card__price">
+                            <span class="listings-price">$49/mes</span>
+                            <span class="listings-price-note">14 días gratis</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__content">
+                        <h4>CRM Automatizado con IA</h4>
+                        <p>Sistema CRM inteligente que automatiza tu proceso de ventas. Incluye lead scoring, email marketing y predicciones de IA.</p>
+                        <div class="listings-card__tags">
+                            <span class="listings-tag">CRM</span>
+                            <span class="listings-tag">IA</span>
+                            <span class="listings-tag">Ventas</span>
+                            <span class="listings-tag">Automatización</span>
+                        </div>
+                        <div class="listings-card__meta">
+                            <span><i class="fas fa-chart-line"></i> Aumenta ventas 40%</span>
+                            <span><i class="fas fa-robot"></i> IA integrada</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__actions">
+                        <button class="listings-btn listings-btn--outline">
+                            <i class="fas fa-play"></i>
+                            Ver Video
+                        </button>
+                        <button class="listings-btn listings-btn--primary">
+                            <i class="fas fa-rocket"></i>
+                            Empezar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="listings-card">
+                    <div class="listings-card__header">
+                        <img src="imagenes/perfilemuestra/branding-business-success.jpg" alt="BrandBuilder" class="listings-card__product-image">
+                        <div class="listings-card__author">
+                            <h3>BrandBuilder</h3>
+                            <div class="listings-card__company">
+                                <span>por BrandMaster</span>
+                            </div>
+                            <div class="listings-card__rating">
+                                <div class="listings-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>4.3 (67 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="listings-card__price">
+                            <span class="listings-price">Gratis</span>
+                            <span class="listings-price-note">Premium $19/mes</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__content">
+                        <h4>Generador de Identidad de Marca</h4>
+                        <p>Herramienta online para crear logos, paletas de colores y guías de marca completas. Ideal para startups y pequeños negocios.</p>
+                        <div class="listings-card__tags">
+                            <span class="listings-tag">Branding</span>
+                            <span class="listings-tag">Logo</span>
+                            <span class="listings-tag">Freemium</span>
+                            <span class="listings-tag">Startup</span>
+                        </div>
+                        <div class="listings-card__meta">
+                            <span><i class="fas fa-palette"></i> Generador de logos</span>
+                            <span><i class="fas fa-file-pdf"></i> Guías de marca PDF</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__actions">
+                        <button class="listings-btn listings-btn--outline">
+                            <i class="fas fa-heart"></i>
+                            Guardar
+                        </button>
+                        <button class="listings-btn listings-btn--primary">
+                            <i class="fas fa-play"></i>
+                            Probar Gratis
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="listings-pagination">
+                <button class="listings-pagination__btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                    Anterior
+                </button>
+                <div class="listings-pagination__numbers">
+                    <button class="listings-pagination__number active">1</button>
+                    <button class="listings-pagination__number">2</button>
+                    <button class="listings-pagination__number">3</button>
+                    <span class="listings-pagination__dots">...</span>
+                    <button class="listings-pagination__number">12</button>
+                </div>
+                <button class="listings-pagination__btn">
+                    Siguiente
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Profile menu toggle
+        function toggleMenu(){
+            const profileMenu = document.getElementById("profileMenu");
+            profileMenu.classList.toggle("open-menu");
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('userLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userProfession');
+            localStorage.removeItem('userLocation');
+            localStorage.removeItem('rememberUser');
+        }
+
+        // View toggle functionality
+        document.querySelectorAll('.listings-view-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.listings-view-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const view = this.dataset.view;
+                const grid = document.getElementById('productsGrid');
+                
+                if (view === 'list') {
+                    grid.classList.add('listings-grid--list');
+                } else {
+                    grid.classList.remove('listings-grid--list');
+                }
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                console.log('Filter changed:', this.name, this.value, this.checked);
+            });
+        });
+
+        // Sort functionality
+        document.getElementById('sort').addEventListener('change', function() {
+            console.log('Sort changed:', this.value);
+        });
+
+        // Product actions
+        document.querySelectorAll('.listings-card__actions .listings-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.textContent.trim();
+                console.log('Product action:', action);
+                
+                if (action.includes('Demo') || action.includes('Preview') || action.includes('Video')) {
+                    alert('Abriendo demo/preview del producto...');
+                } else if (action.includes('Gratis') || action.includes('Probar') || action.includes('Empezar')) {
+                    alert('Iniciando prueba gratuita...');
+                } else if (action.includes('Comprar')) {
+                    alert('Redirigiendo a checkout...');
+                } else if (action.includes('Guardar')) {
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('fas')) {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        this.innerHTML = '<i class="far fa-heart"></i> Guardar';
+                    } else {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        this.innerHTML = '<i class="fas fa-heart"></i> Guardado';
+                    }
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Estilos específicos para productos */
+        .listings-card__product-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .listings-card__company {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 4px;
+        }
+        
+        .listings-price-note {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            font-weight: normal;
+            margin-top: 2px;
+        }
+        
+        .listings-grid--list .listings-card__product-image {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 0;
+            margin-right: 16px;
+        }
+    </style>
+</body>
+</html>

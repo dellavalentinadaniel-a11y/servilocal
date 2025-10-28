@@ -1,0 +1,524 @@
+/**
+ * Estilos para componentes de la biblioteca ServiLocal
+ * Complementa components.css con estilos específicos de la biblioteca
+ */
+
+/* ============================================
+   SERVICE CARD - Mejoras
+   ============================================ */
+
+.c-service-card {
+  position: relative;
+}
+
+.c-badge--featured {
+  position: absolute;
+  top: var(--espacio-pequeno);
+  right: var(--espacio-pequeno);
+  background: linear-gradient(135deg, var(--color-principal), var(--color-acento));
+  color: white;
+  padding: var(--espacio-micro) var(--espacio-pequeno);
+  border-radius: var(--borde-grande);
+  font-size: var(--font-texto-pequeno);
+  font-weight: 600;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.c-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--borde-suave) var(--borde-suave) 0 0;
+}
+
+.c-card__category {
+  position: absolute;
+  bottom: var(--espacio-pequeno);
+  left: var(--espacio-pequeno);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: var(--espacio-micro) var(--espacio-chico);
+  border-radius: var(--borde-suave);
+  font-size: var(--font-texto-pequeno);
+  font-weight: 500;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.c-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-chico);
+}
+
+.c-card__link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.c-card__link:hover {
+  color: var(--color-principal);
+}
+
+.c-card__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-micro);
+  color: var(--color-amarillo);
+}
+
+.c-card__rating-text {
+  color: var(--color-texto-secundario);
+  font-size: var(--font-texto-pequeno);
+  margin-left: var(--espacio-micro);
+}
+
+.c-card__price {
+  font-weight: 600;
+  color: var(--color-texto);
+  font-size: var(--font-texto);
+}
+
+.c-card__provider {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-pequeno);
+  padding-top: var(--espacio-pequeno);
+  border-top: 1px solid var(--color-neutro-200);
+  margin-top: auto;
+}
+
+.c-card__provider-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.c-card__provider-name {
+  font-size: var(--font-texto-pequeno);
+  color: var(--color-texto-secundario);
+}
+
+/* ============================================
+   PROFILE CARD
+   ============================================ */
+
+.c-profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-medio);
+}
+
+.c-profile-card__header {
+  display: flex;
+  gap: var(--espacio-medio);
+  align-items: flex-start;
+}
+
+.c-profile-card__avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.c-profile-card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-neutro-200);
+}
+
+.c-profile-card__verified {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--color-principal);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  border: 2px solid var(--color-superficie);
+}
+
+.c-profile-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.c-profile-card__name {
+  margin: 0;
+  font-size: var(--font-texto-grande);
+  font-weight: 600;
+}
+
+.c-profile-card__link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.c-profile-card__link:hover {
+  color: var(--color-principal);
+}
+
+.c-profile-card__profession {
+  margin: var(--espacio-micro) 0 0;
+  color: var(--color-texto-secundario);
+  font-size: var(--font-texto-pequeno);
+}
+
+.c-profile-card__location {
+  margin: var(--espacio-micro) 0 0;
+  color: var(--color-texto-secundario);
+  font-size: var(--font-texto-pequeno);
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-micro);
+}
+
+.c-profile-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-pequeno);
+}
+
+.c-badge--pro {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.c-badge--verified {
+  background: var(--color-principal);
+  color: white;
+}
+
+.c-badge--top {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+}
+
+.c-profile-card__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-pequeno);
+  color: var(--color-amarillo);
+}
+
+.c-profile-card__rating-text {
+  color: var(--color-texto-secundario);
+  font-size: var(--font-texto-pequeno);
+}
+
+.c-profile-card__bio {
+  margin: 0;
+  color: var(--color-texto-secundario);
+  font-size: var(--font-texto-pequeno);
+  line-height: 1.6;
+}
+
+.c-profile-card__stats {
+  display: flex;
+  gap: var(--espacio-grande);
+  padding: var(--espacio-medio) 0;
+  border-top: 1px solid var(--color-neutro-200);
+  border-bottom: 1px solid var(--color-neutro-200);
+}
+
+.c-profile-card__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.c-profile-card__stat-value {
+  font-size: var(--font-subtitulo-pequeno);
+  font-weight: 700;
+  color: var(--color-principal);
+  line-height: 1;
+}
+
+.c-profile-card__stat-label {
+  font-size: var(--font-texto-pequeno);
+  color: var(--color-texto-secundario);
+  margin-top: var(--espacio-micro);
+}
+
+.c-profile-card__actions {
+  display: flex;
+  gap: var(--espacio-pequeno);
+}
+
+.c-profile-card__actions .c-button {
+  flex: 1;
+}
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+
+.c-search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-pequeno);
+  background: var(--color-superficie);
+  padding: var(--espacio-pequeno);
+  border-radius: var(--borde-suave);
+  box-shadow: var(--sombra-media);
+}
+
+.c-search-bar__field {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.c-search-bar__field--main {
+  flex: 2;
+  min-width: 250px;
+}
+
+.c-search-bar__icon {
+  position: absolute;
+  left: var(--espacio-medio);
+  color: var(--color-texto-secundario);
+  pointer-events: none;
+}
+
+.c-search-bar__input,
+.c-search-bar__select {
+  width: 100%;
+  padding: var(--espacio-chico) var(--espacio-medio);
+  padding-left: calc(var(--espacio-medio) * 2.5);
+  border: 1px solid var(--color-neutro-300);
+  border-radius: var(--borde-suave);
+  font-size: var(--font-texto);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.c-search-bar__input:focus,
+.c-search-bar__select:focus {
+  outline: none;
+  border-color: var(--color-principal);
+  box-shadow: 0 0 0 3px var(--color-principal-light);
+}
+
+.c-search-bar__button {
+  white-space: nowrap;
+}
+
+.c-search-bar__button span {
+  margin-left: var(--espacio-pequeno);
+}
+
+@media (max-width: 768px) {
+  .c-search-bar__field,
+  .c-search-bar__field--main {
+    flex: 1 1 100%;
+  }
+  
+  .c-search-bar__button {
+    width: 100%;
+  }
+  
+  .c-search-bar__button span {
+    display: inline;
+  }
+}
+
+/* ============================================
+   STATS CARD - Variantes de color
+   ============================================ */
+
+.c-stat-card--primary {
+  background: linear-gradient(135deg, var(--color-principal-light), white);
+  border-left: 4px solid var(--color-principal);
+}
+
+.c-stat-card--primary .c-stat-card__icon {
+  color: var(--color-principal);
+}
+
+.c-stat-card--success {
+  background: linear-gradient(135deg, var(--color-exito-light), white);
+  border-left: 4px solid var(--color-exito);
+}
+
+.c-stat-card--success .c-stat-card__icon {
+  color: var(--color-exito);
+}
+
+.c-stat-card--warning {
+  background: linear-gradient(135deg, var(--color-advertencia-light), white);
+  border-left: 4px solid var(--color-advertencia);
+}
+
+.c-stat-card--warning .c-stat-card__icon {
+  color: var(--color-advertencia);
+}
+
+.c-stat-card--danger {
+  background: linear-gradient(135deg, var(--color-error-light), white);
+  border-left: 4px solid var(--color-error);
+}
+
+.c-stat-card--danger .c-stat-card__icon {
+  color: var(--color-error);
+}
+
+.c-stat-card__icon {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.c-stat-card__trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-micro);
+  font-size: var(--font-texto-pequeno);
+  font-weight: 600;
+  margin-top: var(--espacio-micro);
+}
+
+.c-stat-card__trend--up {
+  color: var(--color-exito);
+}
+
+.c-stat-card__trend--down {
+  color: var(--color-error);
+}
+
+.c-stat-card__trend--neutral {
+  color: var(--color-texto-secundario);
+}
+
+/* ============================================
+   REVIEW CARD
+   ============================================ */
+
+.c-review-card {
+  background: var(--color-superficie);
+  border-radius: var(--borde-suave);
+  padding: var(--espacio-medio);
+  box-shadow: var(--sombra-sutil);
+}
+
+.c-review-card__header {
+  display: flex;
+  gap: var(--espacio-chico);
+  align-items: flex-start;
+  margin-bottom: var(--espacio-chico);
+}
+
+.c-review-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.c-review-card__user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.c-review-card__user-name {
+  margin: 0;
+  font-size: var(--font-texto);
+  font-weight: 600;
+}
+
+.c-review-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-chico);
+  margin-top: var(--espacio-micro);
+}
+
+.c-review-card__rating {
+  display: flex;
+  gap: 2px;
+  color: var(--color-amarillo);
+  font-size: 0.875rem;
+}
+
+.c-review-card__date {
+  font-size: var(--font-texto-pequeno);
+  color: var(--color-texto-secundario);
+}
+
+.c-review-card__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-micro);
+  padding: var(--espacio-micro) var(--espacio-pequeno);
+  background: var(--color-principal-light);
+  color: var(--color-principal);
+  border-radius: var(--borde-grande);
+  font-size: var(--font-texto-micro);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.c-review-card__text {
+  margin: var(--espacio-chico) 0;
+  color: var(--color-texto);
+  line-height: 1.6;
+  font-size: var(--font-texto-pequeno);
+}
+
+.c-review-card__images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: var(--espacio-pequeno);
+  margin-top: var(--espacio-chico);
+}
+
+.c-review-card__image {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--borde-suave);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.c-review-card__image:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .c-profile-card__avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .c-profile-card__stats {
+    gap: var(--espacio-medio);
+  }
+  
+  .c-profile-card__actions {
+    flex-direction: column;
+  }
+  
+  .c-review-card__images {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  
+  .c-review-card__image {
+    height: 60px;
+  }
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta Tags Globales -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ServiLocal - Conectamos profesionales con clientes que necesitan servicios de calidad">
+    <meta name="keywords" content="servicios locales, profesionales, trabajos, ServiLocal">
+    <meta name="author" content="ServiLocal">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ServiLocal - Tu Plataforma de Servicios Locales">
+    <meta property="og:description" content="Conectamos profesionales con clientes que necesitan servicios de calidad">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://servilocal.com">
+    <meta property="og:image" content="imagenes/og-image.svg">
+    
+    <!-- Título dinámico -->
+    <title>{{PAGE_TITLE}} - ServiLocal</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Poppins (Consistente en todo el sitio) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Global Base -->
+    <link rel="stylesheet" href="css/global-base.css">
+    
+    <!-- CSS Específico de la página -->
+    {{PAGE_SPECIFIC_CSS}}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body class="no-js {{BODY_CLASS}}">
+    <script type="text/javascript">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.body;var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg," js")}}</script>
+    <!-- Skip Links para Accesibilidad -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+        <a href="#main-navigation" class="skip-link">Saltar a la navegación</a>
+    </div>
+
+    <!-- Header Global -->
+    <header class="global-header" role="banner">
+        <nav class="global-navbar" id="main-navigation" role="navigation" aria-label="Navegación principal">
+            <div class="navbar-container">
+                <!-- Logo/Brand -->
+                <div class="navbar-brand">
+                    <a href="index.html" class="brand-link" aria-label="ServiLocal - Ir al inicio">
+                        <i class="fas fa-handshake brand-icon" aria-hidden="true"></i>
+                        <span class="brand-text">ServiLocal</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <div class="navigation_container">
+                    <ul class="navbar-menu" id="main-menu" role="menubar">
+                        <li class="menu-item" role="none">
+                            <a href="index.html" class="menu-link {{HOME_ACTIVE}}" role="menuitem">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li class="menu-item" role="none">
+                            <a href="linkedin-servicios.html" class="menu-link {{SERVICES_ACTIVE}}" role="menuitem">
+                                <i class="fas fa-briefcase" aria-hidden="true"></i>
+                                <span>Servicios</span>
+                            </a>
+                        </li>
+                        <li class="menu-item" role="none">
+                            <a href="linkedin-productos.html" class="menu-link {{PRODUCTS_ACTIVE}}" role="menuitem">
+                                <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                                <span>Productos</span>
+                            </a>
+                        </li>
+                        <li class="menu-item" role="none">
+                            <a href="linkedin-feed.html" class="menu-link {{FEED_ACTIVE}}" role="menuitem">
+                                <i class="fas fa-stream" aria-hidden="true"></i>
+                                <span>Feed</span>
+                            </a>
+                        </li>
+                        <li class="menu-item" role="none">
+                            <a href="perfil-moderno.html" class="menu-link {{PROFILE_ACTIVE}}" role="menuitem">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- User Actions -->
+                <div class="navbar-actions">
+                    <div class="user-menu-container">
+                        <button class="user-menu-toggle" aria-label="Abrir menú de usuario" aria-expanded="false">
+                            <img src="imagenes/perfile/perfil1.png" alt="Foto de perfil" class="user-avatar">
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        
+                        <div class="user-dropdown" role="menu">
+                            <a href="perfil-moderno.html" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                Mi Perfil
+                            </a>
+                            <a href="#" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-cog" aria-hidden="true"></i>
+                                Configuración
+                            </a>
+                            <a href="#" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-question-circle" aria-hidden="true"></i>
+                                Ayuda
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                                Cerrar Sesión
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main id="main-content" class="main-content" role="main">
+        {{MAIN_CONTENT}}
+    </main>
+
+    <!-- Footer Global -->
+    <footer class="global-footer" role="contentinfo">
+        <div class="footer-container">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
+                            <span>ServiLocal</span>
+                        </a>
+                        <p class="footer-description">
+                            Conectamos profesionales con clientes que necesitan servicios de calidad. 
+                            Tu plataforma de confianza para encontrar y ofrecer servicios locales.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Seguir en Facebook">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Seguir en Twitter">
+                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Seguir en Instagram">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Seguir en LinkedIn">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="linkedin-servicios.html">Todos los Servicios</a></li>
+                        <li><a href="#">Desarrollo Web</a></li>
+                        <li><a href="#">Diseño Gráfico</a></li>
+                        <li><a href="#">Marketing Digital</a></li>
+                        <li><a href="#">Consultoría</a></li>
+                        <li><a href="#">Mantenimiento</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Productos</h3>
+                    <ul class="footer-links">
+                        <li><a href="linkedin-productos.html">Todos los Productos</a></li>
+                        <li><a href="#">Plantillas Web</a></li>
+                        <li><a href="#">Plugins</a></li>
+                        <li><a href="#">Herramientas</a></li>
+                        <li><a href="#">Recursos</a></li>
+                        <li><a href="#">Cursos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Empresa</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Acerca de Nosotros</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                        <li><a href="#">Testimonios</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Soporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Reportar Problema</a></li>
+                        <li><a href="#">Estado del Servicio</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2024 ServiLocal. Todos los derechos reservados.
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="#" class="footer-link">Política de Privacidad</a>
+                        <span class="separator">|</span>
+                        <a href="#" class="footer-link">Términos de Servicio</a>
+                        <span class="separator">|</span>
+                        <a href="#" class="footer-link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Botón Flotante de Chat -->
+    <div class="fab" data-component="floating-chat">
+        <button class="fab__toggle" type="button" aria-label="Abrir chat de ServiLocal" aria-controls="fabMenu" aria-expanded="false">
+            <i class="fas fa-comments fab__toggle-icon" aria-hidden="true"></i>
+        </button>
+        <div class="fab__menu" id="fabMenu" role="menu" aria-hidden="true">
+            <a href="mensajes.html" class="fab__menu-link" role="menuitem">
+                <i class="fas fa-comment-dots fab__menu-icon" aria-hidden="true"></i>
+                <span class="fab__menu-text">Abrir chat</span>
+            </a>
+            <a href="contacto.html" class="fab__menu-link" role="menuitem">
+                <i class="fas fa-life-ring fab__menu-icon" aria-hidden="true"></i>
+                <span class="fab__menu-text">Centro de ayuda</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Botón Scroll to Top -->
+    <button class="scroll-to-top" aria-label="Volver al inicio" title="Volver al inicio">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Global -->
+    <script src="js/responsivemenu.js"></script>
+    <script src="js/global-base.js"></script>
+    
+    <!-- JavaScript Específico de la página -->
+    {{PAGE_SPECIFIC_JS}}
+</body>
+</html>

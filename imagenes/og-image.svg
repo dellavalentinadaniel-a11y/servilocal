@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo degradado -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Círculos decorativos -->
+  <circle cx="100" cy="100" r="80" fill="white" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="120" fill="white" opacity="0.1"/>
+  <circle cx="950" cy="100" r="60" fill="white" opacity="0.15"/>
+  
+  <!-- Logo/Icono grande -->
+  <g transform="translate(500, 200)">
+    <circle cx="0" cy="0" r="80" fill="white" opacity="0.2"/>
+    <path d="M 0 -40 C -20 -40 -36 -24 -36 -4 C -36 20 0 60 0 60 C 0 60 36 20 36 -4 C 36 -24 20 -40 0 -40 Z M 0 8 C -6.6 8 -12 2.6 -12 -4 C -12 -10.6 -6.6 -16 0 -16 C 6.6 -16 12 -10.6 12 -4 C 12 2.6 6.6 8 0 8 Z" fill="white"/>
+  </g>
+  
+  <!-- Título -->
+  <text x="600" y="380" font-family="Arial, Inter, sans-serif" font-size="80" font-weight="700" fill="white" text-anchor="middle">ServiLocal</text>
+  
+  <!-- Subtítulo -->
+  <text x="600" y="450" font-family="Arial, Inter, sans-serif" font-size="36" font-weight="400" fill="white" text-anchor="middle" opacity="0.9">Conectando vecinos con profesionales de confianza</text>
+  
+  <!-- Badges decorativos -->
+  <g transform="translate(350, 520)">
+    <rect x="0" y="0" width="160" height="40" rx="20" fill="white" opacity="0.25"/>
+    <text x="80" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="white" text-anchor="middle">★ Verificados</text>
+  </g>
+  
+  <g transform="translate(530, 520)">
+    <rect x="0" y="0" width="180" height="40" rx="20" fill="white" opacity="0.25"/>
+    <text x="90" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="white" text-anchor="middle">✓ +1,200 usuarios</text>
+  </g>
+  
+  <g transform="translate(730, 520)">
+    <rect x="0" y="0" width="140" height="40" rx="20" fill="white" opacity="0.25"/>
+    <text x="70" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="white" text-anchor="middle">🏘️ Local</text>
+  </g>
+</svg>

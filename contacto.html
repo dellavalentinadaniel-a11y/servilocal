@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto - ServiLocal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/chat-flotante.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="c-page">
+
+  <header class="c-navbar">
+    <div class="container c-navbar__inner">
+      <a class="c-navbar__brand" href="index.html">ServiLocal</a>
+      <nav class="c-navbar__links">
+        <a class="c-navbar__link" href="buscar.html">Buscar servicios</a>
+        <a class="c-navbar__link" href="todos_los_servicios.html">Servicios</a>
+        <a class="c-navbar__link" href="login.html">Iniciar sesión</a>
+        <a class="c-button" href="registro.html">Registrarse</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="c-main">
+    <section class="c-section">
+      <div class="container">
+        <div class="c-section__heading">
+          <span class="c-badge-pill">Estamos para ayudarte</span>
+          <h1 class="texto-subtitulo">Contactá a ServiLocal</h1>
+          <p class="texto-base u-no-margin">Elegí el canal que te resulte más cómodo o completá el formulario para que nos pongamos en contacto con vos.</p>
+        </div>
+        <div class="c-panel c-panel--spacious">
+          <div>
+            <h2 class="texto-subtitulo">Canales directos</h2>
+            <ul class="c-simple-list">
+              <li><i class="fas fa-envelope"></i> soporte@servilocal.com</li>
+              <li><i class="fas fa-phone"></i> +54 11 5555-1234 (lun a vie, 9 a 18 h)</li>
+              <li><i class="fas fa-comments"></i> Chat en vivo desde la app ServiLocal</li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="texto-subtitulo">Centros de asistencia</h2>
+            <ul class="c-simple-list">
+              <li>Microcentro, CABA - Av. Corrientes 1234, 3er piso.</li>
+              <li>Rosario - Bv. Oroño 890, oficina 5.</li>
+              <li>Córdoba - Av. Colón 456, local 2.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="c-section c-section--light">
+      <div class="container">
+        <div class="c-section__heading">
+          <h2 class="texto-subtitulo">Escribinos un mensaje</h2>
+          <p class="texto-base u-no-margin">Contanos qué necesitás y un integrante del equipo te responde dentro de las próximas 24 horas hábiles.</p>
+        </div>
+        <form class="c-panel c-panel--spacious c-form" action="#" method="post" novalidate>
+          <div class="c-form-field">
+            <label class="c-label" for="contacto-nombre">Nombre completo</label>
+            <input class="c-input" id="contacto-nombre" type="text" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="c-form-field">
+            <label class="c-label" for="contacto-email">Correo electrónico</label>
+            <input class="c-input" id="contacto-email" type="email" name="email" placeholder="nombre@correo.com" required>
+          </div>
+          <div class="c-form-field">
+            <label class="c-label" for="contacto-motivo">Motivo del contacto</label>
+            <select class="c-input" id="contacto-motivo" name="motivo" required>
+              <option value="">Seleccioná una opción</option>
+              <option value="vecino">Necesito contratar un servicio</option>
+              <option value="proveedor">Quiero ofrecer mis servicios</option>
+              <option value="soporte">Tengo un problema con un servicio</option>
+              <option value="otro">Otro motivo</option>
+            </select>
+          </div>
+          <div class="c-form-field">
+            <label class="c-label" for="contacto-mensaje">Mensaje</label>
+            <textarea class="c-input" id="contacto-mensaje" name="mensaje" rows="4" placeholder="Contanos en qué podemos ayudarte" required></textarea>
+          </div>
+          <button class="c-button" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="c-footer">
+    <div class="container">
+      <div class="c-footer__inner">
+        <div class="c-footer__column">
+          <h2 class="c-footer__heading">Legal</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="politicas.html">Política de privacidad</a></li>
+            <li><a class="c-footer__link" href="terminos.html">Términos de servicio</a></li>
+            <li><a class="c-footer__link" href="cookies.html">Política de cookies</a></li>
+          </ul>
+        </div>
+        <div class="c-footer__column c-footer__column--center">
+          <h2 class="c-footer__brand">ServiLocal</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="registro.html">Sumar mi negocio</a></li>
+            <li><a class="c-footer__link" href="buscar.html">Buscar profesionales</a></li>
+            <li><a class="c-footer__link" href="proveedor.html">Ofrecer un servicio</a></li>
+          </ul>
+        </div>
+        <div class="c-footer__column">
+          <h2 class="c-footer__heading">Conocenos</h2>
+          <ul class="c-footer__list">
+            <li><a class="c-footer__link" href="sobre_nosotros.html">Sobre nosotros</a></li>
+            <li><a class="c-footer__link" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</p>
+    </div>
+  </footer>
+
+  <script src="js/cookies.js"></script>
+  <script src="js/navbar.js"></script>
+
+
+  <!-- Socket.io para chat en tiempo real -->
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script src="js/chat-flotante.js"></script>
+</body>
+</html>

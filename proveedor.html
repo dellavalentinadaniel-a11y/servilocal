@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Conoce la experiencia, calificaciones, reseñas y disponibilidad de nuestros profesionales verificados.">
+  <meta name="keywords" content="perfil profesional, reseñas proveedor, calificaciones, portfolio profesional">
+  <meta name="author" content="ServiLocal">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://servilocal.com/proveedor.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://servilocal.com/proveedor.html">
+  <meta property="og:title" content="Perfil de proveedor – ServiLocal">
+  <meta property="og:description" content="Conoce la experiencia, calificaciones, reseñas y disponibilidad de nuestros profesionales verificados.">
+  <meta property="og:image" content="https://servilocal.com/imagenes/og-image.svg">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="ServiLocal">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://servilocal.com/proveedor.html">
+  <meta name="twitter:title" content="Perfil de proveedor – ServiLocal">
+  <meta name="twitter:description" content="Conoce la experiencia, calificaciones, reseñas y disponibilidad de nuestros profesionales verificados.">
+  <meta name="twitter:image" content="https://servilocal.com/imagenes/og-image.svg">
+  <meta name="twitter:site" content="@ServiLocal">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- PWA Meta Tags -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ServiLocal">
+  <!-- theme-color is provided in manifest.json for better cross-browser support (Firefox/Opera ignore meta[name="theme-color"]) -->
+  <meta name="msapplication-TileColor" content="#4F46E5">
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" sizes="152x152" href="/imagen/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/imagen/icon-192x192.png">
+  
+  <!-- Splash Screens iOS -->
+  <link rel="apple-touch-startup-image" href="/imagen/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+  <link rel="apple-touch-startup-image" href="/imagen/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)">
+  <link rel="apple-touch-startup-image" href="/imagen/splash-1242x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)">
+  <link rel="apple-touch-startup-image" href="/imagen/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+  <title>Perfil de proveedor – ServiLocal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/chat-flotante.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body class="c-page">
+
+    <header class="c-navbar">
+    <div class="container c-navbar__inner">
+      <a class="c-navbar__brand" href="index.html">
+        <i class="fas fa-map-marker-alt c-navbar__brand-icon"></i>
+        ServiLocal
+      </a>
+      
+      <!-- Botón hamburguesa para móvil -->
+      <button class="c-navbar__toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navbar-menu">
+        <span class="c-navbar__toggle-line"></span>
+        <span class="c-navbar__toggle-line"></span>
+        <span class="c-navbar__toggle-line"></span>
+      </button>
+      
+      <!-- Menú de navegación -->
+      <nav class="c-navbar__menu" id="navbar-menu">
+        <div class="c-navbar__links">
+          <a class="c-navbar__link" href="index.html">
+            <i class="fas fa-home c-navbar__link-icon"></i>
+            Inicio
+          </a>
+          <a class="c-navbar__link" href="buscar.html">
+            <i class="fas fa-search c-navbar__link-icon"></i>
+            Buscar
+          </a>
+          <a class="c-navbar__link" href="todos_los_servicios.html">
+            <i class="fas fa-th-large c-navbar__link-icon"></i>
+            Servicios
+          </a>
+          <a class="c-navbar__link" href="perfil.html">
+            <i class="fas fa-user c-navbar__link-icon"></i>
+            Mi perfil
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="c-main" id="main-content">
+    <section class="c-section c-section--tight">
+      <div class="container">
+        <article class="c-panel c-panel--spacious" role="region" aria-labelledby="perfil-heading">
+          <div class="c-profile-header">
+            <div class="c-profile-header__avatar">
+              <div class="c-avatar">
+                <div class="c-avatar__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img 
+                  src="imagenes/perfile/images%20(1).png" 
+                  alt="Foto de perfil de Carlos Martínez" 
+                  class="c-avatar__image u-transparent u-transition-opacity" 
+                  loading="lazy"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                >
+                <button class="c-avatar__button" type="button" aria-label="Actualizar foto de perfil">
+                  <i class="fas fa-camera" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <div class="c-profile-header__body">
+              <h1 id="perfil-heading" class="texto-subtitulo">Carlos Martínez</h1>
+              <div class="c-profile-rating">
+                <div role="img" aria-label="Calificación 4.5 de 5 estrellas">
+                  <span aria-hidden="true">★★★★☆</span>
+                </div>
+                <span class="c-profile-rating__meta">(<span id="calificacion-promedio" aria-label="Calificación promedio">4.5</span> • <span><span id="contador-resenas-header">24</span> reseñas</span>)</span>
+              </div>
+              <p class="c-profile-description">Jardinero certificado • +10 años de experiencia</p>
+            </div>
+            <div class="c-profile-header__actions">
+              <button class="c-button" type="button" aria-label="Contactar a Carlos">
+                <i class="fas fa-phone c-icon-left" aria-hidden="true"></i>
+                Contactar
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="c-section">
+      <div class="container">
+        <article class="c-panel" role="region" aria-labelledby="galeria-heading">
+          <div class="c-panel__header">
+            <h2 id="galeria-heading" class="c-panel__title">Fotos del proveedor</h2>
+            <button id="uploadBtn" class="c-button" type="button" aria-label="Agregar nuevas fotos">
+              <i class="fas fa-plus c-icon-left" aria-hidden="true"></i>Agregar foto
+            </button>
+          </div>
+          <input type="file" id="fileInput" class="u-hidden" accept="image/*" multiple aria-label="Seleccionar imágenes para subir">
+          <div id="galleryContainer" class="c-gallery" role="list" aria-label="Galería de imágenes del proveedor">
+            <div class="c-gallery__item" role="listitem">
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img 
+                  src="imagenes/perfilemuestra/2-1.png" 
+                  alt="Jardinería 1" 
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="imagenes/perfilemuestra/2-1.png"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                  tabindex="0"
+                  role="button"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            </div>
+            <div class="c-gallery__item" role="listitem">
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img 
+                  src="imagenes/perfilemuestra/21-espectaculares-jardines-verticales-06.png" 
+                  alt="Jardinería 2" 
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="imagenes/perfilemuestra/21-espectaculares-jardines-verticales-06.png"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                  tabindex="0"
+                  role="button"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            </div>
+            <div class="c-gallery__item" role="listitem">
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img 
+                  src="imagenes/perfilemuestra/captura-de-pantalla-alquiler-casa-jardin-flores-villa-la-angostura-neuquen-800x350.png" 
+                  alt="Jardinería 3" 
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="imagenes/perfilemuestra/captura-de-pantalla-alquiler-casa-jardin-flores-villa-la-angostura-neuquen-800x350.png"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                  tabindex="0"
+                  role="button"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            </div>
+            <div class="c-gallery__item" role="listitem">
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img 
+                  src="imagenes/perfilemuestra/planta-exteriores-jardineria.png" 
+                  alt="Jardinería 4" 
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="imagenes/perfilemuestra/planta-exteriores-jardineria.png"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                  tabindex="0"
+                  role="button"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div id="galleryModal" class="c-modal u-hidden" role="dialog" aria-modal="true">
+      <div class="c-modal__dialog">
+        <button id="closeModalBtn" class="c-modal__close" type="button" aria-label="Cerrar galería">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="c-modal__image-wrapper">
+          <div id="modalLoadingSpinner" class="c-modal__loader u-hidden">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+          <img id="modalImage" src="" alt="Imagen ampliada" class="c-modal__image u-transparent u-transition-opacity">
+        </div>
+        <div class="c-modal__nav">
+          <button class="c-modal__nav-btn" type="button" data-direction="-1" aria-label="Ver imagen anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div id="imageCounter" class="c-modal__counter"></div>
+          <button class="c-modal__nav-btn" type="button" data-direction="1" aria-label="Ver imagen siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <section class="c-section">
+      <div class="container">
+        <article class="c-panel" role="region" aria-labelledby="ubicacion-heading">
+          <h2 id="ubicacion-heading" class="c-panel__title">Ubicación</h2>
+          <div id="map" class="c-map" role="application" aria-label="Mapa interactivo mostrando la ubicación de Carlos en Zona Centro, Ciudad de México" aria-describedby="mapa-descripcion"></div>
+          <div id="mapa-descripcion" class="sr-only">
+            Mapa interactivo que muestra la ubicación del proveedor Carlos en Zona Centro, Ciudad de México. 
+            Utiliza las teclas de flecha para navegar o el enlace de direcciones para obtener rutas.
+          </div>
+          <div class="c-panel__actions">
+            <a class="c-navbar__link" href="#" aria-label="Obtener direcciones hacia la ubicación de Carlos">
+              <i class="fas fa-directions c-icon-left" aria-hidden="true"></i>Obtener direcciones
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="c-section">
+      <div class="container">
+        <article class="c-panel" role="region" aria-labelledby="servicios-heading">
+          <h2 id="servicios-heading" class="c-panel__title">Servicios que ofrece</h2>
+          <ul class="c-simple-list">
+            <li>Podado de árboles y arbustos</li>
+            <li>Diseño y mantenimiento de jardines</li>
+            <li>Instalación de sistemas de riego</li>
+            <li>Limpieza de hojas y desechos</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="c-section">
+      <div class="container">
+        <article class="c-panel" role="region" aria-labelledby="resenas-heading">
+          <div class="c-panel__header">
+            <h2 id="resenas-heading" class="c-panel__title">Reseñas (<span id="contador-resenas">2</span>)</h2>
+            <p class="texto-base u-no-margin">
+              Calificación promedio: <strong id="calificacion-promedio">4.5</strong> ★
+            </p>
+          </div>
+
+          <!-- Formulario para agregar reseña -->
+          <form id="formResena" class="c-form-card u-margin-bottom-grande">
+            <h3 class="texto-subtitulo u-margin-bottom-chico">Deja tu reseña</h3>
+            
+            <div class="c-form-field">
+              <label class="c-label" for="calificacion">
+                Calificación <span aria-label="campo requerido">*</span>
+              </label>
+              <div class="c-rating-input" role="radiogroup" aria-label="Selecciona tu calificación">
+                <span class="c-rating-input__star is-empty" data-value="1" role="radio" tabindex="0" aria-label="1 estrella" aria-checked="false">★</span>
+                <span class="c-rating-input__star is-empty" data-value="2" role="radio" tabindex="0" aria-label="2 estrellas" aria-checked="false">★</span>
+                <span class="c-rating-input__star is-empty" data-value="3" role="radio" tabindex="0" aria-label="3 estrellas" aria-checked="false">★</span>
+                <span class="c-rating-input__star is-empty" data-value="4" role="radio" tabindex="0" aria-label="4 estrellas" aria-checked="false">★</span>
+                <span class="c-rating-input__star is-empty" data-value="5" role="radio" tabindex="0" aria-label="5 estrellas" aria-checked="false">★</span>
+              </div>
+              <input type="hidden" id="calificacion" name="calificacion" value="0">
+            </div>
+
+            <div class="c-form-field">
+              <label class="c-label" for="comentario">
+                Tu comentario <span aria-label="campo requerido">*</span>
+              </label>
+              <textarea 
+                id="comentario" 
+                name="comentario" 
+                class="c-input" 
+                rows="4" 
+                maxlength="500" 
+                placeholder="Comparte tu experiencia con este profesional..."
+                required
+              ></textarea>
+              <div id="contador-caracteres" class="c-character-counter">0/500</div>
+            </div>
+
+            <div class="c-form-card__footer">
+              <button type="submit" class="c-button">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                Publicar reseña
+              </button>
+            </div>
+          </form>
+
+          <!-- Lista de reseñas -->
+          <div class="c-review-list" role="list" aria-label="Lista de reseñas de clientes">
+            <article class="c-review" role="listitem">
+              <div class="c-review__header">
+                <div>
+                  <strong>Martín González</strong>
+                  <div class="c-rating" role="img" aria-label="Calificación 5 de 5 estrellas">
+                    <span aria-hidden="true">★★★★★</span>
+                  </div>
+                  <time class="c-review__date" datetime="2025-10-12">Hace 2 semanas</time>
+                </div>
+              </div>
+              <blockquote class="c-review__text">Excelente trabajo. Mi jardín nunca había lucido tan bien. Muy responsable y puntual.</blockquote>
+              <div class="c-review__actions">
+                <span class="texto-base u-color-neutro-600">¿Te resultó útil?</span>
+                <button class="c-button c-button--secondary c-button--small" disabled>
+                  <i class="far fa-thumbs-up" aria-hidden="true"></i>
+                  Útil (5)
+                </button>
+                <button class="c-button c-button--secondary c-button--small" disabled>
+                  <i class="far fa-thumbs-down" aria-hidden="true"></i>
+                  No útil (0)
+                </button>
+              </div>
+            </article>
+
+            <article class="c-review" role="listitem">
+              <div class="c-review__header">
+                <div>
+                  <strong>Sofía Ramírez</strong>
+                  <div class="c-rating" role="img" aria-label="Calificación 4 de 5 estrellas">
+                    <span aria-hidden="true">★★★★☆</span>
+                  </div>
+                  <time class="c-review__date" datetime="2025-10-05">Hace 3 semanas</time>
+                </div>
+              </div>
+              <blockquote class="c-review__text">Buen profesional, aunque llegó 15 minutos tarde. El trabajo fue muy bueno.</blockquote>
+              <div class="c-review__actions">
+                <span class="texto-base u-color-neutro-600">¿Te resultó útil?</span>
+                <button class="c-button c-button--secondary c-button--small" disabled>
+                  <i class="far fa-thumbs-up" aria-hidden="true"></i>
+                  Útil (3)
+                </button>
+                <button class="c-button c-button--secondary c-button--small" disabled>
+                  <i class="far fa-thumbs-down" aria-hidden="true"></i>
+                  No útil (1)
+                </button>
+              </div>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="c-section c-section--tight">
+      <div class="container">
+        <div class="c-cta">
+          <div>
+            <h2 class="c-cta__title">¿Listo para contactar a Carlos?</h2>
+            <p class="c-cta__text">Te conectaremos de forma segura sin revelar tu número.</p>
+          </div>
+          <div class="c-cta__actions">
+            <button class="c-button" type="button">Contactar a Carlos</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="c-footer">
+    <div class="container c-footer__inner">
+      <div>
+        <h2 class="texto-subtitulo c-footer__title">ServiLocal</h2>
+        <p class="c-footer__meta">Conectamos vecinos con profesionales de confianza para que cada servicio sea simple y seguro.</p>
+      </div>
+      <div class="c-footer__links">
+        <a class="c-footer__link" href="todos_los_servicios.html">Todos los servicios</a>
+        <a class="c-footer__link" href="buscar.html">Buscar profesionales</a>
+        <a class="c-footer__link" href="registro.html">Sumar mi negocio</a>
+        <a class="c-footer__link" href="perfil.html">Panel de usuario</a>
+        <a class="c-footer__link" href="politicas.html" target="_blank" rel="noopener noreferrer">Políticas de privacidad</a>
+      </div>
+      <div class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentImageIndex = 0;
+
+      const modal = document.getElementById('galleryModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalLoader = document.getElementById('modalLoadingSpinner');
+      const galleryContainer = document.getElementById('galleryContainer');
+      const fileInput = document.getElementById('fileInput');
+      const uploadBtn = document.getElementById('uploadBtn');
+
+      const getGalleryImages = () => Array.from(document.querySelectorAll('[data-large]'));
+
+      const attachGalleryEvents = (img) => {
+        if (!img) return;
+        img.addEventListener('click', () => openModal(img));
+        img.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openModal(img);
+          }
+        });
+      };
+
+      getGalleryImages().forEach(attachGalleryEvents);
+
+      function openModal(imgElement) {
+        const imageSrc = imgElement.getAttribute('data-large');
+        modalLoader.classList.remove('u-hidden');
+        modalImage.classList.add('u-transparent');
+        modalImage.src = imageSrc;
+        modal.classList.remove('u-hidden');
+
+        const images = getGalleryImages();
+        currentImageIndex = images.indexOf(imgElement);
+        updateImageCounter();
+
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.add('u-hidden');
+        document.body.style.overflow = '';
+      }
+
+      function changeImage(direction) {
+        const images = getGalleryImages();
+        if (!images.length) {
+          return;
+        }
+
+        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+
+        modalLoader.classList.remove('u-hidden');
+        modalImage.classList.add('u-transparent');
+        modalImage.src = images[currentImageIndex].getAttribute('data-large');
+        updateImageCounter();
+      }
+
+      function updateImageCounter() {
+        const counter = document.getElementById('imageCounter');
+        const images = getGalleryImages();
+        if (!counter) return;
+        counter.textContent = images.length ? `${currentImageIndex + 1} / ${images.length}` : '0 / 0';
+      }
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+
+      document.querySelectorAll('.c-modal__nav-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+          const direction = Number(button.dataset.direction || 0);
+          changeImage(direction);
+        });
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (modal.classList.contains('u-hidden')) return;
+
+        if (event.key === 'Escape') {
+          closeModal();
+        } else if (event.key === 'ArrowLeft') {
+          changeImage(-1);
+        } else if (event.key === 'ArrowRight') {
+          changeImage(1);
+        }
+      });
+
+      modalImage.addEventListener('load', () => {
+        modalImage.classList.remove('u-transparent');
+        modalLoader.classList.add('u-hidden');
+      });
+
+      uploadBtn.addEventListener('click', () => fileInput.click());
+
+      fileInput.addEventListener('change', async (event) => {
+        const files = event.target.files;
+
+        for (const file of files) {
+          if (!file.type.match('image.*')) continue;
+
+          const processingContainer = document.createElement('div');
+          processingContainer.className = 'c-gallery__item';
+          processingContainer.setAttribute('role', 'listitem');
+          processingContainer.innerHTML = `
+            <div class="c-gallery__media">
+              <div class="c-gallery__loader">
+                <div class="loading-spinner">
+                  <i class="fas fa-spinner fa-spin"></i>
+                  <span>Procesando imagen...</span>
+                </div>
+              </div>
+            </div>
+          `;
+
+          galleryContainer.insertBefore(processingContainer, galleryContainer.firstChild);
+
+          try {
+            const optimizedBlob = await convertImageToWebP(file, 0.8);
+            const optimizedImageUrl = URL.createObjectURL(optimizedBlob);
+
+            const imgContainer = document.createElement('div');
+            imgContainer.className = 'c-gallery__item';
+            imgContainer.setAttribute('role', 'listitem');
+            imgContainer.innerHTML = `
+              <div class="c-gallery__media">
+                <div class="c-gallery__loader" aria-hidden="true">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <img 
+                  src="${optimizedImageUrl}" 
+                  alt="Imagen subida y optimizada" 
+                  class="c-gallery__image u-transparent u-transition-opacity"
+                  loading="lazy"
+                  data-large="${optimizedImageUrl}"
+                  tabindex="0"
+                  role="button"
+                  onload="this.classList.remove('u-transparent'); this.previousElementSibling.remove();"
+                >
+              </div>
+              <div class="c-gallery__overlay">
+                <span>Ver imagen</span>
+              </div>
+            `;
+
+            galleryContainer.replaceChild(imgContainer, processingContainer);
+
+            const imageElement = imgContainer.querySelector('img');
+            attachGalleryEvents(imageElement);
+            updateImageCounter();
+          } catch (error) {
+            console.error('Error al optimizar la imagen:', error);
+            processingContainer.remove();
+          }
+        }
+
+        fileInput.value = '';
+      });
+
+      async function convertImageToWebP(file, quality = 0.8) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+
+          reader.onload = () => {
+            const img = new Image();
+            img.onload = () => {
+              const canvas = document.createElement('canvas');
+              const maxSize = 800;
+              let { width, height } = img;
+
+              if (width > height && width > maxSize) {
+                height *= maxSize / width;
+                width = maxSize;
+              } else if (height > maxSize) {
+                width *= maxSize / height;
+                height = maxSize;
+              }
+
+              canvas.width = width;
+              canvas.height = height;
+
+              const ctx = canvas.getContext('2d');
+              ctx.drawImage(img, 0, 0, width, height);
+
+              canvas.toBlob((blob) => {
+                if (blob) {
+                  resolve(blob);
+                } else {
+                  reject(new Error('No se pudo generar la imagen optimizada'));
+                }
+              }, 'image/webp', quality);
+            };
+            img.onerror = reject;
+            img.src = reader.result;
+          };
+
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+    });
+  </script>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/performance.js"></script>
+  <script src="js/accesibilidad.js"></script>
+  <script src="js/pwa.js"></script>
+  <script src="js/gestos.js"></script>
+  <script src="js/schema.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/resenas.js"></script>
+  <script src="js/mapa.js"></script>
+  <script src="js/cookies.js"></script>
+
+  <!-- Socket.io para chat en tiempo real -->
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script src="js/chat-flotante.js"></script>
+
+</body>
+</html>

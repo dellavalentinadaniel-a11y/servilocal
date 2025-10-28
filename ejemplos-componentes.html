@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos de Componentes - ServiLocal</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/components-library.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .ejemplo-section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: var(--color-superficie-secundaria);
+      border-radius: var(--borde-suave);
+    }
+    .ejemplo-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--color-texto-primario);
+    }
+    .ejemplo-subtitle {
+      font-size: 1rem;
+      color: var(--color-texto-secundario);
+      margin-bottom: 1.5rem;
+    }
+    .ejemplo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .ejemplo-code {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem;
+      border-radius: var(--borde-suave);
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body class="c-page">
+  
+  <header class="c-navbar" role="banner">
+    <div class="container c-navbar__inner">
+      <a class="c-navbar__brand" href="index.html">
+        <i class="fas fa-map-marker-alt c-navbar__brand-icon"></i>
+        ServiLocal
+      </a>
+      <nav>
+        <a href="componentes.html" class="c-button c-button--ghost">Volver a Componentes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 2rem 1rem;">
+    
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">📚 Librería de Componentes</h1>
+      <p style="font-size: 1.125rem; color: var(--color-texto-secundario);">
+        Ejemplos de uso de todos los componentes disponibles en ServiLocal
+      </p>
+    </div>
+
+    <!-- Service Cards -->
+    <section class="ejemplo-section">
+      <h2 class="ejemplo-title">🏷️ Service Cards</h2>
+      <p class="ejemplo-subtitle">Tarjetas de servicios con rating, precio y badge destacado</p>
+      
+      <div class="ejemplo-grid" id="service-cards-container"></div>
+      
+      <div class="ejemplo-code">
+<pre>// Servicio normal
+SLC.createServiceCard({
+  title: 'Plomería General',
+  category: 'Plomería',
+  rating: 4.8,
+  reviewCount: 127,
+  price: 350,
+  providerName: 'Juan Pérez',
+  providerImage: '/imagenes/perfilemuestra/perfil1.jpg',
+  link: '#'
+});
+
+// Servicio destacado
+SLC.createServiceCard({
+  title: 'Electricidad Profesional',
+  category: 'Electricidad',
+  rating: 5.0,
+  reviewCount: 89,
+  price: 450,
+  providerName: 'María García',
+  providerImage: '/imagenes/perfilemuestra/perfil2.jpg',
+  featured: true,
+  link: '#'
+});</pre>
+      </div>
+    </section>
+
+    <!-- Profile Cards -->
+    <section class="ejemplo-section">
+      <h2 class="ejemplo-title">👤 Profile Cards</h2>
+      <p class="ejemplo-subtitle">Perfiles de proveedores con badges, estadísticas y acciones</p>
+      
+      <div class="ejemplo-grid" id="profile-cards-container"></div>
+      
+      <div class="ejemplo-code">
+<pre>// Proveedor básico
+SLC.createProfileCard({
+  name: 'Carlos Rodríguez',
+  category: 'Construcción',
+  rating: 4.5,
+  reviewCount: 45,
+  image: '/imagenes/perfilemuestra/perfil3.jpg',
+  stats: [
+    { label: 'Proyectos', value: '32' },
+    { label: 'Años exp.', value: '8' }
+  ],
+  link: '#'
+});
+
+// Proveedor PRO verificado
+SLC.createProfileCard({
+  name: 'Ana Martínez',
+  category: 'Veterinaria',
+  rating: 5.0,
+  reviewCount: 156,
+  image: '/imagenes/perfilemuestra/perfil4.jpg',
+  verified: true,
+  isPro: true,
+  isTop: true,
+  stats: [
+    { label: 'Clientes', value: '250+' },
+    { label: 'Años exp.', value: '12' }
+  ],
+  link: '#'
+});</pre>
+      </div>
+    </section>
+
+    <!-- Search Bars -->
+    <section class="ejemplo-section">
+      <h2 class="ejemplo-title">🔍 Search Bars</h2>
+      <p class="ejemplo-subtitle">Barras de búsqueda con filtros de ubicación y categoría</p>
+      
+      <div id="search-bars-container"></div>
+      
+      <div class="ejemplo-code">
+<pre>// Búsqueda simple
+SLC.createSearchBar({
+  placeholder: 'Buscar servicios...',
+  onSearch: (query) => console.log('Buscando:', query)
+});
+
+// Búsqueda con categoría
+SLC.createSearchBar({
+  placeholder: 'Encuentra el servicio que necesitas',
+  showLocation: true,
+  showCategory: true,
+  onSearch: (query) => console.log('Búsqueda:', query)
+});</pre>
+      </div>
+    </section>
+
+    <!-- Stats Cards -->
+    <section class="ejemplo-section">
+      <h2 class="ejemplo-title">📊 Stats Cards</h2>
+      <p class="ejemplo-subtitle">Tarjetas de estadísticas con indicadores de tendencia</p>
+      
+      <div class="ejemplo-grid" id="stats-cards-container"></div>
+      
+      <div class="ejemplo-code">
+<pre>// Estadísticas con tendencias
+SLC.createStatsCard({
+  title: 'Servicios Activos',
+  value: '1,234',
+  icon: 'fa-briefcase',
+  trend: 'up',
+  trendValue: '+12%',
+  variant: 'primary'
+});
+
+SLC.createStatsCard({
+  title: 'Nuevos Usuarios',
+  value: '856',
+  icon: 'fa-users',
+  trend: 'up',
+  trendValue: '+8.5%',
+  variant: 'success'
+});</pre>
+      </div>
+    </section>
+
+    <!-- Review Cards -->
+    <section class="ejemplo-section">
+      <h2 class="ejemplo-title">⭐ Review Cards</h2>
+      <p class="ejemplo-subtitle">Reseñas de usuarios con imágenes y verificación</p>
+      
+      <div class="ejemplo-grid" id="review-cards-container"></div>
+      
+      <div class="ejemplo-code">
+<pre>// Reseña con imágenes
+SLC.createReviewCard({
+  userName: 'Laura González',
+  userImage: '/imagenes/perfilemuestra/perfil5.jpg',
+  rating: 5,
+  date: '15 de octubre, 2025',
+  comment: 'Excelente servicio, muy profesional y puntual.',
+  images: [
+    '/imagenes/perfilemuestra/trabajo1.jpg',
+    '/imagenes/perfilemuestra/trabajo2.jpg'
+  ],
+  verified: true
+});
+
+// Reseña sin imágenes
+SLC.createReviewCard({
+  userName: 'Roberto Silva',
+  userImage: '/imagenes/perfilemuestra/perfil6.jpg',
+  rating: 4,
+  date: '10 de octubre, 2025',
+  comment: 'Buen trabajo, lo recomiendo.'
+});</pre>
+      </div>
+    </section>
+
+    <!-- Ejemplo de renderizado múltiple -->
+    <section class="ejemplo-section">
+      <h2 class="ejemplo-title">🚀 Renderizado Múltiple</h2>
+      <p class="ejemplo-subtitle">Crear múltiples componentes a la vez</p>
+      
+      <div class="ejemplo-code">
+<pre>// Renderizar varios servicios
+const servicios = [
+  { title: 'Servicio 1', category: 'Plomería', ... },
+  { title: 'Servicio 2', category: 'Electricidad', ... },
+  { title: 'Servicio 3', category: 'Jardinería', ... }
+];
+
+SLC.renderMultiple(
+  'service-cards-container',
+  servicios,
+  (data) => SLC.createServiceCard(data)
+);
+
+// O agregar componentes directamente
+SLC.append('container-id', [
+  SLC.createServiceCard({...}),
+  SLC.createProfileCard({...}),
+  SLC.createStatsCard({...})
+]);</pre>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="c-footer">
+    <div class="container c-footer__container">
+      <p class="c-footer__copy">© 2025 ServiLocal. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/components-library.js"></script>
+  <script>
+    // Renderizar Service Cards
+    const serviceCardsData = [
+      {
+        title: 'Plomería General',
+        category: 'Plomería',
+        rating: 4.8,
+        reviewCount: 127,
+        price: 350,
+        providerName: 'Juan Pérez',
+        providerImage: '/imagenes/perfilemuestra/perfil1.jpg',
+        link: '#servicio-1'
+      },
+      {
+        title: 'Electricidad Profesional',
+        category: 'Electricidad',
+        rating: 5.0,
+        reviewCount: 89,
+        price: 450,
+        providerName: 'María García',
+        providerImage: '/imagenes/perfilemuestra/perfil2.jpg',
+        featured: true,
+        link: '#servicio-2'
+      },
+      {
+        title: 'Jardinería y Paisajismo',
+        category: 'Jardinería',
+        rating: 4.9,
+        reviewCount: 64,
+        price: 300,
+        providerName: 'Pedro López',
+        providerImage: '/imagenes/perfilemuestra/perfil3.jpg',
+        link: '#servicio-3'
+      }
+    ];
+
+    SLC.renderMultiple('service-cards-container', serviceCardsData, (data) => 
+      SLC.createServiceCard(data)
+    );
+
+    // Renderizar Profile Cards
+    const profileCardsData = [
+      {
+        name: 'Carlos Rodríguez',
+        category: 'Construcción',
+        rating: 4.5,
+        reviewCount: 45,
+        image: '/imagenes/perfilemuestra/perfil3.jpg',
+        stats: [
+          { label: 'Proyectos', value: '32' },
+          { label: 'Años exp.', value: '8' }
+        ],
+        link: '#proveedor-1'
+      },
+      {
+        name: 'Ana Martínez',
+        category: 'Veterinaria',
+        rating: 5.0,
+        reviewCount: 156,
+        image: '/imagenes/perfilemuestra/perfil4.jpg',
+        verified: true,
+        isPro: true,
+        isTop: true,
+        stats: [
+          { label: 'Clientes', value: '250+' },
+          { label: 'Años exp.', value: '12' }
+        ],
+        link: '#proveedor-2'
+      },
+      {
+        name: 'Luis Hernández',
+        category: 'Mecánica',
+        rating: 4.7,
+        reviewCount: 98,
+        image: '/imagenes/perfilemuestra/perfil5.jpg',
+        verified: true,
+        stats: [
+          { label: 'Reparaciones', value: '340+' },
+          { label: 'Años exp.', value: '10' }
+        ],
+        link: '#proveedor-3'
+      }
+    ];
+
+    SLC.renderMultiple('profile-cards-container', profileCardsData, (data) => 
+      SLC.createProfileCard(data)
+    );
+
+    // Renderizar Search Bars
+    const searchBarsContainer = document.getElementById('search-bars-container');
+    
+    searchBarsContainer.innerHTML = `
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--color-texto-secundario);">Búsqueda simple</h3>
+        ${SLC.createSearchBar({
+          placeholder: 'Buscar servicios...',
+          onSearch: (query) => console.log('Buscando:', query)
+        })}
+      </div>
+      <div>
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--color-texto-secundario);">Búsqueda completa</h3>
+        ${SLC.createSearchBar({
+          placeholder: 'Encuentra el servicio que necesitas',
+          showLocation: true,
+          showCategory: true,
+          onSearch: (query) => console.log('Búsqueda:', query)
+        })}
+      </div>
+    `;
+
+    // Renderizar Stats Cards
+    const statsCardsData = [
+      {
+        title: 'Servicios Activos',
+        value: '1,234',
+        icon: 'fa-briefcase',
+        trend: 'up',
+        trendValue: '+12%',
+        variant: 'primary'
+      },
+      {
+        title: 'Nuevos Usuarios',
+        value: '856',
+        icon: 'fa-users',
+        trend: 'up',
+        trendValue: '+8.5%',
+        variant: 'success'
+      },
+      {
+        title: 'Solicitudes Hoy',
+        value: '342',
+        icon: 'fa-clock',
+        trend: 'neutral',
+        trendValue: '0%',
+        variant: 'warning'
+      },
+      {
+        title: 'Problemas',
+        value: '12',
+        icon: 'fa-exclamation-triangle',
+        trend: 'down',
+        trendValue: '-5%',
+        variant: 'danger'
+      }
+    ];
+
+    SLC.renderMultiple('stats-cards-container', statsCardsData, (data) => 
+      SLC.createStatsCard(data)
+    );
+
+    // Renderizar Review Cards
+    const reviewCardsData = [
+      {
+        userName: 'Laura González',
+        userImage: '/imagenes/perfilemuestra/perfil5.jpg',
+        rating: 5,
+        date: '15 de octubre, 2025',
+        comment: 'Excelente servicio, muy profesional y puntual. El trabajo quedó impecable y superó mis expectativas. ¡Totalmente recomendado!',
+        images: [
+          '/imagenes/perfilemuestra/trabajo1.jpg',
+          '/imagenes/perfilemuestra/trabajo2.jpg',
+          '/imagenes/perfilemuestra/trabajo3.jpg'
+        ],
+        verified: true
+      },
+      {
+        userName: 'Roberto Silva',
+        userImage: '/imagenes/perfilemuestra/perfil6.jpg',
+        rating: 4,
+        date: '10 de octubre, 2025',
+        comment: 'Buen trabajo, cumplió con lo acordado. Llegó a tiempo y fue muy amable.'
+      },
+      {
+        userName: 'Carmen Ruiz',
+        userImage: '/imagenes/perfilemuestra/perfil7.jpg',
+        rating: 5,
+        date: '5 de octubre, 2025',
+        comment: 'Increíble servicio, muy profesional y atento a los detalles.',
+        verified: true
+      }
+    ];
+
+    SLC.renderMultiple('review-cards-container', reviewCardsData, (data) => 
+      SLC.createReviewCard(data)
+    );
+  </script>
+
+</body>
+</html>

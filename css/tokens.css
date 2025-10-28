@@ -1,0 +1,333 @@
+/* Tokens de diseño moderno para ServiLocal */
+:root {
+  /* Paleta de Colores Moderna */
+  --color-fondo: #fafbfc;
+  --color-fondo-secundario: #f1f5f9;
+  --color-superficie: #fff;
+  --color-superficie-elevada: #fff;
+  --color-texto: #1e293b;
+  --color-texto-secundario: #64748b;
+  --color-texto-terciario: #94a3b8;
+  
+  /* Colores de Marca */
+  --color-principal: #059669;
+  --color-principal-hover: #047857;
+  --color-principal-light: #d1fae5;
+  --color-acento: #0891b2;
+  --color-acento-hover: #0e7490;
+  --color-acento-light: #cffafe;
+  --color-acento-claro: #67e8f9;
+  
+  /* Colores Secundarios */
+  --color-violeta: #8b5cf6;
+  --color-violeta-light: #ede9fe;
+  --color-rosa: #ec4899;
+  --color-rosa-light: #fce7f3;
+  --color-amarillo: #f59e0b;
+  --color-amarillo-light: #fef3c7;
+  --color-naranja: #f97316;
+  --color-naranja-light: #fed7aa;
+  
+  /* Neutros para UI */
+  --color-neutro-50: #f8fafc;
+  --color-neutro-100: #f1f5f9;
+  --color-neutro-200: #e2e8f0;
+  --color-neutro-300: #cbd5e1;
+  --color-neutro-400: #94a3b8;
+  --color-neutro-500: #64748b;
+  --color-neutro-600: #475569;
+  --color-neutro-700: #334155;
+  --color-neutro-800: #1e293b;
+  --color-neutro-900: #0f172a;
+  
+  /* Colores de Estado */
+  --color-exito: #10b981;
+  --color-exito-light: #d1fae5;
+  --color-advertencia: #f59e0b;
+  --color-advertencia-light: #fef3c7;
+  --color-error: #ef4444;
+  --color-error-light: #fecaca;
+  --color-info: #3b82f6;
+  --color-info-light: #dbeafe;
+  
+  /* Tipografías Mejoradas */
+  --font-titulo: clamp(2rem, 5vw, 3rem);
+  --font-subtitulo: clamp(1.5rem, 4vw, 2.25rem);
+  --font-subtitulo-pequeno: clamp(1.25rem, 3vw, 1.75rem);
+  --font-texto: 1rem;
+  --font-texto-grande: 1.125rem;
+  --font-texto-pequeno: 0.875rem;
+  --font-texto-micro: 0.75rem;
+
+  
+  /* Espaciados Refinados */
+  --espacio-micro: 0.25rem;
+  --espacio-pequeno: 0.5rem;
+  --espacio-chico: 0.75rem;
+  --espacio-medio: 1rem;
+  --espacio-mediano: 1.5rem;
+  --espacio-grande: 2rem;
+  --espacio-extra-grande: 3rem;
+  --espacio-masivo: 4rem;
+  
+  /* Bordes Modernos */
+  --borde-fino: 2px;
+  --borde-suave: 6px;
+  --borde-medio: 12px;
+  --borde-pronunciado: 20px;
+  --borde-grande: 9999px;
+  
+  /* Sombras Sofisticadas */
+  --sombra-sutil: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px -1px rgb(0 0 0 / 10%);
+  --sombra-pequena: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+  --sombra-media: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+  --sombra-grande: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+  --sombra-xl: 0 25px 50px -12px rgb(0 0 0 / 25%);
+  
+  /* Sombras de Color */
+  --sombra-principal: 0 10px 15px -3px rgb(5 150 105 / 10%), 0 4px 6px -4px rgb(5 150 105 / 10%);
+  --sombra-acento: 0 10px 15px -3px rgb(8 145 178 / 10%), 0 4px 6px -4px rgb(8 145 178 / 10%);
+  
+  /* Gradientes Modernos */
+  --gradiente-principal: linear-gradient(135deg, var(--color-principal) 0%, var(--color-acento) 100%);
+  --gradiente-acento: linear-gradient(135deg, var(--color-acento) 0%, var(--color-principal) 100%);
+  --gradiente-sutil: linear-gradient(135deg, var(--color-principal-light) 0%, var(--color-acento-light) 100%);
+  --gradiente-hero: linear-gradient(135deg, #0f766e 0%, #059669 50%, #0891b2 100%);
+  --gradiente-superficie: linear-gradient(180deg, var(--color-superficie) 0%, var(--color-fondo) 100%);
+  
+  /* Gradientes Coloridos */
+  --gradiente-violeta: linear-gradient(135deg, var(--color-violeta) 0%, var(--color-rosa) 100%);
+  --gradiente-sunrise: linear-gradient(135deg, var(--color-naranja) 0%, var(--color-amarillo) 100%);
+  --gradiente-ocean: linear-gradient(135deg, var(--color-acento) 0%, var(--color-violeta) 100%);
+  --gradiente-rainbow: linear-gradient(135deg, var(--color-principal) 0%, var(--color-acento) 25%, var(--color-violeta) 50%, var(--color-rosa) 75%, var(--color-naranja) 100%);
+  
+  /* Gradientes con Transparencia */
+  --gradiente-overlay: linear-gradient(135deg, rgb(5 150 105 / 90%) 0%, rgb(8 145 178 / 80%) 100%);
+  --gradiente-glass: linear-gradient(135deg, rgb(255 255 255 / 10%) 0%, rgb(255 255 255 / 5%) 100%);
+  
+  /* Variables específicas para móvil */
+  --espaciado-movil-xs: 0.5rem;
+  --espaciado-movil-sm: 1rem;
+  --espaciado-movil-md: 1.5rem;
+  --espaciado-movil-lg: 2rem;
+  --font-movil-titulo: clamp(1.75rem, 6vw, 2.5rem);
+  --font-movil-subtitulo: clamp(1.25rem, 5vw, 1.75rem);
+  --sombra-movil-card: 0 4px 12px rgb(0 0 0 / 15%);
+  --border-movil: 8px;
+  
+  /* Transiciones Suaves */
+  --transicion-rapida: 150ms ease-out;
+  --transicion-normal: 250ms ease-out;
+  --transicion-lenta: 350ms ease-out;
+  --transicion-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Filtros y Efectos */
+  --blur-sutil: blur(4px);
+  --blur-medio: blur(8px);
+  --saturacion-alta: saturate(1.2);
+  --brillo-hover: brightness(1.05);
+}
+
+/* Utilidades de Color */
+.bg-fondo {
+  background-color: var(--color-fondo);
+}
+
+.bg-fondo-secundario {
+  background-color: var(--color-fondo-secundario);
+}
+
+.bg-superficie {
+  background-color: var(--color-superficie);
+}
+
+.bg-superficie-elevada {
+  background-color: var(--color-superficie-elevada);
+  box-shadow: var(--sombra-pequena);
+}
+
+.bg-principal {
+  background: var(--gradiente-principal);
+  color: var(--color-superficie);
+}
+
+.bg-acento {
+  background-color: var(--color-acento);
+  color: var(--color-superficie);
+}
+
+.texto-primario {
+  color: var(--color-texto);
+}
+
+.texto-secundario {
+  color: var(--color-texto-secundario);
+}
+
+.texto-terciario {
+  color: var(--color-texto-terciario);
+}
+
+.texto-principal {
+  color: var(--color-principal);
+}
+
+.texto-acento {
+  color: var(--color-acento);
+}
+
+/* Utilidades de Tipografía */
+.texto-titulo {
+  font-size: var(--font-titulo);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.texto-subtitulo {
+  font-size: var(--font-subtitulo);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.texto-subtitulo-pequeno {
+  font-size: var(--font-subtitulo-pequeno);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.texto-base {
+  font-size: var(--font-texto);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.texto-grande {
+  font-size: var(--font-texto-grande);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.texto-pequeno {
+  font-size: var(--font-texto-pequeno);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.texto-micro {
+  font-size: var(--font-texto-micro);
+  line-height: 1.4;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Utilidades de Espaciado */
+.u-no-margin {
+  margin: 0;
+}
+
+.p-micro { padding: var(--espacio-micro); }
+.p-pequeno { padding: var(--espacio-pequeno); }
+.p-chico { padding: var(--espacio-chico); }
+.p-medio { padding: var(--espacio-medio); }
+.p-mediano { padding: var(--espacio-mediano); }
+.p-grande { padding: var(--espacio-grande); }
+
+.gap-micro { gap: var(--espacio-micro); }
+.gap-pequeno { gap: var(--espacio-pequeno); }
+.gap-chico { gap: var(--espacio-chico); }
+.gap-medio { gap: var(--espacio-medio); }
+.gap-mediano { gap: var(--espacio-mediano); }
+.gap-grande { gap: var(--espacio-grande); }
+
+/* Utilidades de Bordes */
+.radius-fino { border-radius: var(--borde-fino); }
+.radius-suave { border-radius: var(--borde-suave); }
+.radius-medio { border-radius: var(--borde-medio); }
+.radius-pronunciado { border-radius: var(--borde-pronunciado); }
+.radius-grande { border-radius: var(--borde-grande); }
+
+/* Utilidades de Sombras */
+.sombra-sutil { box-shadow: var(--sombra-sutil); }
+.sombra-pequena { box-shadow: var(--sombra-pequena); }
+.sombra-media { box-shadow: var(--sombra-media); }
+.sombra-grande { box-shadow: var(--sombra-grande); }
+.sombra-xl { box-shadow: var(--sombra-xl); }
+.sombra-principal { box-shadow: var(--sombra-principal); }
+.sombra-acento { box-shadow: var(--sombra-acento); }
+
+/* Utilidades de Transiciones */
+.transicion-rapida { transition: all var(--transicion-rapida); }
+.transicion-normal { transition: all var(--transicion-normal); }
+.transicion-lenta { transition: all var(--transicion-lenta); }
+.transicion-bounce { transition: all var(--transicion-bounce); }
+
+/* ===== ANIMACIONES AVANZADAS ===== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 100%; }
+  50% { opacity: 70%; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0%;
+  }
+
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

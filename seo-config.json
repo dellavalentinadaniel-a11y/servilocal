@@ -1,0 +1,94 @@
+{
+  "siteName": "ServiLocal",
+  "siteUrl": "https://servilocal.com",
+  "defaultTitle": "ServiLocal – Encuentra profesionales de confianza cerca de ti",
+  "defaultDescription": "Conectamos vecinos con profesionales verificados en jardinería, plomería, electricidad, limpieza y más. Reseñas reales, disponibilidad inmediata y servicios confiables en tu barrio.",
+  "defaultKeywords": "servicios locales, profesionales verificados, jardinería, plomería, electricidad, limpieza, construcción, marketplace local, servicios a domicilio",
+  "twitterHandle": "@ServiLocal",
+  "defaultImage": "/imagenes/og-image.svg",
+  "locale": "es_MX",
+  "type": "website",
+  
+  "pages": {
+    "index.html": {
+      "title": "ServiLocal – Encuentra profesionales de confianza cerca de ti",
+      "description": "Conectamos vecinos con profesionales verificados en jardinería, plomería, electricidad, limpieza y más. Reseñas reales, disponibilidad inmediata y servicios confiables en tu barrio.",
+      "keywords": "servicios locales, profesionales verificados, marketplace local, servicios a domicilio, profesionales cerca de mí"
+    },
+    "buscar.html": {
+      "title": "Buscar servicios profesionales – ServiLocal",
+      "description": "Encuentra y compara profesionales verificados por categoría, ubicación y calificación. Filtra entre jardineros, plomeros, electricistas, personal de limpieza y más.",
+      "keywords": "buscar servicios, encontrar profesionales, comparar precios, profesionales cerca, servicios por categoría"
+    },
+    "perfil.html": {
+      "title": "Mi Perfil – ServiLocal",
+      "description": "Gestiona tu perfil, revisa tus servicios favoritos y mantén tu información actualizada en ServiLocal.",
+      "keywords": "perfil usuario, mis servicios, favoritos, cuenta servilocal"
+    },
+    "login.html": {
+      "title": "Iniciar sesión – ServiLocal",
+      "description": "Accede a tu cuenta de ServiLocal para contactar profesionales, gestionar tus servicios y ver tu historial.",
+      "keywords": "iniciar sesión, login, acceso cuenta, ingresar servilocal"
+    },
+    "registro.html": {
+      "title": "Crear cuenta – ServiLocal",
+      "description": "Regístrate gratis en ServiLocal como cliente para contratar servicios o como profesional para ofrecer tus servicios locales.",
+      "keywords": "registro, crear cuenta, registrarse, nueva cuenta, ofrecer servicios"
+    },
+    "proveedor.html": {
+      "title": "Perfil de proveedor – ServiLocal",
+      "description": "Conoce la experiencia, calificaciones, reseñas y disponibilidad de nuestros profesionales verificados.",
+      "keywords": "perfil profesional, reseñas proveedor, calificaciones, portfolio profesional"
+    },
+    "todos_los_servicios.html": {
+      "title": "Todos los servicios – ServiLocal",
+      "description": "Explora todas las categorías de servicios disponibles: jardinería, plomería, electricidad, limpieza, construcción, veterinaria y más.",
+      "keywords": "todos los servicios, categorías, directorio servicios, servicios disponibles"
+    },
+    "jardineria.html": {
+      "title": "Servicios de Jardinería – ServiLocal",
+      "description": "Encuentra jardineros profesionales para podado, diseño paisajístico, sistemas de riego y mantenimiento de jardines. Expertos verificados cerca de ti.",
+      "keywords": "jardinería, jardineros, podado, diseño de jardines, sistemas de riego, mantenimiento jardines, paisajismo"
+    },
+    "plomeria.html": {
+      "title": "Servicios de Plomería – ServiLocal",
+      "description": "Plomeros expertos en instalaciones, reparaciones y emergencias 24/7. Soluciones rápidas para fugas, destapes y mantenimiento.",
+      "keywords": "plomería, plomeros, reparación fugas, destapes, instalaciones hidráulicas, emergencias plomería"
+    },
+    "electricidad.html": {
+      "title": "Servicios de Electricidad – ServiLocal",
+      "description": "Electricistas certificados para instalaciones eléctricas, reparaciones, paneles solares y automatización del hogar.",
+      "keywords": "electricidad, electricistas, instalaciones eléctricas, paneles solares, automatización, reparaciones eléctricas"
+    },
+    "limpieza.html": {
+      "title": "Servicios de Limpieza – ServiLocal",
+      "description": "Personal de limpieza profesional para hogares, oficinas y espacios comerciales. Limpieza profunda, mudanzas y productos ecológicos.",
+      "keywords": "limpieza, personal de limpieza, limpieza profunda, limpieza oficinas, limpieza residencial, productos ecológicos"
+    },
+    "construccion.html": {
+      "title": "Servicios de Construcción – ServiLocal",
+      "description": "Profesionales en construcción, remodelaciones y ampliaciones. Equipos multidisciplinarios con arquitectos e ingenieros.",
+      "keywords": "construcción, remodelaciones, ampliaciones, obra nueva, albañilería, arquitectos, ingenieros"
+    },
+    "abogacia.html": {
+      "title": "Servicios Legales y Abogacía – ServiLocal",
+      "description": "Asesoría legal, contratos y representación judicial. Abogados especializados en derecho civil, mercantil y familiar.",
+      "keywords": "abogacía, abogados, asesoría legal, contratos, representación judicial, servicios legales"
+    },
+    "contaduria.html": {
+      "title": "Servicios de Contaduría – ServiLocal",
+      "description": "Contadores profesionales para declaraciones fiscales, auditorías y constitución de empresas. Atención personalizada.",
+      "keywords": "contaduría, contadores, declaraciones fiscales, auditorías, servicios contables, asesoría fiscal"
+    },
+    "veterinaria.html": {
+      "title": "Servicios Veterinarios – ServiLocal",
+      "description": "Clínicas veterinarias con consultas, vacunación, cirugías y emergencias. Servicio a domicilio para tus mascotas.",
+      "keywords": "veterinaria, veterinarios, clínica veterinaria, vacunación mascotas, cirugías veterinarias, emergencias"
+    },
+    "politicas.html": {
+      "title": "Políticas de Privacidad – ServiLocal",
+      "description": "Lee nuestras políticas de privacidad y protección de datos para entender cómo protegemos tu información personal.",
+      "keywords": "políticas de privacidad, protección de datos, privacidad, términos y condiciones"
+    }
+  }
+}

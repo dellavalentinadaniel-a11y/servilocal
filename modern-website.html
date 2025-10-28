@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta Tags para SEO y Responsividad -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitio web moderno y responsivo con las mejores prácticas de desarrollo frontend, SEO optimizado y diseño accesible.">
+    <meta name="keywords" content="desarrollo web, diseño responsivo, SEO, accesibilidad, HTML5, CSS3">
+    <meta name="author" content="ServiLocal">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sitio Web Moderno - ServiLocal">
+    <meta property="og:description" content="Diseño web completo, responsivo y optimizado para SEO">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://servilocal.com">
+    
+    <title>Sitio Web Moderno - Diseño Responsivo y SEO Optimizado</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/modern-website.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <!-- Header Principal -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="#home" class="logo" aria-label="Ir al inicio">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        <span>ModernWeb</span>
+                    </a>
+                </div>
+                
+                <button class="navbar-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
+                <ul class="navbar-menu" role="menubar">
+                    <li role="none"><a href="#home" role="menuitem">Inicio</a></li>
+                    <li role="none"><a href="#services" role="menuitem">Servicios</a></li>
+                    <li role="none"><a href="#about" role="menuitem">Nosotros</a></li>
+                    <li role="none"><a href="#portfolio" role="menuitem">Portafolio</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content" role="main">
+        
+        <!-- Sección Hero/Banner -->
+        <section id="home" class="hero-section" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="hero-title" class="hero-title">
+                            Diseño Web Moderno y <span class="highlight">Responsivo</span>
+                        </h1>
+                        <p class="hero-description">
+                            Creamos experiencias digitales excepcionales con las últimas tecnologías web. 
+                            Nuestro enfoque combina diseño atractivo, funcionalidad óptima y las mejores prácticas de SEO.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#contact" class="btn btn-primary" role="button">
+                                Comenzar Proyecto
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                            <a href="#portfolio" class="btn btn-secondary" role="button">
+                                Ver Portafolio
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+                             alt="Desarrollador trabajando en código moderno" 
+                             class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section id="services" class="services-section" aria-labelledby="services-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="services-title" class="section-title">Nuestros Servicios</h2>
+                    <p class="section-subtitle">
+                        Ofrecemos soluciones completas de desarrollo web con tecnologías de vanguardia
+                    </p>
+                </header>
+                
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-title">Desarrollo Frontend</h3>
+                        <p class="service-description">
+                            Interfaces modernas y responsivas con HTML5, CSS3 y JavaScript. 
+                            Optimizadas para rendimiento y accesibilidad.
+                        </p>
+                        <ul class="service-features">
+                            <li>React & Vue.js</li>
+                            <li>Diseño Responsivo</li>
+                            <li>Optimización SEO</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-title">Desarrollo Backend</h3>
+                        <p class="service-description">
+                            APIs robustas y escalables con Node.js, Python y bases de datos modernas. 
+                            Arquitectura segura y eficiente.
+                        </p>
+                        <ul class="service-features">
+                            <li>APIs RESTful</li>
+                            <li>Bases de Datos</li>
+                            <li>Seguridad Web</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-title">Aplicaciones Móviles</h3>
+                        <p class="service-description">
+                            Apps nativas y híbridas para iOS y Android. 
+                            Experiencia de usuario optimizada para dispositivos móviles.
+                        </p>
+                        <ul class="service-features">
+                            <li>React Native</li>
+                            <li>Flutter</li>
+                            <li>PWA</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Acerca de Nosotros -->
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 id="about-title" class="section-title">¿Quiénes Somos?</h2>
+                        <p class="about-description">
+                            Somos un equipo de desarrolladores apasionados por crear experiencias web excepcionales. 
+                            Con más de 5 años de experiencia, hemos ayudado a empresas de todos los tamaños a 
+                            establecer su presencia digital de manera efectiva.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">150+</span>
+                                <span class="stat-label">Proyectos Completados</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">98%</span>
+                                <span class="stat-label">Clientes Satisfechos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Soporte Técnico</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=400&fit=crop" 
+                             alt="Equipo de desarrolladores colaborando" 
+                             class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Portafolio -->
+        <section id="portfolio" class="portfolio-section" aria-labelledby="portfolio-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="portfolio-title" class="section-title">Nuestro Portafolio</h2>
+                    <p class="section-subtitle">
+                        Algunos de nuestros proyectos más destacados
+                    </p>
+                </header>
+                
+                <div class="portfolio-grid">
+                    <article class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop" 
+                                 alt="Proyecto de e-commerce moderno" 
+                                 class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">E-commerce Platform</h3>
+                                <p class="portfolio-category">Desarrollo Full Stack</p>
+                                <a href="#" class="portfolio-link" aria-label="Ver detalles del proyecto E-commerce">
+                                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop" 
+                                 alt="Dashboard corporativo con analytics" 
+                                 class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">Corporate Dashboard</h3>
+                                <p class="portfolio-category">UI/UX Design</p>
+                                <a href="#" class="portfolio-link" aria-label="Ver detalles del dashboard corporativo">
+                                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop" 
+                                 alt="Aplicación móvil de fitness" 
+                                 class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">Fitness Mobile App</h3>
+                                <p class="portfolio-category">Desarrollo Móvil</p>
+                                <a href="#" class="portfolio-link" aria-label="Ver detalles de la app de fitness">
+                                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Barra Lateral -->
+    <aside class="sidebar" role="complementary" aria-labelledby="sidebar-title">
+        <div class="container">
+            <h2 id="sidebar-title" class="sidebar-title">Recursos Útiles</h2>
+            
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-section-title">Últimas Noticias</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">Nuevas tendencias en CSS Grid</a></li>
+                        <li><a href="#">JavaScript ES2024: Novedades</a></li>
+                        <li><a href="#">Optimización de Core Web Vitals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-section-title">Herramientas Recomendadas</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">Figma para Diseño</a></li>
+                        <li><a href="#">VS Code Extensions</a></li>
+                        <li><a href="#">Chrome DevTools</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="container">
+            <header class="section-header">
+                <h2 id="contact-title" class="section-title">Contáctanos</h2>
+                <p class="section-subtitle">
+                    ¿Tienes un proyecto en mente? Nos encantaría escuchar de ti
+                </p>
+            </header>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contacto@modernweb.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Ciudad de México, México</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" aria-labelledby="contact-form-title">
+                    <h3 id="contact-form-title" class="sr-only">Formulario de contacto</h3>
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre Completo</label>
+                        <input type="text" id="name" name="name" class="form-input" required 
+                               aria-describedby="name-error" placeholder="Tu nombre completo">
+                        <span id="name-error" class="form-error" aria-live="polite"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" class="form-input" required 
+                               aria-describedby="email-error" placeholder="tu@email.com">
+                        <span id="email-error" class="form-error" aria-live="polite"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Asunto</label>
+                        <select id="subject" name="subject" class="form-select" required>
+                            <option value="">Selecciona un tema</option>
+                            <option value="web-development">Desarrollo Web</option>
+                            <option value="mobile-app">Aplicación Móvil</option>
+                            <option value="consultation">Consultoría</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" required 
+                                  aria-describedby="message-error" 
+                                  placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        <span id="message-error" class="form-error" aria-live="polite"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Enviar Mensaje
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="#home" class="footer-logo">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                            <span>ModernWeb</span>
+                        </a>
+                        <p class="footer-description">
+                            Creando experiencias web excepcionales con las últimas tecnologías y mejores prácticas.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#portfolio">Portafolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Desarrollo Web</a></li>
+                        <li><a href="#">Aplicaciones Móviles</a></li>
+                        <li><a href="#">Consultoría</a></li>
+                        <li><a href="#">Mantenimiento</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Seguir en Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Seguir en Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Seguir en LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Seguir en GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2024 ModernWeb. Todos los derechos reservados. 
+                    <a href="#" class="footer-link">Política de Privacidad</a> | 
+                    <a href="#" class="footer-link">Términos de Servicio</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Botón Flotante de Chat -->
+    <div class="fab" data-component="floating-chat">
+        <button class="fab__toggle" type="button" aria-label="Abrir chat de ServiLocal" aria-controls="fabMenu" aria-expanded="false">
+            <i class="fas fa-comments fab__toggle-icon" aria-hidden="true"></i>
+        </button>
+        <div class="fab__menu" id="fabMenu" role="menu" aria-hidden="true">
+            <a href="mensajes.html" class="fab__menu-link" role="menuitem">
+                <i class="fas fa-comment-dots fab__menu-icon" aria-hidden="true"></i>
+                <span class="fab__menu-text">Abrir chat</span>
+            </a>
+            <a href="contacto.html" class="fab__menu-link" role="menuitem">
+                <i class="fas fa-life-ring fab__menu-icon" aria-hidden="true"></i>
+                <span class="fab__menu-text">Centro de ayuda</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Botón de Scroll to Top -->
+    <button class="scroll-to-top" aria-label="Volver al inicio" title="Volver al inicio">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/modern-website.js"></script>
+</body>
+</html>
