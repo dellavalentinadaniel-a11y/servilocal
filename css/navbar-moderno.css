@@ -1,0 +1,493 @@
+/**
+ * NAVBAR MODERNO - SERVILOCAL
+ * Navbar responsive con búsqueda centrada
+ */
+
+/* ============================================
+   VARIABLES DEL NAVBAR
+   ============================================ */
+:root {
+  --navbar-height: 70px;
+  --navbar-height-mobile: 60px;
+  --navbar-bg: rgba(24, 24, 27, 0.98);
+  --navbar-border: rgba(255, 255, 255, 0.15);
+  --navbar-text: #f8fafc;
+  --navbar-text-hover: #8b5cf6;
+  --navbar-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --navbar-transition: all 0.3s ease;
+}
+
+/* Variables para modo claro */
+:root[data-theme="light"] {
+  --navbar-bg: rgba(255, 255, 255, 0.98);
+  --navbar-border: #cbd5e1;
+  --navbar-text: #1e293b;
+  --navbar-text-hover: #059669;
+}
+
+/* Variables para modo oscuro (por defecto) */
+:root,
+:root[data-theme="dark"] {
+  --navbar-bg: rgba(24, 24, 27, 0.98);
+  --navbar-border: rgba(255, 255, 255, 0.15);
+  --navbar-text: #f8fafc;
+  --navbar-text-hover: #8b5cf6;
+}
+
+/* ============================================
+   NAVBAR PRINCIPAL
+   ============================================ */
+.navbar-moderno {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  background: var(--navbar-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--navbar-border);
+  box-shadow: var(--navbar-shadow);
+  z-index: 1000;
+  transition: var(--navbar-transition);
+}
+
+.navbar-moderno__container {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* ============================================
+   LOGO Y MARCA
+   ============================================ */
+.navbar-moderno__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--navbar-text);
+  font-weight: 700;
+  font-size: 1.25rem;
+  transition: var(--navbar-transition);
+  white-space: nowrap;
+}
+
+.navbar-moderno__logo:hover {
+  color: var(--navbar-text-hover);
+  transform: translateY(-1px);
+}
+
+.navbar-moderno__logo-icon {
+  font-size: 1.5rem;
+  color: var(--navbar-text-hover);
+}
+
+/* ============================================
+   BÚSQUEDA CENTRADA
+   ============================================ */
+.navbar-moderno__search {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar-moderno__search-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 3rem 0 2.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--navbar-border);
+  border-radius: 21px;
+  color: var(--navbar-text);
+  font-size: 0.9375rem;
+  transition: var(--navbar-transition);
+  outline: none;
+}
+
+.navbar-moderno__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-moderno__search-input:focus {
+  border-color: var(--navbar-text-hover);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+/* Modo claro - input de búsqueda */
+:root[data-theme="light"] .navbar-moderno__search-input {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+:root[data-theme="light"] .navbar-moderno__search-input::placeholder {
+  color: #64748b;
+}
+
+:root[data-theme="light"] .navbar-moderno__search-input:focus {
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.navbar-moderno__search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+/* Modo claro - icono de búsqueda */
+:root[data-theme="light"] .navbar-moderno__search-icon {
+  color: #64748b;
+}
+
+.navbar-moderno__search-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--navbar-text-hover);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--navbar-transition);
+  font-size: 0.875rem;
+}
+
+.navbar-moderno__search-button:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-moderno__search-button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* ============================================
+   NAVEGACIÓN Y ACCIONES
+   ============================================ */
+.navbar-moderno__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-moderno__link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: var(--navbar-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: var(--navbar-transition);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-moderno__link:hover {
+  color: var(--navbar-text-hover);
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.navbar-moderno__link--active {
+  color: var(--navbar-text-hover);
+  background: rgba(139, 92, 246, 0.2);
+  font-weight: 600;
+}
+
+/* Modo claro - links */
+:root[data-theme="light"] .navbar-moderno__link:hover {
+  background: rgba(5, 150, 105, 0.1);
+}
+
+:root[data-theme="light"] .navbar-moderno__link--active {
+  background: rgba(5, 150, 105, 0.15);
+}
+
+.navbar-moderno__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: var(--navbar-text-hover);
+  border-radius: 50%;
+}
+
+.navbar-moderno__link-icon {
+  font-size: 1rem;
+}
+
+/* Badge de notificaciones */
+.navbar-moderno__badge {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 0.25rem;
+  background: #ef4444;
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 700;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ============================================
+   BOTÓN HAMBURGUESA (MÓVIL)
+   ============================================ */
+.navbar-moderno__toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: var(--navbar-text);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: var(--navbar-transition);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.navbar-moderno__toggle:hover {
+  background: rgba(139, 92, 246, 0.15);
+}
+
+/* Modo claro - toggle */
+:root[data-theme="light"] .navbar-moderno__toggle:hover {
+  background: rgba(5, 150, 105, 0.1);
+}
+
+.navbar-moderno__toggle-line {
+  width: 24px;
+  height: 2px;
+  background: var(--navbar-text);
+  border-radius: 2px;
+  transition: var(--navbar-transition);
+}
+
+.navbar-moderno__toggle--active .navbar-moderno__toggle-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.navbar-moderno__toggle--active .navbar-moderno__toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-moderno__toggle--active .navbar-moderno__toggle-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ============================================
+   MENÚ MÓVIL
+   ============================================ */
+.navbar-moderno__menu-mobile {
+  display: none;
+  position: fixed;
+  top: var(--navbar-height-mobile);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--navbar-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  overflow-y: auto;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-moderno__menu-mobile--active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-moderno__menu-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.navbar-moderno__menu-mobile-links .navbar-moderno__link {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  justify-content: flex-start;
+}
+
+.navbar-moderno__menu-mobile-search {
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+  .navbar-moderno__container {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+  }
+
+  .navbar-moderno__search {
+    max-width: 400px;
+  }
+
+  .navbar-moderno__nav {
+    gap: 0.25rem;
+  }
+
+  .navbar-moderno__link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MÓVIL
+   ============================================ */
+@media (max-width: 768px) {
+  .navbar-moderno {
+    height: var(--navbar-height-mobile);
+  }
+
+  .navbar-moderno__container {
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .navbar-moderno__logo {
+    font-size: 1.125rem;
+  }
+
+  .navbar-moderno__logo-icon {
+    font-size: 1.25rem;
+  }
+
+  /* Ocultar búsqueda y nav en desktop */
+  .navbar-moderno__search,
+  .navbar-moderno__nav {
+    display: none;
+  }
+
+  /* Mostrar botón hamburguesa */
+  .navbar-moderno__toggle {
+    display: flex;
+  }
+}
+
+/* ============================================
+   ESPACIADO PARA CONTENIDO
+   ============================================ */
+.navbar-moderno-spacer {
+  height: var(--navbar-height);
+}
+
+@media (max-width: 768px) {
+  .navbar-moderno-spacer {
+    height: var(--navbar-height-mobile);
+  }
+}
+
+/* ============================================
+   ANIMACIONES DE ENTRADA
+   ============================================ */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar-moderno {
+  animation: slideDown 0.4s ease-out;
+}
+
+/* ============================================
+   ESTADOS DE SCROLL
+   ============================================ */
+.navbar-moderno--scrolled {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  height: calc(var(--navbar-height) - 10px);
+  background: rgba(24, 24, 27, 1);
+}
+
+:root[data-theme="light"] .navbar-moderno--scrolled {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar-moderno--scrolled {
+    height: var(--navbar-height-mobile);
+  }
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+.navbar-moderno__link:focus-visible,
+.navbar-moderno__toggle:focus-visible,
+.navbar-moderno__search-input:focus-visible,
+.navbar-moderno__search-button:focus-visible {
+  outline: 2px solid var(--navbar-text-hover);
+  outline-offset: 2px;
+}
+
+/* Reducir movimiento para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  .navbar-moderno,
+  .navbar-moderno__link,
+  .navbar-moderno__toggle-line,
+  .navbar-moderno__menu-mobile,
+  .navbar-moderno__search-input,
+  .navbar-moderno__search-button {
+    animation: none;
+    transition: none;
+  }
+}

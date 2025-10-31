@@ -35,7 +35,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="ServiLocal">
-  <meta name="theme-color" content="#4F46E5">
   <meta name="msapplication-TileColor" content="#4F46E5">
   <meta name="msapplication-tap-highlight" content="no">
   
@@ -61,6 +60,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/chat-flotante.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body class="c-page">
@@ -211,7 +211,7 @@
             </div>
           </article>
         </div>
-        <div class="c-panel__actions" style="margin-top: var(--espacio-medio);">
+        <div class="c-panel__actions c-panel__actions--spaced">
           <a class="c-navbar__link" href="buscar.html?categoria=mecanica">Ver talleres cercanos <i class="fas fa-arrow-right c-icon-left"></i></a>
         </div>
       </div>
@@ -268,5 +268,9 @@
   <script src="js/gestos.js"></script>
   <script src="js/schema.js"></script>
   <script src="js/componentes.js"></script>
+
+  <!-- Socket.io para chat en tiempo real -->
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script src="js/chat-flotante.js"></script>
 </body>
 </html>

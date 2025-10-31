@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Inicia sesión en tu red profesional ServiLocal. Conecta con profesionales y encuentra servicios locales.">
+    <meta name="keywords" content="login, iniciar sesión, servilocal, red profesional, linkedin">
+    <meta name="author" content="ServiLocal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://servilocal.com/linkedin-login.html">
+    <meta property="og:title" content="Iniciar Sesión - ServiLocal">
+    <meta property="og:description" content="Accede a tu red profesional en ServiLocal">
+    <meta property="og:image" content="https://servilocal.com/imagenes/og-image.svg">
+    
+    <title>Iniciar Sesión - ServiLocal</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/linkedin-auth.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="auth-body">
+
+    <!-- Header -->
+    <header class="auth-header">
+        <div class="auth-header__container">
+            <a href="index.html" class="auth-logo">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>ServiLocal</span>
+            </a>
+            <nav class="auth-nav">
+                <a href="index.html" class="auth-nav__link">Inicio</a>
+                <a href="linkedin-servicios.html" class="auth-nav__link">Servicios</a>
+                <a href="sobre_nosotros.html" class="auth-nav__link">Nosotros</a>
+                <a href="linkedin-register.html" class="auth-nav__link auth-nav__link--register">Registrarse</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-content">
+                <div class="auth-welcome">
+                    <h1>Bienvenido de vuelta</h1>
+                    <p>Mantente al día con tu mundo profesional</p>
+                </div>
+
+                <div class="auth-card">
+                    <form class="auth-form" id="loginForm">
+                        <div class="auth-form__group">
+                            <label for="email" class="auth-form__label">Email o teléfono</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="auth-form__input" 
+                                required
+                                autocomplete="email"
+                                placeholder="ejemplo@email.com"
+                            >
+                        </div>
+
+                        <div class="auth-form__group">
+                            <label for="password" class="auth-form__label">Contraseña</label>
+                            <div class="auth-form__password-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    class="auth-form__input" 
+                                    required
+                                    autocomplete="current-password"
+                                    placeholder="Contraseña"
+                                >
+                                <button type="button" class="auth-form__password-toggle" onclick="togglePassword()">
+                                    <i class="fas fa-eye" id="passwordToggleIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__options">
+                            <label class="auth-checkbox">
+                                <input type="checkbox" name="remember" id="remember">
+                                <span class="auth-checkbox__checkmark"></span>
+                                <span class="auth-checkbox__label">Recordarme</span>
+                            </label>
+                            <a href="#" class="auth-link">¿Olvidaste tu contraseña?</a>
+                        </div>
+
+                        <button type="submit" class="auth-btn auth-btn--primary">
+                            Iniciar sesión
+                        </button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>o</span>
+                    </div>
+
+                    <div class="auth-social">
+                        <button type="button" class="auth-btn auth-btn--google">
+                            <i class="fab fa-google"></i>
+                            Continuar con Google
+                        </button>
+                        <button type="button" class="auth-btn auth-btn--facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Continuar con Facebook
+                        </button>
+                    </div>
+                </div>
+
+                <div class="auth-footer">
+                    <p>¿Nuevo en ServiLocal? <a href="linkedin-register.html" class="auth-link">Únete ahora</a></p>
+                </div>
+            </div>
+
+            <div class="auth-hero">
+                <div class="auth-hero__content">
+                    <h2>Conecta con profesionales locales</h2>
+                    <p>Descubre servicios de calidad en tu área y construye tu red profesional.</p>
+                    <div class="auth-hero__features">
+                        <div class="auth-feature">
+                            <i class="fas fa-users"></i>
+                            <span>Red profesional</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Servicios locales</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-star"></i>
+                            <span>Recomendaciones</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="auth-hero__image">
+                    <img src="imagenes/perfilemuestra/modern-office.png" alt="Profesionales trabajando" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="auth-page-footer">
+        <div class="auth-page-footer__container">
+            <div class="auth-page-footer__links">
+                <a href="sobre_nosotros.html">Acerca de</a>
+                <a href="#">Accesibilidad</a>
+                <a href="#">Centro de Ayuda</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos</a>
+            </div>
+            <div class="auth-page-footer__copyright">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>ServiLocal © 2024</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('passwordToggleIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            
+            // Simulate login process
+            const submitBtn = document.querySelector('.auth-btn--primary');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Iniciando sesión...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Simulate successful login
+                localStorage.setItem('userLoggedIn', 'true');
+                localStorage.setItem('userEmail', email);
+                if (remember) {
+                    localStorage.setItem('rememberUser', 'true');
+                }
+                
+                // Redirect to profile
+                window.location.href = 'perfil-moderno.html';
+            }, 1500);
+        });
+
+        // Social login handlers
+        document.querySelector('.auth-btn--google').addEventListener('click', function() {
+            alert('Integración con Google en desarrollo');
+        });
+
+        document.querySelector('.auth-btn--facebook').addEventListener('click', function() {
+            alert('Integración con Facebook en desarrollo');
+        });
+
+        // Check if user is already logged in
+        if (localStorage.getItem('userLoggedIn') === 'true') {
+            window.location.href = 'perfil-moderno.html';
+        }
+
+        // Auto-fill email if remembered
+        if (localStorage.getItem('rememberUser') === 'true') {
+            const savedEmail = localStorage.getItem('userEmail');
+            if (savedEmail) {
+                document.getElementById('email').value = savedEmail;
+                document.getElementById('remember').checked = true;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -423,6 +423,37 @@
   }
 
   /**
+   * Mejorar funcionalidad de Acordeones
+   */
+  function enhanceAccordion() {
+    const accordionHeaders = document.querySelectorAll('.c-accordion__header');
+    
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        const content = header.nextElementSibling;
+        
+        // Toggle estado
+        header.setAttribute('aria-expanded', !isExpanded);
+        
+        if (!isExpanded) {
+          content.classList.add('c-accordion__content--active');
+        } else {
+          content.classList.remove('c-accordion__content--active');
+        }
+      });
+      
+      // Soporte de teclado
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+  }
+
+  /**
    * Inicializar todas las mejoras de componentes
    */
   function init() {
@@ -436,6 +467,7 @@
       enhanceGallery();
       enhanceInteractiveCards();
       enhanceNavbarToggle();
+      enhanceAccordion();
       
       console.log('✓ Componentes interactivos mejorados');
     } catch (error) {

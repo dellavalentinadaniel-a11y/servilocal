@@ -29,6 +29,38 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 'imagenes/perfile/images%20(1).png'
   },
+  // Campos de perfil extendidos
+  phone: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  location: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  about: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  accountType: {
+    type: String,
+    enum: ['cliente', 'proveedor'],
+    default: 'cliente'
+  },
+  settings: {
+    notifyByEmail: { type: Boolean, default: true },
+    showApproxLocation: { type: Boolean, default: true },
+    allowDirectContact: { type: String, enum: ['nadie', 'clientes', 'verificados'], default: 'verificados' }
+  },
+  gallery: [{ type: String, trim: true }],
+  social: {
+    website: { type: String, trim: true, default: '' },
+    twitter: { type: String, trim: true, default: '' },
+    instagram: { type: String, trim: true, default: '' }
+  },
   isOnline: {
     type: Boolean,
     default: false
@@ -66,6 +98,13 @@ userSchema.methods.toPublic = function() {
     email: this.email,
     userName: this.userName,
     avatar: this.avatar,
+    phone: this.phone,
+    location: this.location,
+    about: this.about,
+    accountType: this.accountType,
+    settings: this.settings,
+    gallery: this.gallery,
+    social: this.social,
     isOnline: this.isOnline,
     lastSeen: this.lastSeen
   };

@@ -636,6 +636,10 @@ a {
   padding: var(--espacio-grande) 0;
 }
 
+.c-section--tight {
+  padding: var(--espacio-pequeno) 0 var(--espacio-grande) 0;
+}
+
 .c-section--light {
   background-color: var(--color-superficie);
 }
@@ -664,11 +668,6 @@ a {
 
 .c-section__heading--left .c-badge-pill {
   justify-self: flex-start;
-}
-
-.c-section--tight {
-  padding-top: var(--espacio-medio);
-  padding-bottom: var(--espacio-grande);
 }
 
 .c-panel {
@@ -1261,8 +1260,8 @@ a {
 .c-profile-body {
   padding: var(--espacio-medio);
   display: grid;
-  gap: var(--espacio-medio);
-  margin-top: calc(var(--espacio-grande) * -0.6);
+  gap: var(--espacio-chico);
+  margin-top: calc(var(--espacio-grande) * -1.2);
 }
 
 .c-profile-body__inner {
@@ -1403,6 +1402,111 @@ a {
 .c-chip--neutral {
   background-color: rgb(31 41 55 / 10%);
   color: rgb(31 41 55 / 70%);
+}
+
+/* ============================================
+   ACORDEÓN
+   ============================================ */
+
+.c-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-chico);
+}
+
+.c-accordion__item {
+  background: var(--color-superficie);
+  border-radius: var(--borde-suave);
+  box-shadow: var(--sombra-sutil);
+  overflow: hidden;
+}
+
+.c-accordion__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacio-medio);
+  background: var(--color-superficie);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.c-accordion__header:hover {
+  background: var(--color-fondo-secundario);
+}
+
+.c-accordion__header:focus-visible {
+  outline: 2px solid var(--color-principal);
+  outline-offset: -2px;
+}
+
+.c-accordion__title {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-chico);
+  font-size: var(--font-texto-grande);
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+.c-accordion__icon {
+  color: var(--color-principal);
+  font-size: 1.1rem;
+}
+
+.c-accordion__chevron {
+  color: var(--color-texto-secundario);
+  transition: transform 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.c-accordion__header[aria-expanded="true"] .c-accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.c-accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.c-accordion__content--active {
+  max-height: 5000px;
+}
+
+.c-accordion__body {
+  padding: var(--espacio-medio);
+  padding-top: 0;
+  display: grid;
+  gap: var(--espacio-medio);
+}
+
+/* Estilos para el mapa placeholder */
+.c-map-placeholder {
+  height: 400px;
+  background: #e2e8f0;
+  border-radius: var(--borde-suave);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-texto-secundario);
+}
+
+.c-map-placeholder__content {
+  text-align: center;
+}
+
+.c-map-placeholder__icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.c-map-placeholder__text {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
 }
 
 .c-tabs {

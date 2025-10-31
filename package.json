@@ -8,9 +8,9 @@
     "lint:css:fix": "stylelint \"css/**/*.css\" --fix"
   },
   "devDependencies": {
+    "husky": "^9.0.11",
     "stylelint": "^14.16.1",
-    "stylelint-config-standard": "^29.0.0",
-    "stylelint-config-prettier": "^9.0.0",
-    "husky": "^9.0.11"
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^29.0.0"
   }
 }

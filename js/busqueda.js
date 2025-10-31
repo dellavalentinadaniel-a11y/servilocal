@@ -418,6 +418,9 @@
         if (window.ServiLocalFavoritos) {
           window.ServiLocalFavoritos.inicializarBotonesFavoritos();
         }
+
+        // Inicializar botones de contactar
+        inicializarBotonesContactar();
       }
 
       // Fade in
@@ -477,7 +480,17 @@
             ${profesional.descripcion}
           </p>
           <div class="c-result-card__actions">
-            <a class="c-button" href="proveedor.html?id=${profesional.id}" aria-label="Ver perfil completo de ${profesional.nombre}">
+            <button 
+              class="c-button js-contactar-proveedor" 
+              type="button"
+              data-proveedor-id="${profesional.id}"
+              data-proveedor-nombre="${profesional.nombre}"
+              data-proveedor-avatar="${profesional.imagen || 'imagenes/perfile/images%20(1).png'}"
+              aria-label="Contactar a ${profesional.nombre}">
+              <i class="fas fa-comment-dots c-icon-left" aria-hidden="true"></i>
+              Contactar
+            </button>
+            <a class="c-button c-button--secondary" href="proveedor.html?id=${profesional.id}" aria-label="Ver perfil completo de ${profesional.nombre}">
               Ver perfil
             </a>
             <button 
@@ -533,6 +546,47 @@
     if (window.announceToScreenReader) {
       window.announceToScreenReader(mensaje);
     }
+  }
+
+  /**
+   * Inicializa botones de contactar con el chat flotante
+   */
+  function inicializarBotonesContactar() {
+    const botonesContactar = document.querySelectorAll('.js-contactar-proveedor');
+    
+    botonesContactar.forEach(boton => {
+      boton.addEventListener('click', function() {
+        const proveedorId = this.dataset.proveedorId;
+        const proveedorNombre = this.dataset.proveedorNombre;
+        const proveedorAvatar = this.dataset.proveedorAvatar;
+
+        // Verificar si el usuario está logueado
+        const token = localStorage.getItem('servilocal_token');
+        if (!token) {
+          // Redirigir a login si no está logueado
+          const returnUrl = encodeURIComponent(window.location.href);
+          window.location.href = `login.html?redirect=${returnUrl}`;
+          return;
+        }
+
+        // Abrir chat flotante si existe la API
+        if (window.ChatFlotante && window.ChatFlotante.abrirChat) {
+          window.ChatFlotante.abrirChat({
+            id: proveedorId,
+            userId: proveedorId,
+            userName: proveedorNombre,
+            userAvatar: proveedorAvatar,
+            isOnline: Math.random() > 0.5 // Simulado, debería venir del backend
+          });
+          
+          anunciarAccesibilidad(`Abriendo chat con ${proveedorNombre}`);
+        } else {
+          console.warn('ChatFlotante no está disponible');
+          // Fallback: redirigir a página de mensajes
+          window.location.href = `mensajes.html?usuario=${proveedorId}`;
+        }
+      });
+    });
   }
 
   /**

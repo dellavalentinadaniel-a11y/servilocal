@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubre servicios profesionales locales en ServiLocal. Conecta con expertos en diseño, desarrollo, consultoría y más.">
+    <meta name="keywords" content="servicios locales, profesionales, freelancers, diseño, desarrollo, consultoría">
+    <meta name="author" content="ServiLocal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://servilocal.com/linkedin-servicios.html">
+    <meta property="og:title" content="Servicios Profesionales - ServiLocal">
+    <meta property="og:description" content="Encuentra servicios profesionales de calidad en tu área">
+    <meta property="og:image" content="https://servilocal.com/imagenes/og-image.svg">
+    
+    <title>Servicios Profesionales - ServiLocal</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/linkedin-style.css">
+    <link rel="stylesheet" href="css/linkedin-listings.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+    <nav class="navbar">
+       <div class="navbar-left">
+        <a href="index.html" class="logo">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ServiLocal</span>
+        </a>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar servicios, profesionales...">
+        </div>
+       </div>
+       <div class="navbar-center">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-newspaper"></i> <span>Inicio</span></a></li>
+            <li><a href="perfil-moderno.html"><i class="fas fa-users"></i> <span>Mi Red</span></a></li>
+            <li><a href="#" class="active-link"><i class="fas fa-briefcase"></i> <span>Servicios</span></a></li>
+            <li><a href="mensajes.html"><i class="fas fa-envelope"></i> <span>Mensajes</span></a></li>
+            <li><a href="#"><i class="fas fa-bell"></i> <span>Notificaciones</span></a></li>
+        </ul>
+       </div>
+       <div class="navbar-right">
+        <div class="online">
+        <img src="imagenes/perfilemuestra/professional-headshot.png" class="nav-profile-img" onclick="toggleMenu()">
+        </div> 
+       </div>
+       
+       <!-- Dropdown menu -->
+       <div class="profile-menu-wrap" id="profileMenu">
+        <div class="profile-menu">
+            <div class="user-info">
+                <img src="imagenes/perfilemuestra/professional-headshot.png">
+                <div>
+                    <h3>Usuario Ejemplo</h3>
+                    <a href="perfil-moderno.html">Ver perfil completo</a>
+                </div>
+            </div>
+            <hr>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-comment-alt"></i>
+                <p>Dar Feedback</p>
+                <span>></span>
+            </a>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-cog"></i>
+                <p>Configuración y Privacidad</p>
+                <span>></span>
+            </a>
+            <a href="linkedin-login.html" class="profile-menu-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Cerrar Sesión</p>
+                <span>></span>
+            </a>
+        </div>
+       </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="listings-hero">
+        <div class="listings-hero__container">
+            <div class="listings-hero__content">
+                <h1>Servicios Profesionales</h1>
+                <p>Encuentra expertos locales para hacer crecer tu negocio</p>
+                <div class="listings-hero__actions">
+                    <a href="#" class="listings-btn listings-btn--primary">
+                        <i class="fas fa-plus"></i>
+                        Publicar Servicio
+                    </a>
+                    <a href="linkedin-productos.html" class="listings-btn listings-btn--secondary">
+                        <i class="fas fa-store"></i>
+                        Ver Productos
+                    </a>
+                </div>
+            </div>
+            <div class="listings-hero__stats">
+                <div class="listings-stat">
+                    <strong>2,500+</strong>
+                    <span>Servicios Activos</span>
+                </div>
+                <div class="listings-stat">
+                    <strong>1,200+</strong>
+                    <span>Profesionales</span>
+                </div>
+                <div class="listings-stat">
+                    <strong>98%</strong>
+                    <span>Satisfacción</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="listings-container">
+        <!-- Sidebar Filters -->
+        <aside class="listings-sidebar">
+            <div class="listings-filter-card">
+                <h3>Filtrar Servicios</h3>
+                
+                <div class="listings-filter-group">
+                    <h4>Categorías</h4>
+                    <div class="listings-filter-options">
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="design">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Diseño UX/UI</span>
+                            <span class="listings-count">(245)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="development">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Desarrollo Web</span>
+                            <span class="listings-count">(189)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="marketing">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Marketing Digital</span>
+                            <span class="listings-count">(156)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="consulting">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Consultoría</span>
+                            <span class="listings-count">(98)</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="category" value="branding">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Branding</span>
+                            <span class="listings-count">(87)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="listings-filter-group">
+                    <h4>Rango de Precio</h4>
+                    <div class="listings-filter-options">
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="price" value="budget">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>$50 - $200</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="price" value="mid">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>$200 - $500</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="price" value="premium">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>$500+</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="listings-filter-group">
+                    <h4>Ubicación</h4>
+                    <div class="listings-filter-options">
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="location" value="remote">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Remoto</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="location" value="local">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Presencial</span>
+                        </label>
+                        <label class="listings-checkbox">
+                            <input type="checkbox" name="location" value="hybrid">
+                            <span class="listings-checkbox__checkmark"></span>
+                            <span>Híbrido</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="listings-btn listings-btn--outline">
+                    <i class="fas fa-filter"></i>
+                    Aplicar Filtros
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="listings-main">
+            <!-- Search Bar -->
+            <div class="listings-search">
+                <div class="listings-search__wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar servicios específicos...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                        Buscar
+                    </button>
+                </div>
+                <div class="listings-sort">
+                    <label for="sort">Ordenar por:</label>
+                    <select id="sort" name="sort">
+                        <option value="relevance">Relevancia</option>
+                        <option value="newest">Más Recientes</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="rating">Mejor Valorados</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results Header -->
+            <div class="listings-results-header">
+                <h2>2,487 servicios encontrados</h2>
+                <div class="listings-view-toggle">
+                    <button class="listings-view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="listings-view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="listings-grid" id="servicesGrid">
+                <!-- Service Card 1 - Profile Style -->
+                <div class="listings-card listings-card--profile">
+                    <!-- Cover Image -->
+                    <div class="listings-card__cover">
+                        <img src="imagenes/albune/albun1.png" alt="Portada de María González" class="listings-cover-image">
+                    </div>
+                    <!-- Profile Section -->
+                    <div class="listings-card__profile-section">
+                        <div class="listings-card__avatar-container">
+                            <img src="imagenes/perfile/perfil1.png" alt="María González" class="listings-card__avatar listings-card__avatar--large">
+                        </div>
+                        <div class="listings-card__author">
+                            <h3>María González</h3>
+                            <div class="listings-card__rating">
+                                <div class="listings-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0 (24 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="listings-card__price">
+                            <span class="listings-price">Desde $150</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__content">
+                        <h4>Diseño UX/UI Completo para Apps Móviles</h4>
+                        <p>Creo experiencias digitales excepcionales con diseños modernos y funcionales. Especializada en apps móviles y web responsive.</p>
+                        <div class="listings-card__tags">
+                            <span class="listings-tag">UX/UI</span>
+                            <span class="listings-tag">Figma</span>
+                            <span class="listings-tag">Prototipado</span>
+                            <span class="listings-tag">Mobile</span>
+                        </div>
+                        <div class="listings-card__meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Madrid, España</span>
+                            <span><i class="fas fa-clock"></i> Entrega en 5-7 días</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__actions">
+                        <button class="listings-btn listings-btn--outline">
+                            <i class="fas fa-heart"></i>
+                            Guardar
+                        </button>
+                        <button class="listings-btn listings-btn--primary">
+                            <i class="fas fa-envelope"></i>
+                            Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="listings-card">
+                    <div class="listings-card__header">
+                        <img src="imagenes/perfilemuestra/user-4.jpg" alt="Carlos Rodríguez" class="listings-card__avatar">
+                        <div class="listings-card__author">
+                            <h3>Carlos Rodríguez</h3>
+                            <div class="listings-card__rating">
+                                <div class="listings-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.8 (31 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="listings-card__price">
+                            <span class="listings-price">Desde $300</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__content">
+                        <h4>Desarrollo Web Full Stack con React y Node.js</h4>
+                        <p>Desarrollo aplicaciones web modernas y escalables. Especializado en React, Node.js, y arquitecturas cloud-native.</p>
+                        <div class="listings-card__tags">
+                            <span class="listings-tag">React</span>
+                            <span class="listings-tag">Node.js</span>
+                            <span class="listings-tag">Full Stack</span>
+                            <span class="listings-tag">API</span>
+                        </div>
+                        <div class="listings-card__meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Barcelona, España</span>
+                            <span><i class="fas fa-clock"></i> Entrega en 2-3 semanas</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__actions">
+                        <button class="listings-btn listings-btn--outline">
+                            <i class="fas fa-heart"></i>
+                            Guardar
+                        </button>
+                        <button class="listings-btn listings-btn--primary">
+                            <i class="fas fa-envelope"></i>
+                            Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="listings-card">
+                    <div class="listings-card__header">
+                        <img src="imagenes/perfilemuestra/professional-headshot.png" alt="Ana Martín" class="listings-card__avatar">
+                        <div class="listings-card__author">
+                            <h3>Ana Martín</h3>
+                            <div class="listings-card__rating">
+                                <div class="listings-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0 (18 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="listings-card__price">
+                            <span class="listings-price">Desde $200</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__content">
+                        <h4>Estrategia de Marketing Digital y SEO</h4>
+                        <p>Impulso tu presencia digital con estrategias de marketing efectivas. Especializada en SEO, SEM y redes sociales.</p>
+                        <div class="listings-card__tags">
+                            <span class="listings-tag">SEO</span>
+                            <span class="listings-tag">SEM</span>
+                            <span class="listings-tag">Social Media</span>
+                            <span class="listings-tag">Analytics</span>
+                        </div>
+                        <div class="listings-card__meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Valencia, España</span>
+                            <span><i class="fas fa-clock"></i> Entrega en 1-2 semanas</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__actions">
+                        <button class="listings-btn listings-btn--outline">
+                            <i class="fas fa-heart"></i>
+                            Guardar
+                        </button>
+                        <button class="listings-btn listings-btn--primary">
+                            <i class="fas fa-envelope"></i>
+                            Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- More cards would be generated dynamically -->
+                <div class="listings-card">
+                    <div class="listings-card__header">
+                        <img src="imagenes/perfilemuestra/user-3.jpg" alt="Luis Fernández" class="listings-card__avatar">
+                        <div class="listings-card__author">
+                            <h3>Luis Fernández</h3>
+                            <div class="listings-card__rating">
+                                <div class="listings-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>4.2 (15 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="listings-card__price">
+                            <span class="listings-price">Desde $120</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__content">
+                        <h4>Consultoría en Transformación Digital</h4>
+                        <p>Ayudo a empresas a digitalizar sus procesos y optimizar su operación. Más de 10 años de experiencia en consultoría.</p>
+                        <div class="listings-card__tags">
+                            <span class="listings-tag">Consultoría</span>
+                            <span class="listings-tag">Digital</span>
+                            <span class="listings-tag">Procesos</span>
+                            <span class="listings-tag">Estrategia</span>
+                        </div>
+                        <div class="listings-card__meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Sevilla, España</span>
+                            <span><i class="fas fa-clock"></i> Entrega en 3-4 semanas</span>
+                        </div>
+                    </div>
+                    <div class="listings-card__actions">
+                        <button class="listings-btn listings-btn--outline">
+                            <i class="fas fa-heart"></i>
+                            Guardar
+                        </button>
+                        <button class="listings-btn listings-btn--primary">
+                            <i class="fas fa-envelope"></i>
+                            Contactar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="listings-pagination">
+                <button class="listings-pagination__btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                    Anterior
+                </button>
+                <div class="listings-pagination__numbers">
+                    <button class="listings-pagination__number active">1</button>
+                    <button class="listings-pagination__number">2</button>
+                    <button class="listings-pagination__number">3</button>
+                    <span class="listings-pagination__dots">...</span>
+                    <button class="listings-pagination__number">15</button>
+                </div>
+                <button class="listings-pagination__btn">
+                    Siguiente
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Profile menu toggle
+        function toggleMenu(){
+            const profileMenu = document.getElementById("profileMenu");
+            profileMenu.classList.toggle("open-menu");
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('userLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userProfession');
+            localStorage.removeItem('userLocation');
+            localStorage.removeItem('rememberUser');
+        }
+
+        // View toggle functionality
+        document.querySelectorAll('.listings-view-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.listings-view-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const view = this.dataset.view;
+                const grid = document.getElementById('servicesGrid');
+                
+                if (view === 'list') {
+                    grid.classList.add('listings-grid--list');
+                } else {
+                    grid.classList.remove('listings-grid--list');
+                }
+            });
+        });
+
+        // Filter functionality
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                // Here you would implement the filtering logic
+                console.log('Filter changed:', this.name, this.value, this.checked);
+            });
+        });
+
+        // Sort functionality
+        document.getElementById('sort').addEventListener('change', function() {
+            console.log('Sort changed:', this.value);
+            // Here you would implement the sorting logic
+        });
+
+        // Save/favorite functionality
+        document.querySelectorAll('.listings-card__actions .listings-btn--outline').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fas')) {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    this.innerHTML = '<i class="far fa-heart"></i> Guardar';
+                } else {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    this.innerHTML = '<i class="fas fa-heart"></i> Guardado';
+                }
+            });
+        });
+
+        // Contact functionality
+        document.querySelectorAll('.listings-card__actions .listings-btn--primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Here you would open a contact modal or redirect to messages
+                alert('Funcionalidad de contacto en desarrollo');
+            });
+        });
+    </script>
+</body>
+</html>

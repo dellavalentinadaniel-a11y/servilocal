@@ -7,6 +7,9 @@
 
   const USER_STORAGE_KEY = 'servilocal:users';
   const SESSION_STORAGE_KEY = 'servilocal:session';
+  const BACKEND_TOKEN_KEY = 'servilocal_token';
+  const BACKEND_USER_KEY = 'servilocal_user';
+  const API_URL = 'http://localhost:3000/api';
   const PROTECTED_PAGES = new Set(['perfil.html']);
   const googleClientId = (document.querySelector('meta[name="google-signin-client_id"]')?.content || '').trim();
   let googleSdkPromise = null;
@@ -26,7 +29,9 @@
   Object.assign(window.ServiLocalAuth, {
     getCurrentUser,
     logout,
-    persistProfileUpdates
+    persistProfileUpdates,
+    tryBackendAuth,
+    checkBackendAvailable
   });
 
   function getPageName() {
@@ -277,9 +282,26 @@
     logoutBtn.addEventListener('click', () => logout());
   }
 
-  function logout() {
+  async function logout() {
+    // Intentar logout del backend primero
+    const token = localStorage.getItem(BACKEND_TOKEN_KEY);
+    if (token) {
+      try {
+        await fetch(`${API_URL}/auth/logout`, {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+      } catch (e) {
+        console.warn('Error al hacer logout del backend:', e);
+      }
+    }
+    
+    // Limpiar almacenamiento local
     sessionStorage.removeItem(SESSION_STORAGE_KEY);
     localStorage.removeItem(SESSION_STORAGE_KEY);
+    localStorage.removeItem(BACKEND_TOKEN_KEY);
+    localStorage.removeItem(BACKEND_USER_KEY);
+    
     window.location.href = 'login.html';
   }
 
@@ -434,6 +456,39 @@
       window.announceToScreenReader(message);
     } else {
       console.log(message);
+    }
+  }
+
+  // Funciones para integración con backend
+  async function checkBackendAvailable() {
+    try {
+      const response = await fetch(`${API_URL}/health`);
+      return response.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  async function tryBackendAuth(email, password, isRegister = false) {
+    try {
+      const endpoint = isRegister ? 'register' : 'login';
+      const response = await fetch(`${API_URL}/auth/${endpoint}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.token && data.user) {
+          localStorage.setItem(BACKEND_TOKEN_KEY, data.token);
+          localStorage.setItem(BACKEND_USER_KEY, JSON.stringify(data.user));
+          return { success: true, user: data.user, token: data.token };
+        }
+      }
+      return { success: false, error: 'Credenciales inválidas' };
+    } catch (error) {
+      return { success: false, error: error.message };
     }
   }
 })();

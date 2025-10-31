@@ -24,7 +24,7 @@ def agregar_meta_pwa(archivo_html):
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="ServiLocal">
-  <meta name="theme-color" content="#4F46E5">
+  <!-- theme-color se añade dinámicamente desde js/pwa.js -->
   <meta name="msapplication-TileColor" content="#4F46E5">
   <meta name="msapplication-tap-highlight" content="no">
   

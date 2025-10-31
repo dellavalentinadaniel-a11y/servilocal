@@ -12,6 +12,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
 
 // Importar rutas
 const authRoutes = require('./routes/auth');
@@ -79,10 +80,12 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/serviloca
 
 // Rutas públicas
 app.use('/api/auth', authRoutes);
+app.use('/api/ai', require('./routes/ai'));
 
 // Rutas protegidas (requieren autenticación)
 app.use('/api/conversations', authenticate, conversationRoutes);
 app.use('/api/messages', authenticate, messageRoutes);
+app.use('/api/users', authenticate, require('./routes/users'));
 
 // Ruta de salud
 app.get('/api/health', (req, res) => {
@@ -91,6 +94,13 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date().toISOString(),
     uptime: process.uptime()
   });
+});
+
+// Servir el portfolio compilado en /portfolio
+const portfolioDir = path.join(__dirname, 'public', 'portfolio');
+app.use('/portfolio', express.static(portfolioDir));
+app.get('/portfolio/*', (req, res) => {
+  res.sendFile(path.join(portfolioDir, 'index.html'));
 });
 
 // Manejo de rutas no encontradas

@@ -6,6 +6,22 @@
 (function() {
   'use strict';
 
+  const THEME_COLOR = '#4F46E5';
+  const UNSUPPORTED_THEME_COLOR = /\b(Firefox|FxiOS|Opera|OPR|OPiOS)\b/i;
+
+  // Añade theme-color solo en navegadores compatibles
+  if (!UNSUPPORTED_THEME_COLOR.test(navigator.userAgent)) {
+    let themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    if (!themeMeta) {
+      themeMeta = document.createElement('meta');
+      themeMeta.name = 'theme-color';
+      document.head.appendChild(themeMeta);
+    }
+
+    themeMeta.content = THEME_COLOR;
+  }
+
   // Verificar soporte de Service Worker
   if (!('serviceWorker' in navigator)) {
     console.log('Service Worker no soportado en este navegador');

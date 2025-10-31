@@ -1,287 +1,719 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Conectamos vecinos con profesionales verificados en jardinería, plomería, electricidad, limpieza y más. Reseñas reales, disponibilidad inmediata y servicios confiables en tu barrio.">
-  <meta name="keywords" content="servicios locales, profesionales verificados, marketplace local, servicios a domicilio, profesionales cerca de mí">
-  <meta name="author" content="ServiLocal">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://servilocal.com/index.html">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://servilocal.com/index.html">
-  <meta property="og:title" content="ServiLocal – Encuentra profesionales de confianza cerca de ti">
-  <meta property="og:description" content="Conectamos vecinos con profesionales verificados en jardinería, plomería, electricidad, limpieza y más. Reseñas reales, disponibilidad inmediata y servicios confiables en tu barrio.">
-  <meta property="og:image" content="https://servilocal.com/imagenes/og-image.svg">
-  <meta property="og:locale" content="es_MX">
-  <meta property="og:site_name" content="ServiLocal">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://servilocal.com/index.html">
-  <meta name="twitter:title" content="ServiLocal – Encuentra profesionales de confianza cerca de ti">
-  <meta name="twitter:description" content="Conectamos vecinos con profesionales verificados en jardinería, plomería, electricidad, limpieza y más. Reseñas reales, disponibilidad inmediata y servicios confiables en tu barrio.">
-  <meta name="twitter:image" content="https://servilocal.com/imagenes/og-image.svg">
-  <meta name="twitter:site" content="@ServiLocal">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <!-- PWA Meta Tags -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="ServiLocal">
-  <!-- meta[name="theme-color"] removed for compatibility with Firefox/Opera; use theme_color in manifest.json -->
-  <meta name="msapplication-TileColor" content="#4338CA">
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.json">
-  
-  <!-- Apple Touch Icons -->
-  <link rel="apple-touch-icon" sizes="152x152" href="/imagen/icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/imagen/icon-192x192.png">
-  
-  <!-- Splash Screens iOS -->
-  <link rel="apple-touch-startup-image" href="/imagen/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
-  <link rel="apple-touch-startup-image" href="/imagen/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)">
-  <link rel="apple-touch-startup-image" href="/imagen/splash-1242x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)">
-  <link rel="apple-touch-startup-image" href="/imagen/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)">
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-  <title>ServiLocal – Encuentra profesionales de confianza cerca de ti</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Feed social de ServiLocal. Comparte experiencias, encuentra profesionales y conecta con tu comunidad local.">
+    <meta name="keywords" content="feed social, comunidad, servicios locales, profesionales, testimonios">
+    <meta name="author" content="ServiLocal">
+    <meta name="robots" content="index, follow">
+    
+    <title>Inicio - ServiLocal</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/linkedin-style.css">
+    <link rel="stylesheet" href="css/linkedin-feed.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
-<body class="c-page">
+<body>
 
-  <header class="c-navbar">
-    <div class="container c-navbar__inner">
-      <a class="c-navbar__brand" href="index.html">
-        <i class="fas fa-map-marker-alt c-navbar__brand-icon"></i>
-        ServiLocal
-      </a>
-      
-      <!-- Botón hamburguesa para móvil -->
-      <button class="c-navbar__toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navbar-menu">
-        <span class="c-navbar__toggle-line"></span>
-        <span class="c-navbar__toggle-line"></span>
-        <span class="c-navbar__toggle-line"></span>
-      </button>
-      
-      <!-- Menú de navegación -->
-      <nav class="c-navbar__menu" id="navbar-menu">
-        <div class="c-navbar__links">
-          <a class="c-navbar__link" href="buscar.html">
-            <i class="fas fa-search c-navbar__link-icon"></i>
-            Buscar servicios
-          </a>
-          <a class="c-navbar__link" href="todos_los_servicios.html">
-            <i class="fas fa-th-large c-navbar__link-icon"></i>
-            Servicios
-          </a>
-          <a class="c-navbar__link" href="login.html">
-            <i class="fas fa-sign-in-alt c-navbar__link-icon"></i>
-            Iniciar sesión
-          </a>
-          <a class="c-button c-button--primary" href="registro.html">
-            <i class="fas fa-user-plus"></i>
-            Registrarse
-          </a>
+    <nav class="navbar">
+       <div class="navbar-left">
+        <a href="index.html" class="logo">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ServiLocal</span>
+        </a>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar publicaciones, personas...">
         </div>
-      </nav>
+       </div>
+       <div class="navbar-center">
+        <ul>
+            <li><a href="index.html" class="active-link"><i class="fas fa-newspaper"></i> <span>Inicio</span></a></li>
+            <li><a href="perfil-moderno.html"><i class="fas fa-users"></i> <span>Mi Red</span></a></li>
+            <li><a href="linkedin-servicios.html"><i class="fas fa-briefcase"></i> <span>Servicios</span></a></li>
+            <li><a href="landing.html"><i class="fas fa-home"></i> <span>Landing</span></a></li>
+            <li><a href="linkedin-productos.html"><i class="fas fa-store"></i> <span>Productos</span></a></li>
+        </ul>
+       </div>
+       <div class="navbar-right">
+        <div class="online">
+        <img src="imagenes/perfilemuestra/professional-headshot.png" class="nav-profile-img" onclick="toggleMenu()">
+        </div> 
+       </div>
+       
+       <!-- Dropdown menu -->
+       <div class="profile-menu-wrap" id="profileMenu">
+        <div class="profile-menu">
+            <div class="user-info">
+                <img src="imagenes/perfilemuestra/professional-headshot.png">
+                <div>
+                    <h3>Usuario Ejemplo</h3>
+                    <a href="perfil-moderno.html">Ver perfil completo</a>
+                </div>
+            </div>
+            <hr>
+            <a href="#" class="profile-menu-link">
+                <i class="fas fa-cog"></i>
+                <p>Configuración</p>
+                <span>></span>
+            </a>
+            <a href="linkedin-login.html" class="profile-menu-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <p>Cerrar Sesión</p>
+                <span>></span>
+            </a>
+        </div>
+       </div>
+    </nav>
+
+    <div class="feed-container">
+        <!-- Left Sidebar -->
+        <aside class="feed-sidebar">
+            <div class="feed-profile-card">
+                <div class="feed-profile-cover">
+                    <img src="imagenes/perfilemuestra/modern-office.png" alt="Portada">
+                </div>
+                <div class="feed-profile-info">
+                    <img src="imagenes/perfilemuestra/professional-headshot.png" alt="Avatar" class="feed-profile-avatar">
+                    <h3>Usuario Ejemplo</h3>
+                    <p>Profesional en Servicios Locales</p>
+                    <div class="feed-profile-stats">
+                        <span><strong>108</strong> conexiones</span>
+                        <span><strong>24</strong> publicaciones</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feed-shortcuts">
+                <h4>Accesos Rápidos</h4>
+                <a href="#" class="feed-shortcut">
+                    <i class="fas fa-users"></i>
+                    <span>Mis Grupos</span>
+                </a>
+                <a href="#" class="feed-shortcut">
+                    <i class="fas fa-bookmark"></i>
+                    <span>Elementos Guardados</span>
+                </a>
+                <a href="#" class="feed-shortcut">
+                    <i class="fas fa-calendar"></i>
+                    <span>Eventos</span>
+                </a>
+                <a href="linkedin-marketplace.html" class="feed-shortcut">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Marketplace</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Feed -->
+        <main class="feed-main">
+            <!-- Create Post -->
+            <div class="create-post-card">
+                <div class="create-post-header">
+                    <img src="imagenes/perfilemuestra/professional-headshot.png" alt="Tu avatar" class="create-post-avatar">
+                    <input type="text" placeholder="¿Qué quieres compartir?" class="create-post-input" id="createPostInput">
+                </div>
+                <div class="create-post-actions">
+                    <button class="create-post-btn" id="addPhotoBtn">
+                        <i class="fas fa-image"></i>
+                        <span>Foto</span>
+                    </button>
+                    <button class="create-post-btn" id="addVideoBtn">
+                        <i class="fas fa-video"></i>
+                        <span>Video</span>
+                    </button>
+                    <button class="create-post-btn" id="addLocationBtn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ubicación</span>
+                    </button>
+                    <button class="create-post-btn" id="addServiceBtn">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Servicio</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Posts Feed -->
+            <div class="posts-container" id="postsContainer">
+                <!-- Post 1 -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <img src="imagenes/perfile/perfil1.png" alt="María González" class="post-avatar">
+                        <div class="post-author-info">
+                            <h4>María González</h4>
+                            <p>Diseñadora UX/UI • <span class="post-time">2h</span></p>
+                        </div>
+                        <button class="post-menu-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="post-content">
+                        <p>¡Acabo de terminar un proyecto increíble! 🎨 Rediseño completo de la app de una startup local. El cliente quedó encantado con la nueva interfaz. ¿Qué opinan del antes y después?</p>
+                        <div class="post-images">
+                            <img src="imagenes/perfilemuestra/modern-ui-design-trends.jpg" alt="Diseño UI">
+                        </div>
+                        <div class="post-tags">
+                            <span class="post-tag">#UXDesign</span>
+                            <span class="post-tag">#UI</span>
+                            <span class="post-tag">#ServiLocal</span>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <span class="post-likes">👍 24 reacciones</span>
+                        <span class="post-comments">8 comentarios</span>
+                        <span class="post-shares">3 compartidos</span>
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action-btn" data-action="like">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>Me gusta</span>
+                        </button>
+                        <button class="post-action-btn" data-action="comment">
+                            <i class="far fa-comment"></i>
+                            <span>Comentar</span>
+                        </button>
+                        <button class="post-action-btn" data-action="share">
+                            <i class="far fa-share"></i>
+                            <span>Compartir</span>
+                        </button>
+                    </div>
+                    <div class="post-comments-section" style="display: none;">
+                        <div class="comment-input">
+                            <img src="imagenes/perfilemuestra/professional-headshot.png" alt="Tu avatar" class="comment-avatar">
+                            <input type="text" placeholder="Escribe un comentario..." class="comment-input-field">
+                            <button class="comment-send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="comments-list">
+                            <div class="comment">
+                                <img src="imagenes/perfile/perfil2.png" alt="Carlos" class="comment-avatar">
+                                <div class="comment-content">
+                                    <div class="comment-bubble">
+                                        <strong>Carlos Rodríguez</strong>
+                                        <p>¡Excelente trabajo María! El diseño se ve muy profesional 👏</p>
+                                    </div>
+                                    <div class="comment-actions">
+                                        <span class="comment-time">1h</span>
+                                        <button class="comment-like-btn">Me gusta</button>
+                                        <button class="comment-reply-btn">Responder</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <img src="imagenes/perfile/perfil2.png" alt="Carlos Rodríguez" class="post-avatar">
+                        <div class="post-author-info">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Desarrollador Full Stack • <span class="post-time">4h</span></p>
+                        </div>
+                        <button class="post-menu-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="post-content">
+                        <p>💡 Tip del día: ¿Sabían que optimizar las imágenes puede mejorar la velocidad de carga de su sitio web hasta un 60%? Aquí les comparto algunas herramientas gratuitas que uso:</p>
+                        <ul>
+                            <li>TinyPNG para comprimir imágenes</li>
+                            <li>WebP para mejor calidad/tamaño</li>
+                            <li>Lazy loading para cargar solo lo visible</li>
+                        </ul>
+                        <div class="post-tags">
+                            <span class="post-tag">#WebDev</span>
+                            <span class="post-tag">#Performance</span>
+                            <span class="post-tag">#Tips</span>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <span class="post-likes">👍 18 reacciones</span>
+                        <span class="post-comments">12 comentarios</span>
+                        <span class="post-shares">5 compartidos</span>
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action-btn" data-action="like">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>Me gusta</span>
+                        </button>
+                        <button class="post-action-btn" data-action="comment">
+                            <i class="far fa-comment"></i>
+                            <span>Comentar</span>
+                        </button>
+                        <button class="post-action-btn" data-action="share">
+                            <i class="far fa-share"></i>
+                            <span>Compartir</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <img src="imagenes/perfilemuestra/professional-headshot.png" alt="Ana Martín" class="post-avatar">
+                        <div class="post-author-info">
+                            <h4>Ana Martín</h4>
+                            <p>Marketing Digital • <span class="post-time">1d</span></p>
+                        </div>
+                        <button class="post-menu-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="post-content">
+                        <p>🚀 ¡Increíble resultado! Mi cliente aumentó sus ventas online un 150% en solo 2 meses aplicando estas estrategias de marketing digital. ¿Quieren saber cuáles fueron las claves del éxito?</p>
+                        <div class="post-poll">
+                            <h5>¿Cuál creen que fue la estrategia más efectiva?</h5>
+                            <div class="poll-options">
+                                <button class="poll-option">
+                                    <span>SEO y contenido orgánico</span>
+                                    <div class="poll-bar"><div class="poll-fill" style="width: 45%"></div></div>
+                                    <span class="poll-percentage">45%</span>
+                                </button>
+                                <button class="poll-option">
+                                    <span>Publicidad en redes sociales</span>
+                                    <div class="poll-bar"><div class="poll-fill" style="width: 35%"></div></div>
+                                    <span class="poll-percentage">35%</span>
+                                </button>
+                                <button class="poll-option">
+                                    <span>Email marketing</span>
+                                    <div class="poll-bar"><div class="poll-fill" style="width: 20%"></div></div>
+                                    <span class="poll-percentage">20%</span>
+                                </button>
+                            </div>
+                            <p class="poll-votes">127 votos • Termina en 2 días</p>
+                        </div>
+                        <div class="post-tags">
+                            <span class="post-tag">#MarketingDigital</span>
+                            <span class="post-tag">#SEO</span>
+                            <span class="post-tag">#Resultados</span>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <span class="post-likes">👍 42 reacciones</span>
+                        <span class="post-comments">15 comentarios</span>
+                        <span class="post-shares">8 compartidos</span>
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action-btn" data-action="like">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>Me gusta</span>
+                        </button>
+                        <button class="post-action-btn" data-action="comment">
+                            <i class="far fa-comment"></i>
+                            <span>Comentar</span>
+                        </button>
+                        <button class="post-action-btn" data-action="share">
+                            <i class="far fa-share"></i>
+                            <span>Compartir</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Sponsored Ad Post -->
+                <article class="post-card sponsored-post">
+                    <div class="sponsored-label">
+                        <i class="fas fa-bullhorn"></i>
+                        Contenido patrocinado
+                    </div>
+                    <div class="post-content">
+                        <div class="ad-video-container">
+                            <video class="feed-ad-video" controls poster="imagenes/publucacion1.png">
+                                <source src="imagenes/publicidad/publicidad43.mp4" type="video/mp4">
+                                Tu navegador no soporta videos HTML5.
+                            </video>
+                        </div>
+                        <div class="ad-content-text">
+                            <h3>ServiLocal - Tu solución más rápida</h3>
+                            <p>Conectamos a los mejores profesionales con clientes que necesitan servicios de calidad. ¡Únete a nuestra comunidad!</p>
+                            <div class="ad-actions">
+                                <a href="linkedin-register.html" class="ad-btn ad-btn--primary">
+                                    Registrarse gratis
+                                </a>
+                                <a href="linkedin-servicios.html" class="ad-btn ad-btn--secondary">
+                                    Ver servicios
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 4 - Jardinería con imágenes del álbum -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <img src="imagenes/perfile/perfil124nver3.png" alt="Ana Martín" class="post-avatar">
+                        <div class="post-author-info">
+                            <h4>Ana Martín</h4>
+                            <p>Especialista en Jardinería • <span class="post-time">6h</span></p>
+                        </div>
+                        <button class="post-menu-btn">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <div class="post-content">
+                        <p>🌿 ¡Terminé otro proyecto de jardinería vertical! Este cliente quería transformar su patio trasero en un oasis verde. Aquí pueden ver el antes y después del trabajo. ¿Qué opinan del resultado? 🌱</p>
+                        
+                        <!-- Galería de imágenes del álbum -->
+                        <div class="post-images">
+                            <div class="post-image-grid">
+                                <img src="imagenes/albune/21-espectaculares-jardines-verticales-06.png" alt="Jardín vertical terminado" class="post-image main-image">
+                                <div class="post-image-secondary">
+                                    <img src="imagenes/albune/albun12.png" alt="Detalle de plantas" class="post-image">
+                                    <img src="imagenes/albune/planta-exteriores-jardineria.png" alt="Plantas exteriores" class="post-image">
+                                    <div class="post-image-more">
+                                        <img src="imagenes/albune/captura-de-pantalla-alquiler-casa-jardin-flores-villa-la-angostura-neuquen-800x350.png" alt="Más fotos" class="post-image">
+                                        <div class="image-overlay">+3</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="post-tags">
+                            <span class="post-tag">#Jardinería</span>
+                            <span class="post-tag">#JardínVertical</span>
+                            <span class="post-tag">#Paisajismo</span>
+                            <span class="post-tag">#AntesYDespués</span>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <span class="post-likes">👍 67 reacciones</span>
+                        <span class="post-comments">23 comentarios</span>
+                        <span class="post-shares">12 compartidos</span>
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action-btn" data-action="like">
+                            <i class="far fa-thumbs-up"></i>
+                            <span>Me gusta</span>
+                        </button>
+                        <button class="post-action-btn" data-action="comment">
+                            <i class="far fa-comment"></i>
+                            <span>Comentar</span>
+                        </button>
+                        <button class="post-action-btn" data-action="share">
+                            <i class="far fa-share"></i>
+                            <span>Compartir</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i>
+                    Cargar más publicaciones
+                </button>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="feed-right-sidebar">
+            <div class="trending-topics">
+                <h4>Tendencias</h4>
+                <div class="trending-list">
+                    <a href="#" class="trending-item">
+                        <span class="trending-tag">#DiseñoUX</span>
+                        <span class="trending-count">2.4k publicaciones</span>
+                    </a>
+                    <a href="#" class="trending-item">
+                        <span class="trending-tag">#PlomeriaUrgente</span>
+                        <span class="trending-count">1.8k publicaciones</span>
+                    </a>
+                    <a href="#" class="trending-item">
+                        <span class="trending-tag">#TrabajosElectricos</span>
+                        <span class="trending-count">1.2k publicaciones</span>
+                    </a>
+                    <a href="#" class="trending-item">
+                        <span class="trending-tag">#LimpiezaPostObra</span>
+                        <span class="trending-count">956 publicaciones</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Sidebar Ad -->
+            <div class="right-sidebar-ad">
+                <div class="ad-label">Publicidad</div>
+                <div class="right-ad-content">
+                    <img src="imagenes/publucacion1.png" alt="Publicidad ServiLocal" class="right-ad-image">
+                    <div class="right-ad-text">
+                        <h4>¿Necesitas más clientes?</h4>
+                        <p>Únete a ServiLocal Premium y aparece primero en las búsquedas</p>
+                        <a href="linkedin-register.html" class="right-ad-btn">
+                            Saber más
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggested-connections">
+                <h4>Personas que podrías conocer</h4>
+                <div class="suggestion-list">
+                    <div class="suggestion-item">
+                        <img src="imagenes/perfilemuestra/user-3.jpg" alt="Laura Pérez" class="suggestion-avatar">
+                        <div class="suggestion-info">
+                            <h5>Laura Pérez</h5>
+                            <p>Arquitecta</p>
+                            <button class="suggestion-connect-btn">Conectar</button>
+                        </div>
+                    </div>
+                    <div class="suggestion-item">
+                        <img src="imagenes/perfilemuestra/user-4.jpg" alt="Miguel Torres" class="suggestion-avatar">
+                        <div class="suggestion-info">
+                            <h5>Miguel Torres</h5>
+                            <p>Electricista</p>
+                            <button class="suggestion-connect-btn">Conectar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
     </div>
-  </header>
 
-  <main class="c-main" id="main-content">
-    <section class="c-hero">
-      <div class="container c-hero__inner">
-        <div class="c-hero__content">
-          <div class="c-badge-group">
-            <span class="c-badge-pill c-badge-pill--primary">
-              <i class="fas fa-star"></i>
-              Marketplace local
-            </span>
-            <span class="c-badge-pill c-badge-pill--accent">
-              <i class="fas fa-users"></i>
-              +1.200 usuarios
-            </span>
-          </div>
-          <h1 class="c-hero__title">¿Necesitás un servicio <span class="c-hero__title-highlight">confiable</span> cerca de tu casa?</h1>
-          <p class="c-hero__text texto-base">Conectamos vecinos con profesionales verificados, reseñas reales y disponibilidad inmediata. Todo en una sola plataforma pensada para barrios y comunidades locales.</p>
-          <div class="c-hero__actions">
-            <a class="c-button c-button--hero" href="buscar.html">
-              <i class="fas fa-search"></i>
-              Buscar servicios
-            </a>
-            <a class="c-button c-button--secondary c-button--outline" href="registro.html">
-              <i class="fas fa-handshake"></i>
-              Ofrecer mis servicios
-            </a>
-          </div>
-          <div class="c-hero__stats">
-            <div class="c-stat-badge">
-              <i class="fas fa-check-circle c-stat-badge__icon"></i>
-              <div class="c-stat-badge__content">
-                <span class="c-stat-badge__number">1.200+</span>
-                <span class="c-stat-badge__label">Trabajos completados</span>
-              </div>
-            </div>
-            <div class="c-stat-badge">
-              <i class="fas fa-shield-alt c-stat-badge__icon"></i>
-              <div class="c-stat-badge__content">
-                <span class="c-stat-badge__number">100%</span>
-                <span class="c-stat-badge__label">Verificados</span>
-              </div>
-            </div>
-            <div class="c-stat-badge">
-              <i class="fas fa-clock c-stat-badge__icon"></i>
-              <div class="c-stat-badge__content">
-                <span class="c-stat-badge__number">24h</span>
-                <span class="c-stat-badge__label">Respuesta promedio</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="c-hero__visual">
-          <article class="c-card-post c-card-post--featured">
-            <div class="c-card-post__header">
-              <span class="c-card-post__category">
-                <i class="fas fa-fire"></i>
-                Destacado
-              </span>
-              <div class="c-card-post__rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>5.0</span>
-              </div>
-            </div>
-            <h2 class="c-card-post__title">+1.200 trabajos completados con reseñas 5 estrellas</h2>
-            <p class="c-card-post__excerpt">Cada profesional pasa por un proceso de verificación y seguimiento de calidad para garantizar seguridad, puntualidad y transparencia en cada visita.</p>
-            <div class="c-card-post__meta">
-              <div class="c-card-post__meta-item">
-                <i class="fas fa-bookmark"></i>
-                <span>Guía de onboarding</span>
-              </div>
-              <div class="c-card-post__meta-item">
-                <i class="fas fa-calendar-alt"></i>
-                <span>Actualizada 2025</span>
-              </div>
-            </div>
-            <a class="c-card-post__link" href="proveedor.html">
-              <span>Ver proveedor de ejemplo</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- Hidden file input for photos -->
+    <input type="file" id="photoInput" accept="image/*" multiple style="display: none;">
 
-    <section class="c-section">
-      <div class="container">
-        <div class="c-section__heading">
-          <h2 class="texto-subtitulo">Servicios populares</h2>
-          <p class="texto-base u-no-margin">Explorá los oficios más solicitados y encontrá especialistas disponibles en tu zona.</p>
+    <!-- Create Post Modal -->
+    <div id="createPostModal" class="create-post-modal">
+        <div class="create-post-modal__content">
+            <div class="create-post-modal__header">
+                <h3>Crear publicación</h3>
+                <button class="create-post-modal__close" id="closeCreatePostModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="create-post-modal__body">
+                <div class="modal-author-info">
+                    <img src="imagenes/perfilemuestra/professional-headshot.png" alt="Tu avatar" class="modal-author-avatar">
+                    <div>
+                        <h4>Usuario Ejemplo</h4>
+                        <select class="post-privacy-select">
+                            <option value="public">🌍 Público</option>
+                            <option value="connections">👥 Conexiones</option>
+                            <option value="private">🔒 Solo yo</option>
+                        </select>
+                    </div>
+                </div>
+                <textarea placeholder="¿Qué quieres compartir?" class="modal-post-textarea" id="modalPostTextarea"></textarea>
+                <div class="modal-post-images" id="modalPostImages" style="display: none;"></div>
+                <div class="modal-post-actions">
+                    <button class="modal-action-btn" id="modalAddPhoto">
+                        <i class="fas fa-image"></i>
+                        Foto
+                    </button>
+                    <button class="modal-action-btn" id="modalAddLocation">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Ubicación
+                    </button>
+                    <button class="modal-action-btn" id="modalAddTag">
+                        <i class="fas fa-hashtag"></i>
+                        Etiqueta
+                    </button>
+                </div>
+            </div>
+            <div class="create-post-modal__footer">
+                <button class="modal-btn modal-btn--secondary" id="cancelPost">Cancelar</button>
+                <button class="modal-btn modal-btn--primary" id="publishPost" disabled>Publicar</button>
+            </div>
         </div>
-        <div class="c-service-grid">
-          <a class="c-service-card" href="jardineria.html">
-            <div class="c-service-card__icon"><i class="fas fa-tree"></i></div>
-            <h3 class="c-service-card__title">Jardinería</h3>
-            <p class="texto-base">Mantenimiento, diseño de jardines y sistemas de riego inteligentes.</p>
-          </a>
-          <a class="c-service-card" href="plomeria.html">
-            <div class="c-service-card__icon"><i class="fas fa-wrench"></i></div>
-            <h3 class="c-service-card__title">Plomería</h3>
-            <p class="texto-base">Soluciones rápidas para fugas, instalaciones y emergencias 24/7.</p>
-          </a>
-          <a class="c-service-card" href="electricidad.html">
-            <div class="c-service-card__icon"><i class="fas fa-plug"></i></div>
-            <h3 class="c-service-card__title">Electricidad</h3>
-            <p class="texto-base">Electricistas matriculados para reparaciones, instalaciones y auditorías.</p>
-          </a>
-          <a class="c-service-card" href="limpieza.html">
-            <div class="c-service-card__icon"><i class="fas fa-broom"></i></div>
-            <h3 class="c-service-card__title">Limpieza</h3>
-            <p class="texto-base">Limpieza profunda, post-mudanza, oficinas y planes recurrentes.</p>
-          </a>
-          <a class="c-service-card" href="construccion.html">
-            <div class="c-service-card__icon"><i class="fas fa-hammer"></i></div>
-            <h3 class="c-service-card__title">Construcción</h3>
-            <p class="texto-base">Reformas, obra nueva y equipos especializados por proyecto.</p>
-          </a>
-          <a class="c-service-card" href="abogacia.html">
-            <div class="c-service-card__icon"><i class="fas fa-gavel"></i></div>
-            <h3 class="c-service-card__title">Abogacía</h3>
-            <p class="texto-base">Asesoramiento legal civil, laboral y comercial para particulares.</p>
-          </a>
-          <a class="c-service-card" href="contaduria.html">
-            <div class="c-service-card__icon"><i class="fas fa-calculator"></i></div>
-            <h3 class="c-service-card__title">Contaduría</h3>
-            <p class="texto-base">Gestión fiscal, contabilidad mensual e informes financieros.</p>
-          </a>
-          <a class="c-service-card" href="veterinaria.html">
-            <div class="c-service-card__icon"><i class="fas fa-paw"></i></div>
-            <h3 class="c-service-card__title">Veterinaria</h3>
-            <p class="texto-base">Profesionales a domicilio para chequeos, vacunas y urgencias.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="c-section c-section--light">
-      <div class="container">
-        <div class="c-section__heading">
-          <h2 class="texto-subtitulo">Lo que dicen nuestros usuarios</h2>
-          <p class="texto-base u-no-margin">Historias reales de vecinos que confían en ServiLocal para resolver sus necesidades.</p>
-        </div>
-        <article class="c-testimonial">
-          <div class="c-testimonial__rating">
-            <span aria-hidden="true">★★★★★</span>
-            <span class="texto-base u-no-margin">Ana, Buenos Aires</span>
-          </div>
-          <p class="texto-base u-no-margin">“Contraté a un jardinero y quedé impresionada. Llegó puntual, hizo un trabajo impecable y a muy buen precio. ¡Lo recomiendo 100%!”</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="c-footer">
-    <div class="container c-footer__inner">
-      <div>
-        <h2 class="texto-subtitulo c-footer__title">ServiLocal</h2>
-        <p class="c-footer__meta">Conectando vecinos con profesionales de confianza para que cada servicio sea simple y seguro.</p>
-      </div>
-      <div class="c-footer__links">
-        <a class="c-footer__link" href="todos_los_servicios.html">Todos los servicios</a>
-        <a class="c-footer__link" href="buscar.html">Buscar profesionales</a>
-        <a class="c-footer__link" href="registro.html">Sumar mi negocio</a>
-        <a class="c-footer__link" href="perfil.html">Panel de usuario</a>
-        <a class="c-footer__link" href="politicas.html" target="_blank" rel="noopener noreferrer">Políticas de privacidad</a>
-      </div>
-      <div class="c-footer__meta">© 2025 ServiLocal. Conectando vecinos con profesionales de confianza.</div>
     </div>
-  </footer>
 
-  <script src="js/performance.js"></script>
-  <script src="js/accesibilidad.js"></script>
-  <script src="js/pwa.js"></script>
-  <script src="js/gestos.js"></script>
-  <script src="js/schema.js"></script>
-  <script src="js/componentes.js"></script>
-  <script src="js/cookies.js"></script>
+    <script>
+        // Profile menu toggle
+        function toggleMenu(){
+            const profileMenu = document.getElementById("profileMenu");
+            profileMenu.classList.toggle("open-menu");
+        }
 
+        // Logout function
+        function logout() {
+            localStorage.removeItem('userLoggedIn');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userProfession');
+            localStorage.removeItem('userLocation');
+            localStorage.removeItem('rememberUser');
+        }
+
+        // Feed functionality will be added in separate script file
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFeed();
+        });
+
+        function initializeFeed() {
+            // Post interactions
+            initPostInteractions();
+            // Create post functionality
+            initCreatePost();
+            // Load more posts
+            initLoadMore();
+        }
+
+        function initPostInteractions() {
+            // Like, comment, share buttons
+            document.querySelectorAll('.post-action-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const action = this.dataset.action;
+                    const post = this.closest('.post-card');
+                    
+                    switch(action) {
+                        case 'like':
+                            toggleLike(this, post);
+                            break;
+                        case 'comment':
+                            toggleComments(post);
+                            break;
+                        case 'share':
+                            sharePost(post);
+                            break;
+                    }
+                });
+            });
+        }
+
+        function toggleLike(btn, post) {
+            const icon = btn.querySelector('i');
+            const isLiked = icon.classList.contains('fas');
+            
+            if (isLiked) {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                btn.classList.remove('post-action-btn--active');
+            } else {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                btn.classList.add('post-action-btn--active');
+            }
+        }
+
+        function toggleComments(post) {
+            const commentsSection = post.querySelector('.post-comments-section');
+            if (commentsSection.style.display === 'none') {
+                commentsSection.style.display = 'block';
+            } else {
+                commentsSection.style.display = 'none';
+            }
+        }
+
+        function sharePost(post) {
+            // Simple share functionality
+            alert('Funcionalidad de compartir en desarrollo');
+        }
+
+        function initCreatePost() {
+            const createPostInput = document.getElementById('createPostInput');
+            const modal = document.getElementById('createPostModal');
+            const closeBtn = document.getElementById('closeCreatePostModal');
+            const cancelBtn = document.getElementById('cancelPost');
+            const publishBtn = document.getElementById('publishPost');
+            const textarea = document.getElementById('modalPostTextarea');
+
+            // Open modal when clicking input
+            createPostInput.addEventListener('click', () => {
+                modal.classList.add('create-post-modal--open');
+                document.body.style.overflow = 'hidden';
+                textarea.focus();
+            });
+
+            // Close modal
+            [closeBtn, cancelBtn].forEach(btn => {
+                btn.addEventListener('click', () => {
+                    modal.classList.remove('create-post-modal--open');
+                    document.body.style.overflow = '';
+                    textarea.value = '';
+                    publishBtn.disabled = true;
+                });
+            });
+
+            // Enable/disable publish button
+            textarea.addEventListener('input', () => {
+                publishBtn.disabled = textarea.value.trim().length === 0;
+            });
+
+            // Publish post
+            publishBtn.addEventListener('click', () => {
+                const content = textarea.value.trim();
+                if (content) {
+                    createNewPost(content);
+                    modal.classList.remove('create-post-modal--open');
+                    document.body.style.overflow = '';
+                    textarea.value = '';
+                    publishBtn.disabled = true;
+                }
+            });
+        }
+
+        function createNewPost(content) {
+            const postsContainer = document.getElementById('postsContainer');
+            const newPost = document.createElement('article');
+            newPost.className = 'post-card';
+            
+            newPost.innerHTML = `
+                <div class="post-header">
+                    <img src="imagenes/perfilemuestra/professional-headshot.png" alt="Usuario Ejemplo" class="post-avatar">
+                    <div class="post-author-info">
+                        <h4>Usuario Ejemplo</h4>
+                        <p>Profesional en Servicios Locales • <span class="post-time">Ahora</span></p>
+                    </div>
+                    <button class="post-menu-btn">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+                <div class="post-content">
+                    <p>${content}</p>
+                </div>
+                <div class="post-stats">
+                    <span class="post-likes">👍 0 reacciones</span>
+                    <span class="post-comments">0 comentarios</span>
+                    <span class="post-shares">0 compartidos</span>
+                </div>
+                <div class="post-actions">
+                    <button class="post-action-btn" data-action="like">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Me gusta</span>
+                    </button>
+                    <button class="post-action-btn" data-action="comment">
+                        <i class="far fa-comment"></i>
+                        <span>Comentar</span>
+                    </button>
+                    <button class="post-action-btn" data-action="share">
+                        <i class="far fa-share"></i>
+                        <span>Compartir</span>
+                    </button>
+                </div>
+            `;
+            
+            postsContainer.insertBefore(newPost, postsContainer.firstChild);
+            
+            // Re-initialize interactions for new post
+            initPostInteractions();
+        }
+
+        function initLoadMore() {
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            loadMoreBtn.addEventListener('click', () => {
+                // Simulate loading more posts
+                loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Cargando...';
+                
+                setTimeout(() => {
+                    loadMoreBtn.innerHTML = '<i class="fas fa-plus"></i> Cargar más publicaciones';
+                    // Here you would load more posts from server
+                }, 1000);
+            });
+        }
+    </script>
 </body>
 </html>
